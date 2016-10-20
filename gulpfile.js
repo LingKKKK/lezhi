@@ -29,8 +29,8 @@ var gulp = require('gulp'),                      //基础库
 	os = require('os'),
 	crypto = require('crypto');
 
-var SRC = './src/';
-var DIST = './dist/';
+var SRC = './resources/assets/';
+var DIST = './public/assets/';
 var args = minimist(process.argv.slice(2));
 
 gulp.task('clean-js', function() {
@@ -68,15 +68,6 @@ gulp.task('img', function() {
 		.pipe(gulp.dest(imgDst));
 });
 
-gulp.task('html', function() {
-	var htmlSrc = SRC + '**.html',
-		htmlDst = DIST;
-
-	return gulp.src(htmlSrc)
-		.pipe(gulpif(args.release, minifyHtml()))
-		.pipe(gulp.dest(htmlDst));
-});
-
 // font处理
 gulp.task('font', function() {
 	var fontSrc = SRC + 'font/**/*',
@@ -86,21 +77,13 @@ gulp.task('font', function() {
 		.pipe(gulp.dest(fontDst));
 });
 
-gulp.task('data', function() {
-	var resSrc = SRC + 'data/**/*',
-		resDst = DIST + 'data/';
-
-	return gulp.src(resSrc)
-		.pipe(gulp.dest(resDst));
-});
-
 // 清空图片、样式、js
 gulp.task('clean', function() {
-	return gulp.src([DIST + 'css', DIST + 'js', DIST + 'img', DIST + 'font', DIST + 'data', DIST + '**.html'], {read: false})
+	return gulp.src([DIST + 'css', DIST + 'js', DIST + 'img', DIST + 'font'], {read: false})
 		.pipe(clean());
 });
 
 // 默认任务
 gulp.task('default', function() {
-	return runSequence('clean', ['css', 'img', 'font', 'data', 'html'], 'js');
+	return runSequence('clean', ['css', 'img', 'font'], 'js');
 });
