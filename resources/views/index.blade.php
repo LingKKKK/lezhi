@@ -1,377 +1,326 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>乐智</title>
-        <link rel=”shortcut icon” href="../favicon.ico">
-        <link rel="stylesheet" type="text/css" href="assets/css/base.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/index.css">
-        <script type="text/javascript" src="assets/js/jquery.js"></script>
-        <script type="text/javascript" src="assets/js/index.js"></script>
-    </head>
-    <body>
-        <div class="main">
-            <div class="banner-one">
-                <div class="top">
-                    <div class="logo">
-                        <img src="assets/img/7E0C600A-4DED-4221-A9B1-EF8EF4AA1321@3x.png"/>
-                    </div>
-                    <div class="nav">
-                        <ul>
-                            <li>
-                                <a href="/">首页</a>
-                            </li>
-                            <li>
-                                <a href="/programme">方案</a>
-                                <ul>
-                                    <li><a href="/programme">中小学方案</a></li>
-                                    <li><a href="/programme">高校方案</a></li>
-                                    <li><a href="/programme">教师提升</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/product">产品</a>
-                                <ul>
-                                    <li><a href="/product">水下机器人系列</a></li>
-                                    <li><a href="/product">创新机器人系列</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/game">大赛</a>
-                                <ul>
-                                    <li><a href="/game">国际水中机器人大赛</a></li>
-                                    <li><a href="/game">国际机器人创客大赛</a></li>
-                                    <li><a href="/game">游学拓展</a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="/about">更多</a>
-                                <ul>
-                                    <li><a href="/about">关于乐智</a></li>
-                                    <li><a href="/about">服务优势</a></li>
-                                    <li><a href="/about">千百万工程</a></li>
-                                    <li><a href="/about">造梦计划</a></li>
-                                    <li><a href="/about">体验中心</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="bannerpic1" id="pic1">
-                    <img src="assets/img/1.jpg">
-                    <span class="chinses">
-                        创新&nbsp&nbsp&nbsp&nbsp协作&nbsp&nbsp&nbsp&nbsp融合&nbsp&nbsp&nbsp&nbsp分享
-                    </span>
-                    <span class="english">
-                        Innovation | Collaboration | Integration | Sharing
-                    </span>
-                </div>
-
-                <div class="bannerpic1" id="pic2">
-                    <img src="assets/img/index1.jpg">
-                    <span class="chinses">
-                        STEAM教育能有效的补充、创新传统教育
-                    </span>
-                    <span class="english">
-                        STEAM education can effectively supplement & innovate traditional education
-                    </span>
-                </div>
-
-                <div class="bannerpic1" id="pic3">
-                    <img src="assets/img/7.jpg">
-                    <span class="chinses">
-                        从课堂到实际应用，<br>我们致力于打造一个开放共融的STEAM教育环境
-                    </span>
-                    <span class="english" style="top:240px;">
-                        From class to actual application, <br>we are devoted to create an open & integrated STEAM education environment
-                    </span>
-                </div>
-
-                <div class="bannerpic1" id="pic4">
-                    <img src="assets/img/indexproduct.jpg">
-                    <span class="chinses">
-                        我们的产品涵盖水中机器人和创意机器人，<br>适用于教学、拓展
-                    </span>
-                    <span class="english" style="top:240px;">
-                        Our products cover underwater robot and innovative robot, <br>suitable for teaching & expansion study
-                    </span>
-                </div>
-
-                <div class="bannerpic1" id="pic5">
-                    <img src="assets/img/index7.jpg">
-                    <span class="chinses">
-                        这个舞台，看我的
-                    </span>
-                    <span class="english">
-                        I am the star of the stage
-                    </span>
-                </div>
-
-                <div class="click">
-                    <li id="btn1"></li>
-                    <li id="btn2"></li>
-                    <li id="btn3"></li>
-                    <li id="btn4"></li>
-                    <li id="btn5"></li>
-                </div>
-                <div class="model"></div>
-            </div>
-
-
-
-
-
-
-            <div class="gd-1">
-                <img src="assets/img/550616891980855979.jpg"/>
-            </div>
-
-            <div class="banner-two">
-                <div class="bannerpic1">
-                    <img src="assets/img/3.jpg">
-                </div>
-                <div class="model">
-                    <!-- <span class="s1">Service Plan of LEZHI STEAM Education</span> -->
-                    <span class="s2">乐智STEAM</span>
-                    <span class="s3">教育服务方案</span>
-                    <ul>
-                        <li style="'margin-left: 0px;">
-                            <div class="div1"><a href="/programme">高校服务方案</a></div>
-                            <div class="div2">High School Education<br>Integrated Scheme</div>
-                        </li>
-                        <li>
-                            <div class="div1 demo"><a href="/programme">中小学服务方案</a></div>
-                            <div class="div2">Middle&Primary School<br>Education Integrated Scheme</div>
-                        </li>
-                        <li>
-                            <div class="div1"><a href="/programme">教师提升</a></div>
-                            <div class="div2">Teachers Improve</div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="clear"></div>
-            <div class="banner-three">
-                <div class="inner">
-                    <div class="title">
-                        <div class="mid">
-                            <ul>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                            </ul>
-                            <span>创新  INNOVATION</span>
-                            <p>乐智倡导多元化的STEAM教育教学模式，让学生养成创新思维，提高对于知识的领悟力，更自如的学以致用。最终实现学科知识的课外延伸和运用，并力图创造相应的社会价值。<br><br>乐智与学校、科研机构开展产学研合作，在项目纽带合作、建设平台合作、产业技术联盟合作这三方面积极探索，寻求深度合作，共同推进中国STEAM教育的成果落地。
-                            </p>
-                        </div>
-                    </div>
-                    <div class="pic">
-                        <img src="assets/img/4.jpg"/>
-                    </div>
-                    <div class="pic">
-                        <img src="assets/img/5.jpg"/>
-                    </div>
-                    <div class="title">
-                        <div class="mid">
-                            <ul>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                            </ul>
-                            <span>协作  COLLABORATION</span>
-                            <p>乐智以国际视野来审视中国STEAM教育，融合中西教育理念，以体系化、高品质的STEAM教育内容服务去推动STEAM教育发展。</p>
-                        </div>
-                    </div>
-                    <div class="title">
-                        <div class="mid">
-                            <ul>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                            </ul>
-                            <span>融合  INTEGRATION</span>
-                            <p>STEAM教育是一块充满着生机和孕育着无限发展前景的人才摇篮，为进一步探索、完善STEAM教育体系，乐智积极与各高校、中小学共建STEAM教育培训基地。</p>
-                        </div>
-                    </div>
-                    <div class="pic">
-                        <img src="assets/img/6.jpg"/>
-                    </div>
-                    <div class="pic">
-                        <img src="assets/img/Bitmap.jpg"/>
-                    </div>
-                    <div class="title">
-                        <div class="mid">
-                            <ul>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                                <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                            </ul>
-                            <span>分享  SHAREING</span>
-                            <p>
-                                开放线上学习讨论平台，课程课件资源下载，立足打造师资交流，资源共享、课程开发的新平台，力争把线上平台打造成创新、协作、融合、分享的共融共通平台。也希望广大教师、学者、专家能在STEAM教育的各方面给予更多建议和支持。<br><br>乐智核心成员均来自北京大学、清华大学等顶尖名校。依托顶尖名校，强大的科研实力，将为各STEAM教育学校提供最新的高精尖科研成果。
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="banner-four">
-                <div class="pic1">
-                    <div class="pic2">
-                        <img src="assets/img/9.png">
-                    </div>
-                    <span class="s1">Service Plan of LEZHI STEAM Education</span>
-                    <span class="s2">乐智STEAM教育产品</span>
-                    <ul>
-                        <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                        <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                        <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                    </ul>
-                    <span class="s3">水下机器人系列<br>SmartTune | Rofish</span>
-                    <span class="s4"><a href="/product">查看详情</a></span>
-                </div>
-                <div class="pic3">
-                    <div class="pic4">
-                        <img src="assets/img/10.png"/>
-                    </div>
-                    <span class="s1">Service Plan of LEZHI STEAM Education</span>
-                    <span class="s2">乐智STEAM教育产品</span>
-                    <ul>
-                        <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                        <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                        <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                    </ul>
-                    <span class="s3">创新机器人系列<br>KenBlock</span>
-                    <span class="s4"><a href="/product">查看详情</a></span>
-                </div>
-            </div>
-            <div class="banner-five">
-                <span class="title">赛事  Games</span>
-                <ul>
-                    <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                    <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                    <li><img src="assets/img/0E9AD482-06CA-4B1A-83AA-3A9BC2A34DB3@3x.png"></li>
-                </ul>
-                <div class="pic1">
-                    <img src="assets/img/11.jpg">
-                </div>
-                <span class="title1">国际水中机器人大赛</span>
-                <span class="title3">为推进中国STEAM教育的发展，乐智与国际水中机器人联盟达成了深度战略合作，积极致力于整合企业、媒体、学界、资本等资源，将联盟打造成为中国STEAM教育成果的“宣传平台”、“交流平台”、“合作平台”、“提升平台”和“资格平台”，发挥联盟“方向的力量”、“联合的力量”、“持续的力量”，为中国STEAM教育的建设和推广服务，为中国的“双创” 人才的培养服务。</span>
-                <div class="logo"></div>
-                <span class="title4">为推进中国STEAM教育的发展，乐智与国际水中机器人联盟达成了深度战略合作，积极致力于整合企业、媒体、学界、资本等资源，将联盟打造成为中国STEAM教育成果的“宣传平台”、“交流平台”、“合作平台”、“提升平台”和“资格平台”，发挥联盟“方向的力量”、“联合的力量”、“持续的力量”，为中国STEAM教育的建设和推广服务，为中国的“双创” 人才的培养服务。</span>
-                <div class="clear"></div>
-                <div class="pic1">
-                    <img src="assets/img/12.jpg">
-                </div>
-                <span class="title1">国际机器人创客大赛</span>
-                <span class="title3">国际机器人创客联盟（International League of Robot Maker）是国内首家，由各大高校联合发起成立的机器人创客教育组织。联盟致力于普及STEAM教育，倡导工程师文化理念和实现创新人才的培养，旨在建设一个国际性的STEAM标教育资源共建共享平台。</span>
-                <div class="logo"></div>
-                <span class="title4" style="transform: translateY(13%);">北京大学，清华大学，复旦大学，山东大学，美国西点军校，英国埃塞克斯大学，澳大利亚格里菲斯大学，荷兰格罗跟大学，韩国仁德大学等</span>
-                <div class="clear"></div>
-                <div class="pic1">
-                    <img src="assets/img/13.jpg">
-                </div>
-                <span class="title1">游学拓展</span>
-                <span class="title3">组织冬夏令营等国外游学活动，能够有效的<br>1、了解国外STEAM教育理念、技术<br>2、提高语言学习能力<br>3、留学预考察等。</span>
-                <div class="logo"></div>
-                <div class="clear"></div>
-            </div>
-
-            <div class="more">
-                <div class="ml">
-                    <span>更多内容</span>
-                    <ul>
-                        <li><a href="/about">关于乐智</a></li>
-                        <li><a href="/about">服务优势</a></li>
-                        <li><a href="/about">百千万工程</a></li>
-                        <li><a href="/about">造梦计划</a></li>
-                        <li><a href="/about">体验中心</a></li>
-                    </ul>
-                </div>
-                <div class="mr">
-                    <img src="assets/img/14.png"/>
-                    <span class="s1">PUT ON THE WINGS OF INNOVATION,<br>REDISCOVER THE WORLD,<br>CHANGE THE FUTURE</span>
-                    <span class="s2"></span>
-                    <span class="s3">INNOVATION｜COLLABORATION｜INTEGRATION｜SHARING</span>
-                </div>
-            </div>
-            <div class="logo">
-                <div class="top"></div>
-                <ul>
-                    <li><img src="assets/img/f1.png"></li>
-                    <li><img src="assets/img/f2.png"></li>
-                    <li><img src="assets/img/f3.png"></li>
-                    <li><img src="assets/img/f4.png"></li>
-                    <li><img src="assets/img/f5.png"></li>
-                    <li><img src="assets/img/f6.png"></li>
-                    <li><img src="assets/img/f7.png"></li>
-                    <li><img src="assets/img/f8.png"></li>
-                    <li><img src="assets/img/f9.png"></li>
-                    <li><img src="assets/img/f10.png"></li>
-                    <li><img src="assets/img/f11.png"></li>
-                    <li class="cp-logo"><img src="assets/img/f12.png"></li>
-                    <li><img src="assets/img/f13.png"></li>
-                    <li><img src="assets/img/f14.png"></li>
-                    <li><img src="assets/img/f15.png"></li>
-                    <li><img src="assets/img/f16.png"></li>
-                    <li><img src="assets/img/f17.png"></li>
-                    <li><img src="assets/img/11 (1).jpg"></li>
-                    <li><img src="assets/img/f19.png"></li>
-                    <li><img src="assets/img/f20.png"></li>
-                    <li><img src="assets/img/f21.png"></li>
-                    <li><img src="assets/img/f22.png"></li>
-                    <li><img src="assets/img/f23.png"></li>
-                    <li><img src="assets/img/f24.png"></li>
-                    <li></li>
-                    <li></li>
-                    <li><img src="assets/img/f25.png"></li>
-                    <li><img src="assets/img/f26.png"></li>
-                </ul>
-            </div>
-
-            <div class="bottom">
-                <div class="bot1">
-                    <div class="inner">
-                        <div class="p1">
-                            <span class="s1">公司</span>
-                                    <span class="s2">一体化创客空间<br>
-                                                    一体化课程包<br>
-                                                    高效率乐智团队<br>
-                                                    权威合作伙伴<br>
-                                                    顶级创客大赛<br>
-                                                    “百千万工程”大型公益科普活动
-                                    </span>
-                        </div>
-                        <div class="p2">
-                            <span class="s1">支持</span>
-                            <span class="s2">技术支持<br>售后服务</span>
-                        </div>
-                        <div class="p3">
-                            <div class="pic">
-                                <img src="assets/img/E6D3D229-26B0-4FA5-A90A-45055DA2ACBC@3x.png"/>
-                            </div>
-                                    <span class="s1">深圳乐智机器人有限公司<br><br>
-                                                    电话 / 传真: <br>
-                                                    北京：010-6287－8672，010-6265-7936<br>
-                                                    深圳：0755-8526-0623<br>
-                                                    Email: info@lzrobot.com<br><br>
-                                                    通讯地址：<br>
-                                                    北京市海淀区天秀路中国农大国际创业园1号楼529<br>
-                                                    深圳市宝安区桃花源科技园B栋611<br>
-                                    </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="bot2">
-                    <div class="inner">
-                        <div class="logo">
-                            <img src="assets/img/7E0C600A-4DED-4221-A9B1-EF8EF4AA1321@3x.png">
-                        </div>
-                        <div class="ico">© 2013-2016 lzrobot Co., Ltd. All rights reserved.<br>粤ICP备15017839号-2</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </body>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="screen-orientation" content="landscape">
+		<meta name="x5-orientation" content="landscape">
+		<title>啃萝卜智能硬件平台</title>
+		<meta name="keywords" content="arduino 开发 IDE 开发平台 教程">
+		<meta name="description" content="啃萝卜智能硬件平台">
+		<meta name="csrf-token" content="{{csrf_token()}}">
+		<link href="assets/css/index.css?v={{time()}}" rel="stylesheet">
+		@if(!env('APP_DEBUG'))
+		<script scr="//hm.baidu.com/hm.js?{{env('PV_KEY')}}"></script>
+		@endif
+		<script src="assets/js/require.js" data-main="assets/js/index"></script>
+	</head>
+	<body>
+		<div class="main no-select">
+			<div class="sidebar-region">
+				<div class="top">
+					<div class="logo"></div>
+					<!-- <div class="name">教育版</div>
+					<div class="url">edu.kenrobot.com</div> -->
+				</div>
+				<ul class="center">
+					<li data-action="project"><!-- <i class="icon lezhi lz-edu-project"></i> --><span class="name">项目</span></li>
+					<li data-action="hardware"><!-- <i class="icon lezhi lz-edu-hardware"></i> --><span class="name">硬件</span></li>
+					<li data-action="software"><!-- <i class="icon lezhi lz-edu-block"></i> --><span class="name">编程</span></li>
+					<li data-action="code"><!-- <i class="icon lezhi lz-edu-code"></i> --><span class="name">源码</span></li>
+				</ul>
+				<!-- <ul class="bottom">
+					<li data-action="share"><i class="icon lezhi lz-edu-share"></i><span class="name">分享</span></li>
+					<li data-action="help" data-href="http://www.kenrobot.com/index.php?app=square&mod=Index&act=help"><i class="icon lezhi lz-edu-help"></i><span class="name">帮助</span></li>
+				</ul> -->
+			</div>
+			<div class="content-region">
+				<div class="sidebar-tabs">
+					<div class="tab tab-project no-scrollbar">
+						<p class="product-m">PRODUCT  项目</p>
+						<ul class="list"></ul>
+					</div>
+					<div class="tab tab-hardware">
+						<div class="search-wrap">
+							<input class="search" type="text" placeholder="搜索..." />
+							<i class="lezhi lz-search"></i>
+						</div>
+						<div class="filters-wrap">
+							<ul class="filters">
+								<li data-filter="all">全部</li>
+								<li data-filter="sensor">传感模块</li>
+								<li data-filter="action">执行模块</li>
+								<li data-filter="function">功能模块</li>
+								<li data-filter="sensor">传感模块</li>
+								<li data-filter="action">执行模块</li>
+							</ul>
+						</div>
+						<div class="components-wrap no-scrollbar">
+							<ul class="components"></ul>
+						</div>
+					</div>
+					<div class="tab tab-software">
+						<div class="filters-wrap">
+							<ul class="filters">
+								<li data-filter="module">模块</li>
+								<li data-filter="function">函数</li>
+								<li data-filter="var">变量</li>
+								<li data-filter="code">代码</li>
+								<li data-filter="math">数学函数</li>
+								<li data-filter="text">文本</li>
+								<li data-filter="control">控制</li>
+								<li data-filter="logic">逻辑运算</li>
+							</ul>
+						</div>
+						<div class="filter">
+							<span class="filter-name">全部</span>
+							<input class="advanced" type="button" value="高级" />
+						</div>
+						<div class="blocks-wrap no-scrollbar">
+							<ul class="blocks"></ul>
+						</div>
+					</div>
+				</div>
+				<div class="wrap">
+					<div class="content-header">
+						<div class="project-region">
+							<div class="name-wrap">
+								<div class="name ellipsis"></div>
+								<div class="btn-change" data-action="edit">修改</div>
+							</div>
+							<div class="project-wrap clearfix">
+								<input class="new" id="creat-new" type="button" value="新建项目" />
+								<div class="x-select boards">
+									<div class="placeholder"></div>
+									<ul></ul>
+								</div>
+								<input class="x-btn share" type="button" value="分享" />
+								<input class="x-btn save" type="button" value="保存" />
+								<input class="x-btn upload" type="button" value="上传" />
+							</div>
+						</div>
+						<div class="login-region">
+							<div class="photo{{isset($user) ? '' : ' no-user'}}" data-href="{{$loginInfo->home_url}}">
+								@if(isset($user))
+								<img src="{{$user->avatar_url or 'assets/image/default-user.png'}}" />
+								@else
+								<img src="assets/image/default-user.png" />
+								@endif
+							</div>
+							<div class="login-menu">
+								<div class="tab tab-user {{isset($user) ? 'active' : ''}}">
+									<ul>
+										<li data-action="setting"><span>设置</span></li>
+										<li><a href="/logout">退出</a></li>
+									</ul>
+								</div>
+								<div class="tab tab-no-user{{isset($user) ? '' : ' active'}}">
+									<ul>
+										<li data-action="login"><span>登录</span></li>
+										<li data-action="register"><span>注册</span></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="content-tabs">
+						<div class="tab tab-hardware" data-action="hardware">
+							<div id="hardware-container" class="hardware-container" droppable="true">
+								<div class="board absolute-center">
+								</div>
+							</div>
+							<div class="component-dialog" id="component-dialog">
+								<span class="name-label">名字</span>
+								<input class="name" type="text" spellcheck="false" />
+							</div>
+							<ul class="x-context-menu component-menu">
+								<li data-action="copy">复制</li>
+								<li data-action="disconnect">断开</li>
+								<li data-action="delete">删除</li>
+							</ul>
+							<ul class="x-context-menu board-menu">
+								<li data-action="disconnect">断开</li>
+								<li data-action="delete">删除</li>
+							</ul>
+							<div class="recycle">
+								<i class="icon lezhi lz-delete"></i>
+							</div>
+						</div>
+						<div class="tab tab-software" data-action="software">
+							<div id="software-container" class="software-container no-scrollbar">
+								<div class="block-group-region block-global">
+									<div class="group-header"><span>全局变量、函数</span></div>
+									<div class="group-extension">
+										<div class="group-description">如果你有变量需要在setup和loop里面同时使用，要在这里定义哦<br />如果你需要定义函数，要在这里定义哦</div>
+										<div class="group-placeholder">拖一个块放到这里开始你第一个程序吧</div>
+									</div>
+								</div>
+								<div class="block-group-region block-setup">
+									<div class="group-header"><span>Setup</span></div>
+									<div class="group-extension">
+										<div class="group-description">什么事情需要程序开始时只做一遍，放在这里面吧</div>
+										<div class="group-placeholder">拖一个块放到这里开始你第一个程序吧</div>
+									</div>
+								</div>
+								<div class="block-group-region block-loop">
+									<div class="group-header"><span>Loop</span></div>
+									<div class="group-extension">
+										<div class="group-description">这里就是程序一直在做的事情，记得是无循环哦</div>
+										<div class="group-placeholder">拖一个块放到这里开始你第一个程序吧</div>
+									</div>
+								</div>
+							</div>
+							<ul class="x-context-menu block-menu">
+								<li data-action="copy">复制</li>
+								<li data-action="comment">注释</li>
+								<li data-action="uncomment">取消注释</li>
+								<li data-action="delete">删除</li>
+							</ul>
+						</div>
+						<div class="tab tab-code" data-action="code">
+							<div id="code-container" class="code-container"></div>
+						</div>
+					</div>
+					<div class="layer message-layer" data-offset="120"></div>
+				</div>
+			</div>
+		</div>
+		<div class="no-select">
+			<div class="layer modal dialog-layer">
+				<div class="x-dialog login-dialog">
+					<i class="lezhi lz-close x-dialog-close"></i>
+					<ul class="switch">
+						<li class="account active" data-action="account"></li>
+						<li class="weixin" data-action="weixin"><div class="tips">扫码登录更安全</div></li>
+					</ul>
+					<div class="logo"></div>
+					<div class="seperator"></div>
+					<div class="wrap">
+						<div class="tab tab-account active">
+							<div class="title">账号登录</div>
+							<form>
+								{!! csrf_field() !!}
+								<input class="qrcode-key" type="hidden" value="{{$loginInfo->key or ''}}">
+								<div class="field">
+									<span class="icon"><i class="lezhi lz-user"></i></span>
+									<input class="email" type="email" name="email" placeholder="邮箱地址/手机号码" autocomplete="off" />
+								</div>
+								<div class="field">
+									<span class="icon"><i class="lezhi lz-password"></i></span>
+									<input class="password" type="password" name="password" placeholder="密码" />
+								</div>
+								<div class="message">
+									<span></span>
+								</div>
+								<input class="login-btn" type="button" value="登录" />
+							</form>
+						</div>
+						<div class="tab tab-weixin">
+							<div class="scan">
+								<img src="{{asset('assets/image/weixin-scan.png')}}" />
+							</div>
+							<img class="qrcode" alt="微信扫码" src="{{$loginInfo->qrcode_url or ''}}" />
+							<div class="login-tips tips">
+								请使用微信扫一扫<br />扫码关注后即可直接登录
+							</div>
+							<div class="register-tips tips">
+								推荐使用微信扫码功能<br />扫码后将完成注册并登录
+							</div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="login-footer">
+							<a class="forget-password" href="{{$loginInfo->find_password_url}}">忘记密码</a>
+							<a class="register" href="{{$loginInfo->register_url}}">点击注册</a>
+							<span class="no-account">还没有啃萝卜账号？</span>
+						</div>
+						<div class="register-footer">
+							<span class="no-account">不使用微信？前往</span>
+							<a class="register" href="{{$loginInfo->register_url}}">网站注册</a>
+						</div>
+					</div>
+				</div>
+				<div class="x-dialog project-dialog">
+					<i class="lezhi lz-close x-dialog-close"></i>
+					<div class="image no-image">
+						<div class="mask"></div>
+						<input class="absolute-center upload" type="button" value="上传项目图片" />
+						<input class="file" type="file" accept="image/jpeg" />
+						<div class="message"></div>
+					</div>
+					<div class="info">
+						<div class="field-label">项目名称：</div>
+						<input class="name" type="text" placeholder="在此输入项目名称，如Arduino Project 01" />
+						<div class="field-label">项目介绍：</div>
+						<textarea class="intro" placeholder="介绍下您的项目，如项目背景、目的、功能..." spellcheck="false"></textarea>
+						<div class="field-label public-label">公开程度：</div>
+						<div>
+							<input class="public" id="public-2" name="public" type="radio" value="2" checked="checked" /><label for="public-2">完全公开</label>
+							<input class="public" id="public-1" name="public" type="radio" value="1" /><label for="public-1">好友公开</label>
+							<input class="public" id="public-0" name="public" type="radio" value="0" /><label for="public-0">仅自己可见</label>
+						</div>
+					</div>
+					<div class="x-dialog-btns">
+						<input class="x-dialog-btn cancel" type="button" value="取消" /><input class="x-dialog-btn confirm" type="button" value="创建" />
+					</div>
+				</div>
+				<div class="x-dialog common-dialog">
+					<i class="lezhi lz-close x-dialog-close"></i>
+					<div class="x-dialog-header"></div>
+					<div class="x-dialog-content"></div>
+					<div class="x-dialog-btns">
+						<input class="x-dialog-btn cancel" type="button" value="取消" /><input class="x-dialog-btn confirm" type="button" value="确定" />
+					</div>
+				</div>
+				<div class="x-dialog share-dialog">
+					<i class="lezhi lz-close x-dialog-close"></i>
+					<div class="x-dialog-header"></div>
+					<div class="x-dialog-content">
+						<div class="left">
+							<div class="share" data-action="wechat"><i class="lezhi lz-wechat"></i>微信扫码</div>
+							<img class="qrcode" />
+						</div>
+						<div class="right">
+							<ul>
+								<li class="share" data-action="weibo"><i class="lezhi lz-weibo"></i>新浪微博</li>
+								<li class="share" data-action="qzone"><i class="lezhi lz-qzone"></i>QQ空间</li>
+								<li class="share" data-action="kenrobot"><i class="lezhi lz-kenrobot-logo"></i>啃萝卜</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="x-dialog port-dialog">
+					<div class="x-dialog-title"><i class="lezhi lz-setting"></i>端口选择</div>
+					<div class="port-label">端口:</div>
+					<div class="x-select port-list">
+						<div class="placeholder"></div>
+						<ul></ul>
+					</div>
+					<div class="x-dialog-btns">
+						<input class="x-dialog-btn cancel" type="button" value="取消" /><input class="x-dialog-btn confirm" type="button" value="确定" />
+					</div>
+				</div>
+				<div class="x-dialog install-dialog">
+					<div class="x-dialog-title">安装</div>
+					<i class="lezhi lz-close x-dialog-close"></i>
+					<div class="x-dialog-content selectable">
+						你没有安装啃萝卜<span class="strong">KenExt.crx</span>，请按以下步骤操作:
+						<div class="step">
+							Step 1: 点击<a href="http://ide.kenrobot.com/download/KenExt.crx" title="啃萝卜">下载</a><br />
+							Step 2: 打开chrome浏览器，在地址栏输入<span class="strong">chrome://extensions</span><br />
+							Step 3: 把<span class="strong">KenExt.crx</span>拖入浏览器<br />
+							Step 4: 完成安装
+						</div>
+						<div class="des">说明: 如果顶部弹出“无法添加来自此网站的应用...”，请点击确定。由于一些你懂的原因，我们不能把插件发布到google应用商店。就算能发布，部分用户也不能...，所以<span class="helpless">╮(╯▽╰)╭</span></div>
+					</div>
+					<div class="x-dialog-btns">
+						<button class="x-dialog-btn confirm">确定</button>
+					</div>
+				</div>
+			</div>
+			<div class="layer drag-layer block-drag-layer"></div>
+			<div class="layer drag-layer component-drag-layer"></div>
+		</div>
+	</body>
 </html>

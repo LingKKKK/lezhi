@@ -1,0 +1,180 @@
+
+@font-face {font-family: "lezhi";
+  src: url('../font/lezhi.eot?t=1478504336010'); /* IE9*/
+  src: url('../font/lezhi.eot?t=1478504336010#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/lezhi.woff?t=1478504336010') format('woff'), /* chrome, firefox */
+  url('../font/lezhi.ttf?t=1478504336010') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/lezhi.svg?t=1478504336010') format('svg'); /* iOS 4.1- */
+}
+
+.lezhi {
+  font-family:"lezhi" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.lz-stop:before { content: "\e624"; }
+
+.lz-search:before { content: "\e630"; }
+
+.lz-edu-share:before { content: "\e64f"; }
+
+.lz-hd:before { content: "\e63e"; }
+
+.lz-fullscreen:before { content: "\e64a"; }
+
+.lz-weibo:before { content: "\e635"; }
+
+.lz-pause:before { content: "\e62b"; }
+
+.lz-qzone:before { content: "\e636"; }
+
+.lz-wechat:before { content: "\e650"; }
+
+.lz-edu-code:before { content: "\e64d"; }
+
+.lz-setting2:before { content: "\e628"; }
+
+.lz-switch-on2:before { content: "\e626"; }
+
+.lz-switch-off2:before { content: "\e627"; }
+
+.lz-check:before { content: "\e631"; }
+
+.lz-arduino:before { content: "\e637"; }
+
+.lz-comment:before { content: "\e62d"; }
+
+.lz-next:before { content: "\e639"; }
+
+.lz-play:before { content: "\e62c"; }
+
+.lz-project2:before { content: "\e61a"; }
+
+.lz-chapter:before { content: "\e640"; }
+
+.lz-setting:before { content: "\e63a"; }
+
+.lz-rank:before { content: "\e641"; }
+
+.lz-arrow-left:before { content: "\e642"; }
+
+.lz-clear:before { content: "\e629"; }
+
+.lz-demo:before { content: "\e62e"; }
+
+.lz-add:before { content: "\e600"; }
+
+.lz-close:before { content: "\e601"; }
+
+.lz-icon-code:before { content: "\e602"; }
+
+.lz-component:before { content: "\e603"; }
+
+.lz-delete:before { content: "\e604"; }
+
+.lz-icon-hardware:before { content: "\e606"; }
+
+.lz-info-error:before { content: "\e607"; }
+
+.lz-info-info:before { content: "\e608"; }
+
+.lz-info-info2:before { content: "\e609"; }
+
+.lz-info-success:before { content: "\e60a"; }
+
+.lz-info-warning:before { content: "\e60b"; }
+
+.lz-library:before { content: "\e60c"; }
+
+.lz-switch-off:before { content: "\e60d"; }
+
+.lz-switch-on:before { content: "\e60e"; }
+
+.lz-password:before { content: "\e60f"; }
+
+.lz-project:before { content: "\e610"; }
+
+.lz-setting1:before { content: "\e611"; }
+
+.lz-share:before { content: "\e612"; }
+
+.lz-logout:before { content: "\e613"; }
+
+.lz-triangle-down:before { content: "\e614"; }
+
+.lz-triangle-left:before { content: "\e615"; }
+
+.lz-triangle-right:before { content: "\e616"; }
+
+.lz-triangle-up:before { content: "\e617"; }
+
+.lz-user:before { content: "\e618"; }
+
+.lz-move:before { content: "\e619"; }
+
+.lz-clone:before { content: "\e61b"; }
+
+.lz-board:before { content: "\e61c"; }
+
+.lz-switch:before { content: "\e61d"; }
+
+.lz-icon-folder:before { content: "\e61e"; }
+
+.lz-save:before { content: "\e605"; }
+
+.lz-terminal:before { content: "\e61f"; }
+
+.lz-upload:before { content: "\e620"; }
+
+.lz-build:before { content: "\e621"; }
+
+.lz-download:before { content: "\e622"; }
+
+.lz-format:before { content: "\e623"; }
+
+.lz-scratch:before { content: "\e625"; }
+
+.lz-message:before { content: "\e63c"; }
+
+.lz-note:before { content: "\e62f"; }
+
+.lz-edu-help:before { content: "\e64e"; }
+
+.lz-serial:before { content: "\e62a"; }
+
+.lz-play1:before { content: "\e63d"; }
+
+.lz-stop1:before { content: "\e63f"; }
+
+.lz-hot:before { content: "\e633"; }
+
+.lz-tool:before { content: "\e632"; }
+
+.lz-guide:before { content: "\e634"; }
+
+.lz-arrow-right:before { content: "\e643"; }
+
+.lz-task-0:before { content: "\e644"; }
+
+.lz-task-2:before { content: "\e645"; }
+
+.lz-task-3:before { content: "\e646"; }
+
+.lz-lezhi-logo:before { content: "\e647"; }
+
+.lz-lezhi-face:before { content: "\e648"; }
+
+.lz-share1:before { content: "\e64b"; }
+
+.lz-exit-fullscreen:before { content: "\e638"; }
+
+.lz-edu-hardware:before { content: "\e63b"; }
+
+.lz-edu-block:before { content: "\e649"; }
+
+.lz-edu-project:before { content: "\e64c"; }
+

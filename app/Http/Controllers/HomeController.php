@@ -7,27 +7,39 @@ use App\User;
 use Auth;
 use DB;
 use Illuminate\Http\Request;
+use ZipArchive;
+use Curl\Curl;
 use Session;
+use App\Util\Tools;
+use App\WebAuth\Factory as WebAuthFactory;
 
 class HomeController extends Controller {
 
 	public function index(Request $request) {
-		return view("index");
-	}
+		if (Auth::check()) {
+			$user = Auth::user();
+		} else {
+			if ($request->input('from') == 'weixin') {
+				header('Location:http://weixinapp.kenrobot.com/social/edubetaauth');
+			}
 
-	public function game(Request $request) {
-		return view("game");
-	}
+			$openid = $request->input('openid');
+			if (!empty($openid)) {
+				$webauth = WebAuthFactory::create('weixinweb');
+				$crendentials = compact('openid');
+				$loginResult = $webauth->validate($crendentials);
 
-	public function programme(Request $request) {
-		return view("programme");
-	}
+		        if ($loginResult === true) {
+			        $user = $webauth->localUser();
+			        Auth::login($user, true);
+		        }
+			}
+		}
 
-	public function product(Request $request) {
-		return view("product");
-	}
 
-	public function about(Request $request) {
-		return view("about");
+		$loginInfo = Tools::getLoginInfo($request->url());
+		Session::put('key', $loginInfo->key);
+
+		return view("index", compact('user', 'loginInfo'));
 	}
 }
