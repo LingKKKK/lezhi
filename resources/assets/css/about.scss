@@ -40,9 +40,13 @@
     }
 }
 
+.no-select {
+    user-select: none;
+}
 
-
-
+.selectable {
+  user-select: default;
+}
 
 .page1 {
     width: 100%;

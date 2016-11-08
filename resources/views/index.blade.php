@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>乐智</title>
+        <link rel=”shortcut icon” href="../favicon.ico">
         <link rel="stylesheet" type="text/css" href="assets/css/base.css">
         <link rel="stylesheet" type="text/css" href="assets/css/index.css">
         <script type="text/javascript" src="assets/js/jquery.js"></script>
@@ -81,20 +82,20 @@
                 <div class="bannerpic1" id="pic3">
                     <img src="assets/img/7.jpg">
                     <span class="chinses">
-                        从课堂到实际应用，我们致力于打造一个开放共融的STEAM教育环境
+                        从课堂到实际应用，<br>我们致力于打造一个开放共融的STEAM教育环境
                     </span>
-                    <span class="english">
-                        From class to actual application, we are devoted to create an open & integrated STEAM education environment
+                    <span class="english" style="top:240px;">
+                        From class to actual application, <br>we are devoted to create an open & integrated STEAM education environment
                     </span>
                 </div>
 
                 <div class="bannerpic1" id="pic4">
-                    <img src="assets/img/index6.jpg">
+                    <img src="assets/img/indexproduct.jpg">
                     <span class="chinses">
-                        我们的产品涵盖水中机器人和创意机器人，适用于教学、拓展
+                        我们的产品涵盖水中机器人和创意机器人，<br>适用于教学、拓展
                     </span>
-                    <span class="english">
-                        Our products cover underwater robot and innovative robot, suitable for teaching & expansion study
+                    <span class="english" style="top:240px;">
+                        Our products cover underwater robot and innovative robot, <br>suitable for teaching & expansion study
                     </span>
                 </div>
 
@@ -198,7 +199,7 @@
                         <img src="assets/img/6.jpg"/>
                     </div>
                     <div class="pic">
-                        <img src="assets/img/7.jpg"/>
+                        <img src="assets/img/Bitmap.jpg"/>
                     </div>
                     <div class="title">
                         <div class="mid">
