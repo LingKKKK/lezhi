@@ -47,9 +47,9 @@ $focus-color: #f1cb33;
 					float: left;
 					transition: all 0.2s;
 
-					&:nth-child(3n) {
-						margin-right: 0;
-					}
+					// &:nth-child(3n) {
+					// 	margin-right: 0;
+					// }
 
 					&[data-filter="module"] {
 						color: $module-color;

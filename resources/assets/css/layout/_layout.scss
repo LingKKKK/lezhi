@@ -56,18 +56,18 @@ html, body {
 	}
 }
 
-@media screen and (max-width: $wide-screen-width) {
-	.main {
-		.content-region {
-			left: 80px;
-		}
+// @media screen and (max-width: $wide-screen-width) {
+// 	.main {
+// 		.content-region {
+// 			left: 80px;
+// 		}
 
-		.sidebar-region {
-			width: 80px;
-		}
-	}
+// 		.sidebar-region {
+// 			width: 80px;
+// 		}
+// 	}
 	
-	.drag-layer {
-		left: 80px;
-	}
-}
+// 	.drag-layer {
+// 		left: 80px;
+// 	}
+// }

@@ -10,8 +10,8 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	var componentContextMenu;
 	var boardContextMenu;
 	var contextMenuTarget;
-	var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
-
+	// var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
+	var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div><div class="hover"><img src="{{src2}}" /></div></li>'
 	var mouseDownComponentDom;
 	var dragContainer;
 	var dragComponentDom;
@@ -87,7 +87,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			var li = componentTemplate.replace(/\{\{name\}\}/g, component.name)
 				.replace(/\{\{label\}\}/g, component.label)
 				.replace(/\{\{filter\}\}/, component.category)
-				.replace(/\{\{src\}\}/, component.imageUrl);
+				.replace(/\{\{src\}\}/, component.imageUrl)
+				.replace(/\{\{src2\}\}/, component.imageUrl2);
+
 			componentList.append(li);
 		});
 		[].forEach.call(componentList[0].querySelectorAll("li .image"), function(imageDom) {

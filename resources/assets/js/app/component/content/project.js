@@ -3,27 +3,21 @@ define(['vendor/jquery', 'app/util/emitor', 'app/util/util', 'app/model/userMode
 	var projectList;
 	var boardList;
 	// var projectTemplate = '<li data-id="{{id}}"><div class="project-title"><div class="name ellipsis">{{name}}</div><div class="arrow"><ul class="project-menu"><li data-action="edit">编辑项目</li><li data-action="copy">复制项目</li><li data-action="delete">删除项目</li></ul></div></div><div class="project-image" style="background-image: url(\'/project/image/{{imageHash}}\');"></div><div class="project-intro">{{intro}}</div><div class="project-footer"><div class="public" data-action="{{public_type}}">{{public}}</div><div>最后更新：</div><div class="time">{{time}}</div></div></li>';
-	var projectTemplate = '<li data-id="{{id}}"><div class="project-title"><div class="name ellipsis">{{name}}</div><div class="arrow"><ul class="project-menu"><li data-action="edit">操作项目</li><li data-action="copy">复制</li><li data-action="delete">删除</li></ul></div></div><div class="project-image" style="background-image: url(\'/project/image/{{imageHash}}\');"></div><div class="project-intro">{{intro}}</div><div class="project-footer"></li>';
+	var projectTemplate = '<li data-id="{{id}}"><div class="btn-edit"><img src="assets/image/xiugai2.png"/></div></div><div class="project-title"><div class="name ellipsis">{{name}}</div><div class="arrow"><ul class="project-menu"><li data-action="edit"><img src="assets/image/xiugai.png"/>操作项目</li><li data-action="copy">复制</li><li data-action="delete">删除</li></ul></div></div><div class="project-image" style="background-image: url(\'/project/image/{{imageHash}}\');"></div><div class="project-intro">{{intro}}</div><div class="project-footer"></li>';
 	
 	var boardTemplate = '<li data-value="{{name}}"><div class="board {{name}}" style="background-image: url({{src}})"></div><div class="board-name">{{label}}</div></li>';
 	var publicTypes = ["仅自己可见", "好友公开", "完全公开"];
 	var btnChange = $('.btn-change');
-
+	var btnEdit = $('.tab-project').find('.list').find('.active').find('.btn-edit');
 
 	btnChange.click(function(){
 		$('.project-menu li:nth-child(1)').click();
 		$('.center li:nth-child(1)').click();
-	})
-	
-	// function clickEdit(){
-
-	// }
+	});
 
 	function init() {
 		$(window).on('click', onWindowClick);
-
 		region = $('.project-region');
-
 		$('.new', region).on('click', onNewClick);
 		$('.save', region).on('click', onSaveClick);
 		$('.upload', region).on('click', onUploadClick);
@@ -94,6 +88,13 @@ define(['vendor/jquery', 'app/util/emitor', 'app/util/util', 'app/model/userMode
 	function updateCurrentProject(projectInfo) {
 		$('.name', region).text(projectInfo.project_name);
 		projectList.find('> li').removeClass("active").filter('[data-id="' + projectInfo.id + '"]').addClass("active");
+		projectList.find('> li').find('.btn-edit').css("display","none");
+		projectList.find('> li').filter('[data-id="' + projectInfo.id + '"]').find('.btn-edit').css("display","block");
+		var btnEdit = projectList.find('> li').filter('[data-id="' + projectInfo.id + '"]').find('.btn-edit');
+		btnEdit.click(function(){
+			$('.project-menu li:nth-child(1)').click();
+		})
+
 	}
 
 	function removeProject(projectId) {

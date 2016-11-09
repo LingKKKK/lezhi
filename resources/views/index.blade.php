@@ -6,9 +6,9 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="screen-orientation" content="landscape">
 		<meta name="x5-orientation" content="landscape">
-		<title>啃萝卜智能硬件平台</title>
-		<meta name="keywords" content="arduino 开发 IDE 开发平台 教程">
-		<meta name="description" content="啃萝卜智能硬件平台">
+		<title>乐智智能硬件平台</title>
+		<meta name="keywords" content="rosys 开发 IDE 开发平台 教程">
+		<meta name="description" content="乐智智能硬件平台">
 		<meta name="csrf-token" content="{{csrf_token()}}">
 		<link href="assets/css/index.css?v={{time()}}" rel="stylesheet">
 		@if(!env('APP_DEBUG'))
@@ -30,10 +30,10 @@
 					<li data-action="software"><!-- <i class="icon lezhi lz-edu-block"></i> --><span class="name">编程</span></li>
 					<li data-action="code"><!-- <i class="icon lezhi lz-edu-code"></i> --><span class="name">源码</span></li>
 				</ul>
-				<!-- <ul class="bottom">
-					<li data-action="share"><i class="icon lezhi lz-edu-share"></i><span class="name">分享</span></li>
-					<li data-action="help" data-href="http://www.kenrobot.com/index.php?app=square&mod=Index&act=help"><i class="icon lezhi lz-edu-help"></i><span class="name">帮助</span></li>
-				</ul> -->
+				<ul class="bottom">
+					<li data-action="share"><i class="icon lezhi lz-edu-share"></i><span class="name"></span></li>
+					<li data-action="help" data-href="http://www.kenrobot.com/index.php?app=square&mod=Index&act=help"><i class="icon lezhi lz-edu-help"></i><span class="name"></span></li>
+				</ul>
 			</div>
 			<div class="content-region">
 				<div class="sidebar-tabs">
@@ -96,8 +96,14 @@
 									<ul></ul>
 								</div>
 								<input class="x-btn share" type="button" value="分享" />
-								<input class="x-btn save" type="button" value="保存" />
-								<input class="x-btn upload" type="button" value="上传" />
+								<div class="x-btn save">
+									<img src='assets/image/baocun.png'>
+								</div>
+								<div class="x-btn upload">
+									<img src="assets/image/shangchuan.png">
+								</div>
+								<!-- <input class="x-btn save" type="button" value=""/>
+								<input class="x-btn upload" type="button" value="" /> -->
 							</div>
 						</div>
 						<div class="login-region">
@@ -111,8 +117,9 @@
 							<div class="login-menu">
 								<div class="tab tab-user {{isset($user) ? 'active' : ''}}">
 									<ul>
-										<li data-action="setting"><span>设置</span></li>
-										<li><a href="/logout">退出</a></li>
+										<li data-action="setting"><span>账户设置</span></li>
+										<li><a href="#">我的组群</a></li>
+										<li><a href="/logout">注销</a></li>
 									</ul>
 								</div>
 								<div class="tab tab-no-user{{isset($user) ? '' : ' active'}}">
@@ -121,6 +128,9 @@
 										<li data-action="register"><span>注册</span></li>
 									</ul>
 								</div>
+							</div>
+							<div class="triangle">
+								<img src="assets/image/hardware/component/triangle.png"/>
 							</div>
 						</div>
 					</div>
@@ -233,7 +243,7 @@
 						<div class="login-footer">
 							<a class="forget-password" href="{{$loginInfo->find_password_url}}">忘记密码</a>
 							<a class="register" href="{{$loginInfo->register_url}}">点击注册</a>
-							<span class="no-account">还没有啃萝卜账号？</span>
+							<span class="no-account">还没有乐智平台账号？</span>
 						</div>
 						<div class="register-footer">
 							<span class="no-account">不使用微信？前往</span>
@@ -242,6 +252,9 @@
 					</div>
 				</div>
 				<div class="x-dialog project-dialog">
+					<div class="gengxin">
+						<img src="assets/image/shuaxin.png">
+					</div>	
 					<i class="lezhi lz-close x-dialog-close"></i>
 					<div class="image no-image">
 						<div class="mask"></div>
@@ -250,19 +263,31 @@
 						<div class="message"></div>
 					</div>
 					<div class="info">
-						<div class="field-label">项目名称：</div>
+						<div class="field-label login-div1">项目名称：</div>
 						<input class="name" type="text" placeholder="在此输入项目名称，如Arduino Project 01" />
-						<div class="field-label">项目介绍：</div>
+						<div class="field-label login-div2">项目介绍：</div>
 						<textarea class="intro" placeholder="介绍下您的项目，如项目背景、目的、功能..." spellcheck="false"></textarea>
 						<div class="field-label public-label">公开程度：</div>
-						<div>
+						<div class="select-public">
 							<input class="public" id="public-2" name="public" type="radio" value="2" checked="checked" /><label for="public-2">完全公开</label>
 							<input class="public" id="public-1" name="public" type="radio" value="1" /><label for="public-1">好友公开</label>
 							<input class="public" id="public-0" name="public" type="radio" value="0" /><label for="public-0">仅自己可见</label>
 						</div>
 					</div>
 					<div class="x-dialog-btns">
-						<input class="x-dialog-btn cancel" type="button" value="取消" /><input class="x-dialog-btn confirm" type="button" value="创建" />
+						<div class="x-dialog-btn cancel">
+							<img src="assets/image/false.png">
+						</div>
+						<div class="x-dialog-btn confirm">
+							<img src="assets/image/true.png">
+							保存
+						</div>
+					</div>
+					<div class="btn-click1">
+						标记
+					</div>
+					<div class="btn-click2">
+						<img src="assets/image/biaoji.png">
 					</div>
 				</div>
 				<div class="x-dialog common-dialog">

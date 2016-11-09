@@ -189,6 +189,8 @@
         display: block;
         cursor: pointer;
         position: relative;
+        width: 240px;
+        margin-left: 75px;
         height: 100%;
         border: 1px solid #c4d1dd;
     }
@@ -199,6 +201,7 @@
         top: 100%;
         width: 100%;
         position: absolute;
+        left: 75px;
 
         li {
             display: block;

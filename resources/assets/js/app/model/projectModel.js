@@ -608,16 +608,17 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						name: "k",
 						anchor: [0.25, 1],
 						tags: ["digital"],
+						spec: "2",
 					}, {
 						name: "sa",
 						anchor: [0.5, 1],
 						tags: ["digital"],
-						spec: "2",
+						spec: "3",
 					}, {
 						name: "sb",
 						anchor: [0.75, 1],
 						tags: ["digital"],
-						spec: "3",
+						spec: "8",
 					}],
 					code: {
 						include: "#include <Encoder.h>",
@@ -6960,6 +6961,8 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 
 		schema.hardware.components.forEach(function(component) {
 			component.imageUrl = prefix + "component/" + component.name + ".png";
+			// component.imageUrl2 = prefix + "component/" + component.name + "2.png";
+			component.imageUrl2 = prefix + "component/led2.png";
 		});
 
 		var promise = $.Deferred();

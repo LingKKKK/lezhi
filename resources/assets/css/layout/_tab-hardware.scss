@@ -113,7 +113,6 @@
 					float: left;
 					margin: 10px 11px;
 					opacity: 0;
-					display: none;
 
 					.image-wrap {
 						width: 72px;
@@ -121,6 +120,11 @@
 						display: flex;
 						border: 1px solid #dee9e9;
 						border-radius: 8px;
+						opacity: 1;
+						z-index: 99;
+						img {
+							z-index: 99;
+						}
 					}
 
 					.image {
@@ -140,9 +144,28 @@
 						user-select: none;
 					}
 
+					.hover {
+						width: 72px;
+						height: 72px;
+					    display: none;
+					    position:absolute;
+    					transform: translate(0%, -145%);
+    					z-index: 9;
+    					img {
+    						width: 100%;
+    					}
+					}
+
 					&.active {
 						display: block;
 						@include animation('component-fadeIn' 1s both);
+					}
+
+					// &:hover .image-wrap {
+					// 	opacity: 0.2;
+					// }
+					&:hover .hover {
+						display: block;
 					}
 				}
 			}
@@ -172,6 +195,8 @@
 
 		.component-dialog {
 			position: absolute;
+			left: 50%;
+			top: 20px;
 		}
 
 		.recycle {

@@ -32,7 +32,7 @@
 	.project-wrap {
 		position: relative;
 		.x-btn {
-			background-color: #0b7bdc;
+			// background-color: #0b7bdc;
 			border-radius: 5px;
 			height: 42px;
 			line-height: 42px;
@@ -135,139 +135,150 @@
 		}
 
 		.save {
-			width: 60px;
-			margin-left: 15px;
+			width: 50px;
+			margin-left: 90px;
+			cursor: pointer;
+
+			img {
+				width: 100%;
+			}
 		}
 
 		.upload {
-			width: 60px;
+			width: 50px;
 			margin-left: 15px;
-		}
-
-	}
-}
-
-@media screen and (max-width: $wide-screen-width) {
-	@include keyframes('project-region-slide-in') {
-		from {
-			transform: translateY(-270px);
-		}
-		to {
-			transform: translateY(0);
-		}
-	}
-
-	@include keyframes('project-region-slide-out') {
-		from {
-			transform: translateY(0);
-		}
-		to {
-			transform: translateY(-270px);
-		}
-	}
-
-	.project-region {
-		padding-top: 26px;
-		padding-bottom: 0;
-
-		.name-wrap {
-			margin-bottom: 0;
-			margin-left: auto;
-			margin-right: auto;
-			text-align: center;
-		}
-
-		.name {
-			position: relative;
-			padding-right: 20px;
-			color: #333;
 			cursor: pointer;
-
-			&:before {
-				content: '';
-				background-color: #718ac0;
-				width: 12px;
-				height: 12px;
-				position: absolute;
-				border-radius: 50%;
-				top: 4px;
-				right: 2px;
-			}
-
-			&:after {
-				content: '';
-				width: 4px;
-				height: 4px;
-				border: 4px solid transparent;
-				border-top-color: white;
-				position: absolute;
-				right: 4px;
-				top: 8px;
+			img {
+				width: 100%;
 			}
 		}
 
-		.project-wrap {
-			background-color: rgba(255, 255, 255, 0.9);
-			border: 1px solid #cad1e0;
-			border-radius: 5px;
-			padding: 40px 60px;
-			display: none;
-			margin-top: 30px;
-			margin-left: auto;
-			margin-right: auto;
-			width: 502px;
-
-			.new {
-				margin-right: 40px;
-				background-color: transparent;
-				border: 1px solid #0b7bdc;
-				color: #0b7bdc;
-				margin-bottom: 40px;
-			}
-
-			.boards {
-				margin-left: 0;
-				margin-bottom: 40px;
-			}
-
-			.share {
-				width: 100px;
-				background-color: #f2bc15;
-				display: block;
-			}
-
-			.save {
-				width: 100px;
-				margin-left: 40px;
-			}
-
-			.upload {
-				width: 100px;
-				margin-left: 40px;
-			}
-		}
-
-		&.active {
-			.project-wrap {
-				background-color: white;
-				display: block;
-			}
-		}
-
-		&.slide-in {
-			.project-wrap {
-				background-color: white;
-				display: block;
-				@include animation(project-region-slide-in 0.3s cubic-bezier(0, 0.8, 0.1, 1) both);
-			}
-		}
-
-		&.slide-out {
-			.project-wrap {
-				background-color: white;
-				display: block;
-				@include animation(project-region-slide-out 0.3s cubic-bezier(0, 0.8, 0.1, 1) forwards);
-			}
-		}
 	}
 }
+
+// @media screen and (max-width: $wide-screen-width) {
+// 	@include keyframes('project-region-slide-in') {
+// 		from {
+// 			transform: translateY(-270px);
+// 		}
+// 		to {
+// 			transform: translateY(0);
+// 		}
+// 	}
+
+// 	@include keyframes('project-region-slide-out') {
+// 		from {
+// 			transform: translateY(0);
+// 		}
+// 		to {
+// 			transform: translateY(-270px);
+// 		}
+// 	}
+
+// 	.project-region {
+// 		padding-top: 26px;
+// 		padding-bottom: 0;
+
+// 		.name-wrap {
+// 			margin-bottom: 0;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			text-align: center;
+// 		}
+
+// 		.name {
+// 			position: relative;
+// 			padding-right: 20px;
+// 			color: #333;
+// 			cursor: pointer;
+
+// 			&:before {
+// 				content: '';
+// 				background-color: #718ac0;
+// 				width: 12px;
+// 				height: 12px;
+// 				position: absolute;
+// 				border-radius: 50%;
+// 				top: 4px;
+// 				right: 2px;
+// 			}
+
+// 			&:after {
+// 				content: '';
+// 				width: 4px;
+// 				height: 4px;
+// 				border: 4px solid transparent;
+// 				border-top-color: white;
+// 				position: absolute;
+// 				right: 4px;
+// 				top: 8px;
+// 			}
+// 		}
+
+// 		.project-wrap {
+// 			// background-color: rgba(255, 255, 255, 0.9);
+// 			border: 1px solid #cad1e0;
+// 			border-radius: 5px;
+// 			padding: 40px 60px;
+// 			display: none;
+// 			margin-top: 30px;
+// 			margin-left: auto;
+// 			margin-right: auto;
+// 			width: 502px;
+
+// 			.new {
+// 				margin-right: 40px;
+// 				background-color: transparent;
+// 				border: 1px solid #0b7bdc;
+// 				color: #0b7bdc;
+// 				margin-bottom: 40px;
+// 			}
+
+// 			.boards {
+// 				margin-left: 0;
+// 				margin-bottom: 40px;
+// 			}
+
+// 			.share {
+// 				width: 100px;
+// 				background-color: #f2bc15;
+// 				display: block;
+// 			}
+
+// 			.save {
+// 				width: 100px;
+// 				margin-left: 40px;
+// 				background-image: url('../image/baocun.png');
+// 			}
+
+// 			.upload {
+// 				width: 100px;
+// 				margin-left: 40px;				
+// 				background-image: url('../image/shangchuan.png');
+// 			}
+// 		}
+
+// 		&.active {
+// 			.project-wrap {
+// 				background-color: white;
+// 				display: block;
+// 			}
+// 		}
+
+// 		&.slide-in {
+// 			.project-wrap {
+// 				background-color: white;
+// 				display: block;
+// 				@include animation(project-region-slide-in 0.3s cubic-bezier(0, 0.8, 0.1, 1) both);
+// 			}
+// 		}
+
+// 		&.slide-out {
+// 			.project-wrap {
+// 				background-color: white;
+// 				display: block;
+// 				@include animation(project-region-slide-out 0.3s cubic-bezier(0, 0.8, 0.1, 1) forwards);
+// 			}
+// 		}
+// 	}
+// }

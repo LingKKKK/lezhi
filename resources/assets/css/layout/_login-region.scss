@@ -1,10 +1,11 @@
 .login-region {
 	position: absolute;
 	top: -110px;
-	right: 30px;
+	right: 70px;
 	width: 42px;
 	height: 42px;
 	z-index: 16;
+	cursor: pointer;
 	
 	.photo {
 		cursor: pointer;
@@ -38,6 +39,13 @@
 		z-index: 11;
 		padding-top: 10px;
 		display: none;
+		/* 控制显示隐藏 */
+	}
+
+	.triangle {
+		position: absolute;
+		right: -23px;
+		bottom: 0px;
 	}
 
 	.tab {
@@ -45,19 +53,15 @@
 		display: none;
 
 		& > ul {
-			float: left;
-			width: 100px;
-			padding-top: 5px;
-			padding-bottom: 5px;
-			background-color: white;
-			box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.3);
-			border-radius: 5px;
+			background:#46c8ff;
+			padding-top: 7px;
+			width:125px;
+			height:58px;
 
 			& > li {
-				height: 30px;
-				cursor: pointer;
-				float: left;
-				width: 100px;
+				background:#46c8ff;
+				width:125px;
+				height:24px;
 
 				& > a {
 					font-size: 12px;
@@ -80,7 +84,7 @@
 				}
 
 				&:hover {
-					background-color: #f7f9f9;
+				background:#143c82;
 				}
 			}
 		}
@@ -91,18 +95,18 @@
 	}
 }
 
-@media screen and (max-width: $wide-screen-width) {
-	.login-region {
-		right: calc(100vw - 60px);
-		top: calc(100vh - 55px);
+// @media screen and (max-width: $wide-screen-width) {
+// 	.login-region {
+// 		right: calc(100vw - 60px);
+// 		top: calc(100vh - 55px);
 
-		.photo {
-			cursor: default;
-		}
+// 		.photo {
+// 			cursor: default;
+// 		}
 
-		.login-menu {
-			top: -67px;
-			left: 63px;
-		}
-	}
-}
+// 		.login-menu {
+// 			top: -67px;
+// 			left: 63px;
+// 		}
+// 	}
+// }

@@ -1,12 +1,12 @@
 define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvents) {
 
 	var config = {
-		color: '#F1C933',
-		colorHover: '#F19833',
-		labelColor: 'white',
+		color: 'blue',
+		colorHover: 'red',
+		labelColor: 'yellow',
 		font: '14px Microsoft YaHei',
 		endpoint: {
-			radius: 4,
+			radius: 7,
 			color: "#f69c4d",
 		}
 	};
@@ -331,7 +331,7 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 				connectorStyle: {
 					strokeStyle: config.color,
 					fillStyle: 'transparent',
-					lineWidth: 2,
+					lineWidth: 5,
 					joinstyle: 'round',
 				},
 				connectorHoverStyle: {
@@ -588,8 +588,8 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 
 	function getConnections(componentDom) {
 		var rect = componentDom.getBoundingClientRect();
-		var a = rect.left -500 +'px';
-		var b = rect.top -150 +'px'
+		var a = rect.left -460 +'px';
+		var b = rect.top -260 +'px'
 		console.log(a)
 
 		$("#component-dialog").css("left",a);

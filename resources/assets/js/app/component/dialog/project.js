@@ -10,7 +10,12 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/projectM
 		image = $('.image', dialogWin);
 
 		$('.upload', dialogWin).on('click', onUploadClick);
-
+		$('.upload', dialogWin).hover(function(){
+			console.log(1)
+		    $('.gengxin',dialogWin).css("transform","0deg");
+		},function(){
+		    $('.gengxin',dialogWin).css("transform","360deg");
+		});
 		emitor.on('project', 'show', onShow);
 	}
 
