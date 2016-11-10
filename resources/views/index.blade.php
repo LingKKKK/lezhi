@@ -118,7 +118,7 @@
 								<div class="tab tab-user {{isset($user) ? 'active' : ''}}">
 									<ul>
 										<li data-action="setting"><span>账户设置</span></li>
-										<li><a href="#">我的组群</a></li>
+										<!-- <li><a href="#">我的组群</a></li> -->
 										<li><a href="/logout">注销</a></li>
 									</ul>
 								</div>

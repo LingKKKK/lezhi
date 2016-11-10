@@ -47,7 +47,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 			dom.classList.add(tag);
 		});
 		this.dom = dom;
-		// console.dir(dom);
+		console.dir(dom);
 
 		switch (this.data.type) {
 			case "statement-input":

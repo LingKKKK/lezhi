@@ -108,6 +108,7 @@
         z-index: 10;
         position: absolute;
         cursor: pointer;
+        transform-origin: 50% 50%;
 
         &:hover {
             color: #ff6666;

@@ -10,6 +10,7 @@
 	    left: 118px;
 	    top: 196px;
 	    z-index: 999;
+	    transition: all 1s;
 	}
 	.image {
 		border:1px solid #c4d1dd;
@@ -213,10 +214,13 @@
 				top: 344px;
 				cursor: pointer;
 				img {
+					width: 17px;
+					height: 17px;
+					transform-origin: 50% 50%;
 					position: absolute;
-					left: 50%;
-					top: 50%;
-					transform: translate(-50%,-50%);
+					left: 33%;
+					top: 34%;
+					transition: all 1s;
 				}
 			}
 
