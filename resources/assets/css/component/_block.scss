@@ -15,6 +15,8 @@ $control-deep-color: #0363b7;
 $logic-color: #d764ae;
 $logic-deep-color: #c04995;
 
+$creat: #01315c;
+
 $connector-color: rgba(0, 0, 0, 0.5);
 $placeholder-color: rgba(255, 255, 255, 0.5);
 
@@ -221,16 +223,24 @@ $disabled-deep-color: #dadada;
 
 		&.connector-input {
 			&.active {
-				&:after {
-					content: ' ';
+				
+				&:before {
 					width: 14px;
 					height: 14px;
+					content: ' ';
 					position: absolute;
+					border-radius: 50%;
 					left: -10px;
 					top: 14px;
-					background-color: $connector-color;
-					border-radius: 50%;
+					background-color: #036343;
+					pointer-events: none;
 				}
+
+				&:after {					
+					background-color: red;
+					pointer-events: none;
+				}
+
 			}
 		}
 
@@ -263,6 +273,19 @@ $disabled-deep-color: #dadada;
 			border-radius: 50%;
 			left: -10px;
 			top: 14px;
+			pointer-events: none;
+
+		}
+
+		&:after {
+			width: 50px;
+			height: 40px;
+			content: ' ';
+			position: absolute;
+			border-radius: 7px;
+			left: 0px;
+			top: 0px;
+			pointer-events: none;
 		}
 	}
 

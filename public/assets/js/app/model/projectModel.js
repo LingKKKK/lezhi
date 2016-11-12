@@ -38,331 +38,472 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 		var schema = {
 			hardware: {
 				boards: [{
-	label: "KenBlock",
-	name: "KenBlock",
-	tags: ["KenBlock"],
-	pins: [{
-		uid: "c9168884-b454-4342-b677-f06dacb0b3cc",
-		width: 32,
-		height: 20,
-		x: 0.333,
-		y: 0.851,
-		name: "2",
-		tags: ["digital"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "55798942-05de-4d9c-82e8-ddced2259aec",
-		width: 32,
-		height: 20,
-		x: 0.431,
-		y: 0.851,
-		name: "3",
-		tags: ["digital", "analog-out"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "c297515b-2a2d-4b5c-96a8-e740d83a75ce",
-		width: 32,
-		height: 20,
-		x: 0.529,
-		y: 0.851,
-		name: "8",
-		tags: ["digital"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "86624d9f-0ddb-4356-8664-0afc9223e12e",
-		width: 32,
-		height: 20,
-		x: 0.627,
-		y: 0.851,
-		name: "9",
-		tags: ["digital", "analog-out"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "e29d477e-8923-40c2-8922-af988a78811f",
-		width: 32,
-		height: 20,
-		x: 0.725,
-		y: 0.851,
-		name: "10",
-		tags: ["digital", "analog-out"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "08001087-da26-451b-b124-5c100d928201",
-		width: 32,
-		height: 20,
-		x: 0.823,
-		y: 0.851,
-		name: "11",
-		tags: ["digital", "analog-out"],
-		overlay: [0.5, -0.5]
-	}, {
-		width: 32,
-		height: 20,
-		x: 0.333,
-		y: 0.149,
-		name: "A0",
-		tags: ["analog-in"],
-		uid: "7186a1cf-2fab-4c5a-8d1e-19836d4a561d",
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "7c10ef7d-a65e-497d-868a-b9c2e43bea81",
-		width: 32,
-		height: 20,
-		x: 0.431,
-		y: 0.149,
-		name: "A1",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "15ad5a73-f510-44bc-b4ac-5886a8211d38",
-		width: 32,
-		height: 20,
-		x: 0.529,
-		y: 0.149,
-		name: "A2",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "129d8693-115f-40c4-a6c1-4315bd020254",
-		width: 32,
-		height: 20,
-		x: 0.627,
-		y: 0.149,
-		name: "A3",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "d679b1cd-91d4-4aed-8f6f-6ad31d041518",
-		width: 32,
-		height: 20,
-		x: 0.725,
-		y: 0.149,
-		name: "A6",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "15c50e12-8705-4d47-803d-5c50b7512981",
-		width: 32,
-		height: 20,
-		x: 0.823,
-		y: 0.149,
-		name: "A7",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "ed9cbaec-e3fb-4acb-87d9-c4825bb5594c",
-		width: 40,
-		height: 20,
-		x: 0.228,
-		y: 0.851,
-		name: "USART",
-		tags: ["serial"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "e6f796e0-d283-41d3-a996-7316acb2c4cc",
-		width: 40,
-		height: 20,
-		x: 0.228,
-		y: 0.149,
-		name: "IIC",
-		tags: ["iic"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "cc94cecf-1424-4352-8309-474a814981f5",
-		width: 40,
-		height: 20,
-		x: 0.97,
-		y: 0.72,
-		name: "IIC",
-		tags: ["iic"],
-		overlay: [0.5, 1.5],
-		rotate: true
-	}, {
-		uid: "0ae7f137-66e0-437a-998f-c71a2ec62c3b",
-		width: 20,
-		height: 54,
-		x: 0.97,
-		y: 0.336,
-		name: "MA",
-		tags: ["motor"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "ee0399c9-2700-4456-96e1-47803c1ff60a",
-		width: 20,
-		height: 54,
-		x: 0.97,
-		y: 0.54,
-		name: "MB",
-		tags: ["motor"],
-		overlay: [0.5, 1.5]
-	}]
-}, {
-	label: "KenBlock",
-	name: "KenBlock",
-	tags: ["KenBlock"],
-	pins: [{
-		uid: "c9168884-b454-4342-b677-f06dacb0b3cc",
-		width: 32,
-		height: 20,
-		x: 0.333,
-		y: 0.851,
-		name: "2",
-		tags: ["digital"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "55798942-05de-4d9c-82e8-ddced2259aec",
-		width: 32,
-		height: 20,
-		x: 0.431,
-		y: 0.851,
-		name: "3",
-		tags: ["digital", "analog-out"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "c297515b-2a2d-4b5c-96a8-e740d83a75ce",
-		width: 32,
-		height: 20,
-		x: 0.529,
-		y: 0.851,
-		name: "8",
-		tags: ["digital"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "86624d9f-0ddb-4356-8664-0afc9223e12e",
-		width: 32,
-		height: 20,
-		x: 0.627,
-		y: 0.851,
-		name: "9",
-		tags: ["digital", "analog-out"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "e29d477e-8923-40c2-8922-af988a78811f",
-		width: 32,
-		height: 20,
-		x: 0.725,
-		y: 0.851,
-		name: "10",
-		tags: ["digital", "analog-out"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "08001087-da26-451b-b124-5c100d928201",
-		width: 32,
-		height: 20,
-		x: 0.823,
-		y: 0.851,
-		name: "11",
-		tags: ["digital", "analog-out"],
-		overlay: [0.5, -0.5]
-	}, {
-		width: 32,
-		height: 20,
-		x: 0.333,
-		y: 0.149,
-		name: "A0",
-		tags: ["analog-in"],
-		uid: "7186a1cf-2fab-4c5a-8d1e-19836d4a561d",
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "7c10ef7d-a65e-497d-868a-b9c2e43bea81",
-		width: 32,
-		height: 20,
-		x: 0.431,
-		y: 0.149,
-		name: "A1",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "15ad5a73-f510-44bc-b4ac-5886a8211d38",
-		width: 32,
-		height: 20,
-		x: 0.529,
-		y: 0.149,
-		name: "A2",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "129d8693-115f-40c4-a6c1-4315bd020254",
-		width: 32,
-		height: 20,
-		x: 0.627,
-		y: 0.149,
-		name: "A3",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "d679b1cd-91d4-4aed-8f6f-6ad31d041518",
-		width: 32,
-		height: 20,
-		x: 0.725,
-		y: 0.149,
-		name: "A6",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "15c50e12-8705-4d47-803d-5c50b7512981",
-		width: 32,
-		height: 20,
-		x: 0.823,
-		y: 0.149,
-		name: "A7",
-		tags: ["analog-in"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "ed9cbaec-e3fb-4acb-87d9-c4825bb5594c",
-		width: 40,
-		height: 20,
-		x: 0.228,
-		y: 0.851,
-		name: "USART",
-		tags: ["serial"],
-		overlay: [0.5, -0.5]
-	}, {
-		uid: "e6f796e0-d283-41d3-a996-7316acb2c4cc",
-		width: 40,
-		height: 20,
-		x: 0.228,
-		y: 0.149,
-		name: "IIC",
-		tags: ["iic"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "cc94cecf-1424-4352-8309-474a814981f5",
-		width: 40,
-		height: 20,
-		x: 0.97,
-		y: 0.72,
-		name: "IIC",
-		tags: ["iic"],
-		overlay: [0.5, 1.5],
-		rotate: true
-	}, {
-		uid: "0ae7f137-66e0-437a-998f-c71a2ec62c3b",
-		width: 20,
-		height: 54,
-		x: 0.97,
-		y: 0.336,
-		name: "MA",
-		tags: ["motor"],
-		overlay: [0.5, 1.5]
-	}, {
-		uid: "ee0399c9-2700-4456-96e1-47803c1ff60a",
-		width: 20,
-		height: 54,
-		x: 0.97,
-		y: 0.54,
-		name: "MB",
-		tags: ["motor"],
-		overlay: [0.5, 1.5]
-	}]
-}],
+					label: "KenBlock",
+					name: "KenBlock",
+					tags: ["KenBlock"],
+					pins: [{
+						uid: "c9168884-b454-4342-b677-f06dacb0b3cc",
+						width: 34,
+						height: 22,
+						x: 0.417,
+						y: 0.842,
+						name: "2",
+						tags: ["digital"],
+						overlay: [0.5, -0.5]
+					}, {
+						uid: "55798942-05de-4d9c-82e8-ddced2259aec",
+						width: 34,
+						height: 22,
+						x: 0.466,
+						y: 0.842,
+						name: "3",
+						tags: ["digital", "analog-out"],
+						overlay: [0.5, -0.5]
+					}, {
+						uid: "c297515b-2a2d-4b5c-96a8-e740d83a75ce",
+						width: 34,
+						height: 22,
+						x: 0.515,
+						y: 0.842,
+						name: "8",
+						tags: ["digital"],
+						overlay: [0.5, -0.5]
+					}, {
+						uid: "86624d9f-0ddb-4356-8664-0afc9223e12e",
+						width: 34,
+						height: 22,
+						x: 0.564,
+						y: 0.842,
+						name: "9",
+						tags: ["digital", "analog-out"],
+						overlay: [0.5, -0.5]
+					}, {
+						uid: "e29d477e-8923-40c2-8922-af988a78811f",
+						width: 34,
+						height: 22,
+						x: 0.613,
+						y: 0.842,
+						name: "10",
+						tags: ["digital", "analog-out"],
+						overlay: [0.5, -0.5]
+					}, {
+						uid: "08001087-da26-451b-b124-5c100d928201",
+						width: 34,
+						height: 22,
+						x: 0.662,
+						y: 0.842,
+						name: "11",
+						tags: ["digital", "analog-out"],
+						overlay: [0.5, -0.5]
+					}, {
+						width: 34,
+						height: 22,
+						x: 0.417,
+						y: 0.157,
+						name: "A0",
+						tags: ["analog-in"],
+						uid: "7186a1cf-2fab-4c5a-8d1e-19836d4a561d",
+						overlay: [0.5, 1.5]
+					}, {
+						uid: "7c10ef7d-a65e-497d-868a-b9c2e43bea81",
+						width: 34,
+						height: 22,
+						x: 0.466,
+						y: 0.157,
+						name: "A1",
+						tags: ["analog-in"],
+						overlay: [0.5, 1.5]
+					}, {
+						uid: "15ad5a73-f510-44bc-b4ac-5886a8211d38",
+						width: 34,
+						height: 22,
+						x: 0.515,
+						y: 0.157,
+						name: "A2",
+						tags: ["analog-in"],
+						overlay: [0.5, 1.5]
+					}, {
+						uid: "129d8693-115f-40c4-a6c1-4315bd020254",
+						width: 34,
+						height: 22,
+						x: 0.564,
+						y: 0.157,
+						name: "A3",
+						tags: ["analog-in"],
+						overlay: [0.5, 1.5]
+					}, {
+						uid: "d679b1cd-91d4-4aed-8f6f-6ad31d041518",
+						width: 34,
+						height: 22,
+						x: 0.613,
+						y: 0.157,
+						name: "A6",
+						tags: ["analog-in"],
+						overlay: [0.5, 1.5]
+					}, {
+						uid: "15c50e12-8705-4d47-803d-5c50b7512981",
+						width: 34,
+						height: 22,
+						x: 0.662,
+						y: 0.157,
+						name: "A7",
+						tags: ["analog-in"],
+						overlay: [0.5, 1.5]
+					}, {
+						uid: "ed9cbaec-e3fb-4acb-87d9-c4825bb5594c",
+						width: 40,
+						height: 21.2,
+						x: 0.364,
+						y: 0.844,
+						name: "USART",
+						tags: ["serial"],
+						overlay: [0.5, -0.5]
+					}, {
+						uid: "e6f796e0-d283-41d3-a996-7316acb2c4cc",
+						width: 40,
+						height: 20,
+						x: 0.364,
+						y: 0.156,
+						name: "IIC",
+						tags: ["iic"],
+						overlay: [0.5, 1.5]
+					}, {
+						uid: "cc94cecf-1424-4352-8309-474a814981f5",
+						width: 40,
+						height: 18,
+						x: 0.733,
+						y: 0.707,
+						name: "IIC",
+						tags: ["iic"],
+						overlay: [0.5, 1.5],
+						rotate: true
+							//  给这个IIC 加了一个旋转s
+					}, {
+						uid: "0ae7f137-66e0-437a-998f-c71a2ec62c3b",
+						width: 18,
+						height: 54,
+						x: 0.733,
+						y: 0.324,
+						name: "MA",
+						tags: ["motor"],
+						overlay: [0.5, 1.5]
+					}, {
+						uid: "ee0399c9-2700-4456-96e1-47803c1ff60a",
+						width: 18,
+						height: 54,
+						x: 0.733,
+						y: 0.53,
+						name: "MB",
+						tags: ["motor"],
+						overlay: [0.5, 1.5]
+					}]
+				}, {
+					label: "KenBlock-ATmega328",
+					name: "KenBlock-ATmega328",
+					tags: ["KenBlock-ATmega328"],
+					pins: [{
+							uid: "c9168884-b454-4342-b677-f06dacb0b3cc",
+							width: 33,
+							height: 20,
+							x: 0.163,
+							y: 0.837,
+							name: "2",
+							tags: ["digital"],
+							overlay: [0.5, -0.5]
+						}, {
+							uid: "55798942-05de-4d9c-82e8-ddced2259aec",
+							width: 32,
+							height: 20,
+							x: 0.211,
+							y: 0.837,
+							name: "3",
+							tags: ["digital", "analog-out"],
+							overlay: [0.5, -0.5]
+						}, {
+							uid: "c297515b-2a2d-4b5c-96a8-e740d83a75ce",
+							width: 33,
+							height: 20,
+							x: 0.26,
+							y: 0.837,
+							name: "8",
+							tags: ["digital"],
+							overlay: [0.5, -0.5]
+						}, {
+							uid: "86624d9f-0ddb-4356-8664-0afc9223e12e",
+							width: 33,
+							height: 20,
+							x: 0.309,
+							y: 0.837,
+							name: "9",
+							tags: ["digital", "analog-out"],
+							overlay: [0.5, -0.5]
+						}, {
+							uid: "e29d477e-8923-40c2-8922-af988a78811f",
+							width: 33,
+							height: 20,
+							x: 0.358,
+							y: 0.837,
+							name: "10",
+							tags: ["digital", "analog-out"],
+							overlay: [0.5, -0.5]
+						}, {
+							uid: "08001087-da26-451b-b124-5c100d928201",
+							width: 33,
+							height: 20,
+							x: 0.407,
+							y: 0.837,
+							name: "11",
+							tags: ["digital", "analog-out"],
+							overlay: [0.5, -0.5]
+						}, {
+							width: 33,
+							height: 20,
+							x: 0.163,
+							y: 0.162,
+							name: "A0",
+							tags: ["analog-in"],
+							uid: "7186a1cf-2fab-4c5a-8d1e-19836d4a561d",
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "7c10ef7d-a65e-497d-868a-b9c2e43bea81",
+							width: 34,
+							height: 20,
+							x: 0.211,
+							y: 0.162,
+							name: "A1",
+							tags: ["analog-in"],
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "15ad5a73-f510-44bc-b4ac-5886a8211d38",
+							width: 33,
+							height: 20,
+							x: 0.26,
+							y: 0.162,
+							name: "A2",
+							tags: ["analog-in"],
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "129d8693-115f-40c4-a6c1-4315bd020254",
+							width: 33,
+							height: 20,
+							x: 0.309,
+							y: 0.162,
+							name: "A3",
+							tags: ["analog-in"],
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "d679b1cd-91d4-4aed-8f6f-6ad31d041518",
+							width: 33,
+							height: 20,
+							x: 0.358,
+							y: 0.162,
+							name: "A6",
+							tags: ["analog-in"],
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "15c50e12-8705-4d47-803d-5c50b7512981",
+							width: 33,
+							height: 20,
+							x: 0.408,
+							y: 0.162,
+							name: "A7",
+							tags: ["analog-in"],
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "ed9cbaec-e3fb-4acb-87d9-c4825bb5594c",
+							width: 40,
+							height: 20,
+							x: 0.11,
+							y: 0.837,
+							name: "USART",
+							tags: ["serial"],
+							overlay: [0.5, -0.5]
+						}, {
+							uid: "e6f796e0-d283-41d3-a996-7316acb2c4cc",
+							width: 40,
+							height: 20,
+							x: 0.11,
+							y: 0.162,
+							name: "IIC",
+							tags: ["iic"],
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "cc94cecf-1424-4352-8309-474a814981f5",
+							width: 40,
+							height: 20,
+							x: 0.480,
+							y: 0.7,
+							name: "IIC",
+							tags: ["iic"],
+							overlay: [0.5, 1.5],
+							rotate: true
+						}, {
+							uid: "0ae7f137-66e0-437a-998f-c71a2ec62c3b",
+							width: 20,
+							height: 54,
+							x: 0.480,
+							y: 0.329,
+							name: "MA",
+							tags: ["motor"],
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "ee0399c9-2700-4456-96e1-47803c1ff60a",
+							width: 20,
+							height: 54,
+							x: 0.480,
+							y: 0.520,
+							name: "MB",
+							tags: ["motor"],
+							overlay: [0.5, 1.5]
+						}, {
+							uid: "ee0399c9-2700-4456-96e1-47803c1ff60c",
+							width: 20,
+							height: 54,
+							x: 0.70,
+							y: 0.520,
+							name: "MB",
+							tags: ["motor"],
+							overlay: [0.5, 1.5]
+						}
+						/*-------------------------------------------------------*/
+						/*添加328板子 新的端点*/
+						, {
+							uid: "fe0399c9-2700-4456-96e1-47803c1ff60c",
+							width: 39,
+							height: 16,
+							x: 0.618,
+							y: 0.158,
+							name: "PA4",
+							tags: ["analog-in"],
+							overlay: [0.5, 1.8]
+						}, {
+							uid: "fa0399c9-2700-4456-96e1-47803c1ff60c",
+							width: 39,
+							height: 16,
+							x: 0.676,
+							y: 0.158,
+							name: "PA2",
+							tags: ["analog-in"],
+							overlay: [0.5, 1.8]
+						}, {
+							uid: "fa1399c9-2700-4456-96e1-47803c1ff60c",
+							width: 54,
+							height: 16,
+							x: 0.744,
+							y: 0.158,
+							name: "PA3",
+							tags: ["analog-in"],
+							overlay: [0.5, 1.8]
+						}, {
+							uid: "fa1199c9-2700-4456-96e1-47803c1ff60c",
+							width: 54,
+							height: 16,
+							x: 0.824,
+							y: 0.158,
+							name: "PD5",
+							tags: ["digital"],
+							overlay: [0.5, 1.8]
+						}, {
+							uid: "fa1119c9-2700-4456-96e1-47803c1ff60c",
+							width: 54,
+							height: 16,
+							x: 0.900,
+							y: 0.158,
+							name: "PD6/SRI",
+							tags: ["digital"],
+							overlay: [0.5, 1.8]
+						}, {
+							uid: "fa1111c9-2700-4456-96e1-47803c1ff60c",
+							width: 42,
+							height: 14,
+							x: 0.620,
+							y: 0.837,
+							name: "USART",
+							tags: ["serial"],
+							overlay: [0.5, -0.8]
+						}, {
+							uid: "fa1111a9-2700-4456-96e1-47803c1ff60c",
+							width: 42,
+							height: 14,
+							x: 0.675,
+							y: 0.837,
+							name: "PD1",
+							tags: ["digital"],
+							overlay: [0.5, -0.8]
+						}, {
+							uid: "fa1111a1-2700-4456-96e1-47803c1ff60c",
+							width: 42,
+							height: 14,
+							x: 0.735,
+							y: 0.837,
+							name: "PD2",
+							tags: ["digital"],
+							overlay: [0.5, -0.8]
+						}, {
+							uid: "fa1111a1-1700-4456-96e1-47803c1ff60c",
+							width: 42,
+							height: 14,
+							x: 0.795,
+							y: 0.837,
+							name: "PD3",
+							tags: ["digital"],
+							overlay: [0.5, -0.8]
+						}, {
+							uid: "fa1111a1-1100-4456-96e1-47803c1ff60c",
+							width: 42,
+							height: 14,
+							x: 0.851,
+							y: 0.837,
+							name: "PD4",
+							tags: ["digital"],
+							overlay: [0.5, -0.8]
+						}, {
+							uid: "fa1111a1-1110-4456-96e1-47803c1ff60c",
+							width: 38,
+							height: 14,
+							x: 0.910,
+							y: 0.837,
+							name: "IIC",
+							tags: ["iic"],
+							overlay: [0.5, -0.8]
+						}, {
+							uid: "fa1111a1-1111-4456-96e1-47803c1ff60c",
+							width: 13,
+							height: 32,
+							x: 0.988,
+							y: 0.636,
+							name: "IIC",
+							tags: ["iic"],
+							overlay: [0.5, -0.8]
+						}, {
+							uid: "fa1111a1-1111-1456-96e1-47803c1ff60c",
+							width: 13,
+							height: 32,
+							x: 0.988,
+							y: 0.513,
+							name: "IIC",
+							tags: ["iic"],
+							overlay: [0.5, -0.8]
+						}, {
+							uid: "fa1111a1-1111-1156-96e1-47803c1ff60c",
+							width: 13,
+							height: 55,
+							x: 0.988,
+							y: 0.342,
+							name: "IIC",
+							tags: ["iic"],
+							overlay: [0.5, -0.8]
+						}			
+		/*-------------------------------------------------------------*/
+					]
+				}],
 				components: [{
 					uid: "aa1a2f4c-2934-414a-823f-9961fbf23c55",
 					name: "led",
 					label: "LED",
 					type: "led",
 					category: "action",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -380,7 +521,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "三色LED",
 					type: "rgb",
 					category: "action",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -406,7 +547,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "液晶模块",
 					type: "lcd",
 					category: "action",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -431,7 +572,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "串口模块",
 					type: "serial",
 					category: "function",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -449,7 +590,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "蓝牙模块",
 					type: "serial",
 					category: "function",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -472,7 +613,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "wifi模块",
 					type: "serial",
 					category: "function",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -493,7 +634,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "按键",
 					type: "button",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -511,7 +652,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "蜂鸣器",
 					type: "buzzer",
 					category: "action",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -529,7 +670,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "电位器",
 					type: "pot",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -547,7 +688,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "温湿度传感器",
 					type: "hts221",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -566,7 +707,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "旋转编码器",
 					type: "encoder",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -596,7 +737,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "光电对管",
 					type: "infraredSensor",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -614,7 +755,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "光敏传感器",
 					type: "lightSensor",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -632,7 +773,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "声音传感器",
 					type: "soundSensor",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -650,7 +791,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "碰撞传感器",
 					type: "limitSwitch",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -668,7 +809,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "舵机",
 					type: "servo",
 					category: "action",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -687,7 +828,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "全角度舵机",
 					type: "continuousServo",
 					category: "action",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -706,7 +847,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "超声波",
 					type: "ultrasound",
 					category: "sensor",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{
@@ -728,7 +869,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					label: "时钟模块",
 					type: "rtc",
 					category: "function",
-					boards: ["Arduino"],
+					boards: ["KenBlock"],
 					width: 72,
 					height: 72,
 					pins: [{

@@ -19,8 +19,9 @@
 		position: absolute;
 		left: 19px;
 		top: 103px;
-		background-size: cover;
-
+		background: no-repeat center;
+  		background-size: contain;
+		/* background-size: cover; */
 		&.no-image {
 			background-image: linear-gradient(135deg, #2accec 0%, #5680f0 100%);
 

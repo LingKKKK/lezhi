@@ -351,13 +351,18 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function onComponentNameBlur(e) {
+		// 记录下 修改之后 硬件模块的名字；
 		var uid = componentDialog.data("uid");
 		var name = componentDialog.find(".name").val();
 		var componentData = hardwareModel.getComponentData(uid);
 		componentData.varName = name;
+		// console.dir(componentData);   
+		// 修改名字之后 记录连线硬件的所有信息
 	}
 
 	function hideComponentDialog() {
+		// console.log('删除所有的硬件模块')
+		// 删除所有的硬件模块  
 		componentDialog.removeClass("active").data("uid", "").find(".name").val("");
 	}
 

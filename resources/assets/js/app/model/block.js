@@ -1,6 +1,6 @@
 define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEvents, emitor) {
-	var blocks = {};
-	var connectors = {};
+	var blocks = {}; /*编程链接的模块*/
+	var connectors = {}; /*连接器*/
 	var ioConnectors = {};
 	var blockVars = {
 		voidFunctions: [],
@@ -31,14 +31,17 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	reservedWords = reservedWords.split(',');
 
 	function Block(blockData) {
+		// 添加模块s
 		this.data = blockData;
 		this.uid = genUid();
 		this.connectable = false;
 		this.enable = true;
 		this.connectors = [];
 		this.ioConnectors = [];
+		//  获取所有的模块 记录到各个模块的信息；
 
 		var dom = document.createElement('div');
+		//  dom 是所有的编程模块
 		dom.draggable = false;
 		dom.dataset.uid = this.uid;
 		dom.classList.add("block");
@@ -82,6 +85,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 
 		blocks[this.uid] = this;
 
+
 		if (this.data.createDynamicContent) {
 			var inputDom = this.dom.querySelector("input.var-input");
 			if (inputDom) {
@@ -96,30 +100,37 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	Block.prototype.getCode = function() {
+		// 切换到源码部分
 		return getBlockCode(this);
 	}
 
 	Block.prototype.copy = function() {
+		// 复制一个模块
 		return copyBlock(this);
 	}
 
 	Block.prototype.remove = function() {
+		//  删除这个模块
 		removeBlock(this);
 	}
 
 	Block.prototype.getStructure = function() {
+		//  上传 保存
 		return getBlockStructure(this);
 	}
 
 	Block.prototype.isEnable = function() {
+		// 右击 对模块进行操作
 		return this.enable;
 	}
 
 	Block.prototype.setEnable = function(value) {
+		//  给模块添加注释 或者 取消注释
 		setBlockEnable(this, value, false);
 	}
 
 	Block.prototype.isConnectable = function() {
+		console.log(8)
 		return this.connectable;
 	}
 
@@ -136,10 +147,12 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	Block.prototype.getOffset = function() {
+		// 获取模块的坐标
 		return getBlockOffset(this);
 	}
 
 	Block.prototype.setOffset = function(x, y) {
+		// 创建模块的坐标
 		setBlockOffset(this, x, y);
 	}
 
@@ -149,6 +162,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 			var elementDom = createBlockElement(block, elementData);
 			if (elementData.extra && !extDom) {
 				extDom = block.dom.querySelector(".statement-extension-end");
+				// querySelector 获取到第一个class名字为…的元素；
 				extDom.classList.add("with-content");
 			}
 			elementData.extra ? extDom.appendChild(elementDom) : block.contentDom.appendChild(elementDom);
@@ -160,6 +174,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var connectorUid;
 		var connector;
 		var containerDom;
+		//  声明编程模块的各类信息；  新建模块
 
 		block.data.connectors.forEach(function(connectorData) {
 			connectorUid = genUid();
@@ -169,6 +184,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 				blockUid: block.uid,
 				connectedTo: null
 			};
+			// console.dir(connector);connector每一个模块
 
 			switch (connectorData.type) {
 				case "connector-top":
@@ -215,6 +231,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function createBlockElement(block, elementData) {
+		// 新增模块
 		var elementDom;
 		switch (elementData.type) {
 			case "static-select":
@@ -247,13 +264,13 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 				var options = blockVars[elementData.options];
 				options && updateSelectDom(selectDom, options);
 
-				if(options && elementData.value) {
+				if (options && elementData.value) {
 					selectDom.value = elementData.value;
 					selectDom.dataset.value = elementData.value;
 
 					var reference;
 					options.forEach(function(optionData) {
-						if(optionData.name == elementData.value) {
+						if (optionData.name == elementData.value) {
 							reference = optionData.id;
 							return true;
 						}
@@ -344,6 +361,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function buildStatementConnector(block, connectorUid, connectorData, connector, containerDom) {
+		//  新添加一个模块  从第一个模块添加开始 一直到后期添加模块
 		var connectorDom = document.createElement("div");
 		connectorDom.dataset.connectorUid = connectorUid;
 		connectorDom.classList.add("connector");
@@ -351,7 +369,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		containerDom.appendChild(connectorDom);
 		connectors[connectorUid] = connector;
 		block.connectors.push(connectorUid);
-
 		return connectorDom;
 	}
 
@@ -363,31 +380,37 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 			optionDom.dataset.reference = optionData.id;
 			optionDom.innerHTML = optionData.name;
 			selectDom.appendChild(optionDom);
+			//  optionDom  需要加载的模块
 		});
 	}
 
 	function onBlockMouseDown(e) {
+		//  点击拖拽模块
 		var tagName = e.target.tagName.toLowerCase();
+		//  转换成小写的字符串
 		if (tagName == "select" || tagName == "input" || tagName == "textarea") {
 			return;
 		}
 
-		e.stopPropagation();
-		e.returnValue = false;
+		e.stopPropagation(); /* 停止派发事件 */
+		e.returnValue = false; /*如果失败  阻止当前事件的继续*/
 
 		mouseDownBlockDom = e.currentTarget;
+		// mouseDownBlockDom  被操作的BlockDom 
 		startPreMouseMove = true;
 		document.addEventListener(compitableEvents.up, onBlockMouseUpBeforeMove);
 		document.addEventListener(compitableEvents.move, onBlockPreMouseMove);
 	}
 
 	function onBlockMouseUpBeforeMove(e) {
+		//  在移动模块之前 松鼠标的同时 执行的函数 （ 包含左右击）
 		mouseDownBlockDom = null;
 		document.removeEventListener(compitableEvents.up, onBlockMouseUpBeforeMove);
 		document.removeEventListener(compitableEvents.move, onBlockPreMouseMove);
 	}
 
 	function onBlockPreMouseMove(e) {
+		//  移动模块 松开鼠标之前的函数；
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		if (startPreMouseMove) {
 			startPreMouseMove = false;
@@ -413,6 +436,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function onBlockMouseMove(e) {
+		//  拖拽模块时 移动鼠标
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		var block;
 		if (mouseDownBlockDom) {
@@ -460,11 +484,14 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function onBlockMouseUp(e) {
+		// 移动模块之后 松开鼠标   点击无效
 		document.removeEventListener(compitableEvents.move, onBlockMouseMove);
 		document.removeEventListener(compitableEvents.up, onBlockMouseUp);
 
 		var block = dragBlock;
+		// block 是被操作（移动的）模块
 		var dropConnectorDom = container.querySelector(".connector.active") || dragContainer.querySelector(".connector.active");
+		// console.dir(dropConnectorDom); 显示dropConnectorDom的类型  object或者null
 		if (dropConnectorDom) {
 			switch (block.data.type) {
 				case "statement":
@@ -498,6 +525,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function statementDragStart(block) {
+		// 开始拖拽模块
 		var preConnectorUid = connectors[block.connectors[0]].connectedTo;
 		if (preConnectorUid) {
 			var previousBlock = getBlockByConnector(preConnectorUid);
@@ -523,6 +551,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function statementDragEnd(block, dropConnectorDom) {
+		// 成功的拖拽 并且 放置一个模块 过程结束的时候
 		var dropConnectorUid = dropConnectorDom.dataset.connectorUid;
 		var dragConnectorUid = dropConnectorDom.dataset.canConnectWith;
 
@@ -537,6 +566,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function outputDragStart(block) {
+		// 开始拖拽移动模块
 		var outputConnector = getOutputConnector(block);
 		if (outputConnector.connectedTo) {
 			var blockConnector = ioConnectors[outputConnector.connectedTo];
@@ -565,8 +595,11 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function outputDragEnd(block, dropConnectorDom) {
+		//  移动可填充模块执行的函数   头部带点
 		var dropConnectorUid = dropConnectorDom.dataset.connectorUid;
+		// console.dir(dropConnectorUid);  被拖拽的模块;
 		var dragConnectorUid = getOutputConnector(block).uid;
+		// console.dir(dragConnectorUid);   被放置的接口位置;
 
 		dropConnectorDom.appendChild(block.dom);
 		block.dom.style.transform = "none";
@@ -577,6 +610,8 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var dropBlock = getBlockByConnector(dropConnectorUid, true);
 		var dragBlock = getBlockByConnector(dragConnectorUid, true);
 		dropBlock.data.returnType && dropBlock.data.returnType.type == 'fromInput' && dragBlock.data.returnType.pointer && updateBlockVar(dropBlock);
+		console.dir(block.dom);
+		console.dir(dropConnectorDom);
 	}
 
 	function connectorRootDragEnd(dragBlock, dropConnectorDom) {
@@ -774,6 +809,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		}
 
 		return !!connectors[block.connectors[2]].connectedTo;
+		console.log(1)
 	}
 
 	function copyBlock(block) {
@@ -1251,9 +1287,9 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 					}
 				});
 				var connector;
-				if(elementData) {
+				if (elementData) {
 					var c;
-					for(var key in ioConnectors) {
+					for (var key in ioConnectors) {
 						c = ioConnectors[key];
 						if (c.blockUid == block.uid && c.data.name == elementData.name) {
 							conector = c;
@@ -1309,20 +1345,21 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function getTypeFromDynamicSelect(block, acceptType) {
+		console.log(1)
 		var tempDom = block.dom.querySelector('select[data-content-id="' + acceptType.id + '"][data-options="' + acceptType.options + '"]');
-		if(!tempDom) {
+		if (!tempDom) {
 			return "";
 		}
 
 		var varName = tempDom.dataset.value || tempDom.value;
 		var vars = blockVars[acceptType.options];
-		if(!vars) {
+		if (!vars) {
 			return "";
 		}
 
 		var varData;
 		vars.forEach(function(_varData) {
-			if(_varData.name == varName) {
+			if (_varData.name == varName) {
 				varData = _varData;
 				return true;
 			}
@@ -1480,15 +1517,15 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	function isInGroup(dom) {
 		var find = false;
 		var node = dom;
-		while(node && node.tagName != "BODY") {
-			if([].indexOf.call(node.classList, "block-group") >= 0) {
+		while (node && node.tagName != "BODY") {
+			if ([].indexOf.call(node.classList, "block-group") >= 0) {
 				find = true;
 				break;
 			} else {
 				node = node.parentNode;
 			}
 		}
-		
+
 		return find;
 	}
 
@@ -1718,7 +1755,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 
 		if (value && reference) {
 			options.forEach(function(optionData) {
-				if(optionData.id == reference) {
+				if (optionData.id == reference) {
 					selectDom.value = optionData.name;
 					selectDom.dataset.value = optionData.name;
 					selectDom.dataset.reference = optionData.id;

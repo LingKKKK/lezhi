@@ -60,9 +60,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor'], function($1, util,
 	function onLogoClick(e) {
 		var isWeixin = navigator.userAgent.match(/MicroMessenger/) ? true : false;
 		if(isWeixin) {
-			window.location.href = window.location.pathname + "?" + new Date().getTime();
+			// window.location.href = window.location.pathname + "?" + new Date().getTime();
 		} else {
-			window.location.href = "http://www.kenrobot.com";
+			// window.location.href = "http://www.kenrobot.com";
 		}
 	}
 

@@ -8344,6 +8344,7 @@ html, body {
   float: left;
   margin: 10px 11px;
   opacity: 0;
+  display: none;
 }
 .sidebar-tabs .tab-hardware .components-wrap .components li .image-wrap {
   width: 72px;
@@ -8435,7 +8436,7 @@ html, body {
 }
 
 .hardware-container .board {
-  width: 355px;
+  width: 710px;
   height: 265px;
   background-size: contain;
   background-position: center;
@@ -9328,7 +9329,9 @@ html, body {
   position: absolute;
   left: 19px;
   top: 103px;
-  background-size: cover;
+  background: no-repeat center;
+  background-size: contain;
+  /* background-size: cover; */
 }
 .project-dialog .image.no-image {
   background-image: -webkit-linear-gradient(315deg, #2accec 0%, #5680f0 100%);
@@ -10032,15 +10035,20 @@ html, body {
 .block .connector.connector-bottom.active {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.block .connector.connector-input.active:after {
-  content: ' ';
+.block .connector.connector-input.active:before {
   width: 14px;
   height: 14px;
+  content: ' ';
   position: absolute;
+  border-radius: 50%;
   left: -10px;
   top: 14px;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
+  background-color: #036343;
+  pointer-events: none;
+}
+.block .connector.connector-input.active:after {
+  background-color: red;
+  pointer-events: none;
 }
 .block .connector.connector-root {
   width: calc(100% - 14px);
@@ -10068,6 +10076,17 @@ html, body {
   border-radius: 50%;
   left: -10px;
   top: 14px;
+  pointer-events: none;
+}
+.block .block-input:after {
+  width: 50px;
+  height: 40px;
+  content: ' ';
+  position: absolute;
+  border-radius: 7px;
+  left: 0px;
+  top: 0px;
+  pointer-events: none;
 }
 .block.dragging {
   z-index: 9;

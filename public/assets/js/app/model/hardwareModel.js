@@ -590,7 +590,7 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 		var rect = componentDom.getBoundingClientRect();
 		var a = rect.left -460 +'px';
 		var b = rect.top -260 +'px'
-		console.log(a)
+		// console.log(a)
 
 		$("#component-dialog").css("left",a);
 		$("#component-dialog").css("top",b);
