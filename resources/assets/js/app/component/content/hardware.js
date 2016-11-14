@@ -11,7 +11,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	var boardContextMenu;
 	var contextMenuTarget;
 	// var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
-	var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div><div class="hover"><img src="{{src2}}" /></div></li>'
+	var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="hover"><img src="{{src2}}" /></div><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
 	var mouseDownComponentDom;
 	var dragContainer;
 	var dragComponentDom;
@@ -22,6 +22,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	var dragMouseY;
 
 	function init() {
+
 		var sidebarTab = $('.sidebar-tabs .tab-hardware');
 		search = $('.search', sidebarTab);
 		filterList = $('.filters', sidebarTab);
@@ -48,6 +49,18 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		emitor.on('hardware', 'boardChange', onBoardChange);
 		emitor.on('hardware', 'resize', onResize);
 		emitor.on('sidebar', 'activeTab', onActiveTab);
+
+		$('.hardware-container', region).mouseover(function(){
+
+			
+			if($('.pin-A0').hasClass('jsplumb-endpoint-full')){
+				$('.pin-PA1').css('display','none');
+				$('.pin-PA3').css('display','none');
+			}else if($('.pin-A1').hasClass('jsplumb-endpoint-full')){
+				$('.pin-PA2').css('display','none');
+				$('.pin-PA3').css('display','none')
+			}
+		})
 	}
 
 	function loadSchema(schema) {
@@ -91,12 +104,14 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 				.replace(/\{\{src2\}\}/, component.imageUrl2);
 
 			componentList.append(li);
+
 		});
 		[].forEach.call(componentList[0].querySelectorAll("li .image"), function(imageDom) {
 			imageDom.addEventListener(compitableEvents.down, onComponentMouseDown);
 		});
 
 		filterList.find('[data-filter="all"]').click();
+		console.log($('.hover').length)
 	}
 
 	function onAppStart() {
@@ -179,6 +194,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function onComponentMouseDown(e) {
+		//  点击左侧模块
+		console.log('1');
+		// $('.hover').css('display','none')
 		e.stopPropagation();
 		e.returnValue = false;
 
@@ -189,12 +207,15 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function onComponentMouseUpBeforeMove(e) {
+		console.log(1)
+		// 点击左侧模块之后 松开鼠标
 		mouseDownComponentDom = null;
 		document.removeEventListener(compitableEvents.up, onComponentMouseUpBeforeMove);
 		document.removeEventListener(compitableEvents.move, onComponentPreMouseMove);
 	}
 
 	function onComponentPreMouseMove(e) {
+		// console.log(2);  拖拽元素的数量  之前
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		if (startPreMouseMove) {
 			startPreMouseMove = false;
@@ -218,6 +239,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function onComponentMouseMove(e) {
+		//  放入主视图之前 拖拽硬件
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		
 		if (mouseDownComponentDom) {
@@ -241,6 +263,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function onComponentMouseUp(e) {
+		// //  放入主视图之前 放弃拖拽硬件
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		document.removeEventListener(compitableEvents.move, onComponentMouseMove);
 		document.removeEventListener(compitableEvents.up, onComponentMouseUp);
@@ -254,7 +277,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function dragComponentMove(componentDom, clientX, clientY) {
+		// console.log('1')
 		var offset = 30;
+		// var offset = 0;
 
 		var x = clientX - dragMouseX;
 		var y = clientY - dragMouseY;
@@ -293,6 +318,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function onContainerEvent(e) {
+		// console.log('1')
 		var action = e.originalEvent.action;
 		if(action == "select-component") {
 			showComponentDialog(e.originalEvent.data.uid);

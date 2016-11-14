@@ -10,7 +10,7 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 			color: "#f69c4d",
 		}
 	};
-
+	// var region;
 	var container;
 	var dragComponentDom;
 	var schema;
@@ -24,6 +24,8 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 	var recycleDom;
 
 	function init(_container) {
+		// region = $('.content-tabs .tab-hardware');
+		// eMouseMove();
 		container = _container;
 		recycleDom = container.parentNode.querySelector(".recycle");
 		boardDom = container.querySelector(".board");
@@ -467,10 +469,7 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 		});
 	}
 
-
-
-	function onDomMouseUp(e) {
-
+	function onDomMouseUp(e) {		
 		if (!dragComponentDom) {
 			return;
 		}
@@ -480,6 +479,14 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 		} else {
 			dragComponentDom.style.left = ((dragComponentDom.offsetLeft * 100) / container.offsetWidth) + '%';
 			dragComponentDom.style.top = ((dragComponentDom.offsetTop * 100) / container.offsetHeight) + '%';
+
+			rect = dragComponentDom.getBoundingClientRect();
+			$("#component-dialog").css({
+				left: rect.left - 460,
+				top: rect.top - 260
+			});
+			// componentDialogDom.style.left = (rect.left - 460) + "px";
+			// componentDialogDom.style.top = (rect.top - 260) + "px";
 		}
 		dragComponentDom = null;
 	}
@@ -534,6 +541,8 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 	}
 
 	function onBoardEndpointClick(endpoint) {
+		// console.log(1); 点击左侧硬件模块
+		$('.hover').css('display','none')
 		if (endpoint.hasType('selected')) {
 			return false;
 		}
@@ -553,6 +562,7 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 	}
 
 	function onComponentEndpointClick(endpoint) {
+		console.log(1)
 		endpoint.canvas.classList.add('selected');
 		unselectAllConnections();
 
@@ -585,13 +595,11 @@ define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvent
 		});
 	}
 
-
 	function getConnections(componentDom) {
+		// 点击硬件
 		var rect = componentDom.getBoundingClientRect();
 		var a = rect.left -460 +'px';
 		var b = rect.top -260 +'px'
-		// console.log(a)
-
 		$("#component-dialog").css("left",a);
 		$("#component-dialog").css("top",b);
 

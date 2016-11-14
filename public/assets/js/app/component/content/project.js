@@ -50,7 +50,7 @@ define(['vendor/jquery', 'app/util/emitor', 'app/util/util', 'app/model/userMode
 				.replace(/\{\{src\}\}/, board.imageUrl);
 			ul.append(li);
 		});
-		ul.find("> li").eq(0).click();
+		ul.find("> li").eq(1).click();
 	}
 
 	function addProject(projectInfo, prepend, liveEvent) {
@@ -80,8 +80,8 @@ define(['vendor/jquery', 'app/util/emitor', 'app/util/util', 'app/model/userMode
 			$('.project-intro', li).text(projectInfo.project_intro);
 			// $('.public', li).text(publicTypes[projectInfo.public_type]).attr('data-action', projectInfo.public_type);
 			// $('.time', li).text(util.formatDate(projectInfo.updated_at, "yyyy.MM.dd"));
-
 			projectList.find("> li.active").data('id') == projectInfo.id && updateCurrentProject(projectInfo);
+			// console.log(1);
 		}
 	}
 
@@ -141,16 +141,21 @@ define(['vendor/jquery', 'app/util/emitor', 'app/util/util', 'app/model/userMode
 
 	function onShowBoardSelect(e) {
 		boardList.toggleClass("active");
+		// console.log($('.hover').length);
+		// console.log(3);
 		return false;
 	}
 
 	function onBoardSelectClick(e) {
+		// console.log('切换主板')
 		var li = $(this);
 		var name = li.data("value");
 		boardList.removeClass("active").find(".placeholder").html(li.html());
 		boardList.data("value", name);
 
 		name && emitor.trigger("hardware", "boardChange", name);
+
+
 	}
 
 	function onRemoveBoard() {

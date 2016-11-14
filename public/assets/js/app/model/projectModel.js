@@ -355,16 +355,17 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							name: "MB",
 							tags: ["motor"],
 							overlay: [0.5, 1.5]
-						}, {
-							uid: "ee0399c9-2700-4456-96e1-47803c1ff60c",
-							width: 20,
-							height: 54,
-							x: 0.70,
-							y: 0.520,
-							name: "MB",
-							tags: ["motor"],
-							overlay: [0.5, 1.5]
 						}
+						// , {
+						// 	uid: "ee0399c9-2700-4456-96e1-47803c1ff60c",
+						// 	width: 20,
+						// 	height: 54,
+						// 	x: 0.70,
+						// 	y: 0.520,
+						// 	name: "MB",
+						// 	tags: ["motor"],
+						// 	overlay: [0.5, 1.5]
+						// }
 						/*-------------------------------------------------------*/
 						/*添加328板子 新的端点*/
 						, {
@@ -373,8 +374,8 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							height: 16,
 							x: 0.618,
 							y: 0.158,
-							name: "PA4",
-							tags: ["analog-in"],
+							name: "PA1",
+							tags: ["4P-analog"],
 							overlay: [0.5, 1.8]
 						}, {
 							uid: "fa0399c9-2700-4456-96e1-47803c1ff60c",
@@ -383,7 +384,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							x: 0.676,
 							y: 0.158,
 							name: "PA2",
-							tags: ["analog-in"],
+							tags: ["4P-analog"],
 							overlay: [0.5, 1.8]
 						}, {
 							uid: "fa1399c9-2700-4456-96e1-47803c1ff60c",
@@ -392,7 +393,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							x: 0.744,
 							y: 0.158,
 							name: "PA3",
-							tags: ["analog-in"],
+							tags: ["4P-analog"],
 							overlay: [0.5, 1.8]
 						}, {
 							uid: "fa1199c9-2700-4456-96e1-47803c1ff60c",
@@ -401,7 +402,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							x: 0.824,
 							y: 0.158,
 							name: "PD5",
-							tags: ["digital"],
+							tags: ["6P-digital"],
 							overlay: [0.5, 1.8]
 						}, {
 							uid: "fa1119c9-2700-4456-96e1-47803c1ff60c",
@@ -409,8 +410,9 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							height: 16,
 							x: 0.900,
 							y: 0.158,
-							name: "PD6/SRI",
-							tags: ["digital"],
+							name: "PD6",
+							label: "PD6/SPI",
+							tags: ["6P-digital", "SPI"],
 							overlay: [0.5, 1.8]
 						}, {
 							uid: "fa1111c9-2700-4456-96e1-47803c1ff60c",
@@ -428,7 +430,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							x: 0.675,
 							y: 0.837,
 							name: "PD1",
-							tags: ["digital"],
+							tags: ["4P-digital"],
 							overlay: [0.5, -0.8]
 						}, {
 							uid: "fa1111a1-2700-4456-96e1-47803c1ff60c",
@@ -437,7 +439,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							x: 0.735,
 							y: 0.837,
 							name: "PD2",
-							tags: ["digital"],
+							tags: ["4P-digital"],
 							overlay: [0.5, -0.8]
 						}, {
 							uid: "fa1111a1-1700-4456-96e1-47803c1ff60c",
@@ -446,7 +448,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							x: 0.795,
 							y: 0.837,
 							name: "PD3",
-							tags: ["digital"],
+							tags: ["4P-digital"],
 							overlay: [0.5, -0.8]
 						}, {
 							uid: "fa1111a1-1100-4456-96e1-47803c1ff60c",
@@ -455,7 +457,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							x: 0.851,
 							y: 0.837,
 							name: "PD4",
-							tags: ["digital"],
+							tags: ["4P-digital"],
 							overlay: [0.5, -0.8]
 						}, {
 							uid: "fa1111a1-1110-4456-96e1-47803c1ff60c",
@@ -490,404 +492,172 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							height: 55,
 							x: 0.988,
 							y: 0.342,
-							name: "IIC",
-							tags: ["iic"],
+							name: "IIC INT",
+							tags: ["iic-6P"],
 							overlay: [0.5, -0.8]
-						}			
-		/*-------------------------------------------------------------*/
+						}
+						/*-------------------------------------------------------------*/
 					]
 				}],
 				components: [{
-					uid: "aa1a2f4c-2934-414a-823f-9961fbf23c55",
-					name: "led",
-					label: "LED",
-					type: "led",
-					category: "action",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 0],
-						tags: ["digital"]
-					}],
-					code: {
-						var: 'int {NAME} = {s};',
-						setup: 'pinMode({NAME}, OUTPUT);'
-					}
-				}, {
-					uid: "a8466d12-ed5e-4cc8-bffe-1031c3bb10e1",
-					name: "rgb",
-					label: "三色LED",
-					type: "rgb",
-					category: "action",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "r",
-						anchor: [0.25, 1],
-						tags: ["analog-out"]
+						uid: "aa1a2f4c-2934-414a-823f-9961fbf23c55",
+						name: "RoLed",
+						label: "LED模块",
+						type: "led",
+						category: "action",
+						boards: ["KenBlock"],
+						width: 72,
+						height: 72,
+						pins: [{
+							name: "s",
+							anchor: [0.5, 0],
+							tags: ["digital"]
+						}],
+						code: {
+							var: 'int {NAME} = {s};',
+							setup: 'pinMode({NAME}, OUTPUT);'
+						}
 					}, {
-						name: "g",
-						anchor: [0.5, 1],
-						tags: ["analog-out"]
+						uid: "a8466d12-ed5e-4cc8-bffe-1031c3bb10e1",
+						name: "RoRGB",
+						label: "彩色LED模块",
+						type: "rgb",
+						category: "action",
+						boards: ["KenBlock"],
+						width: 72,
+						height: 72,
+						pins: [{
+							name: "r",
+							anchor: [0.25, 1],
+							tags: ["analog-out"]
+						}, {
+							name: "g",
+							anchor: [0.5, 1],
+							tags: ["analog-out"]
+						}, {
+							name: "b",
+							anchor: [0.75, 1],
+							tags: ["analog-out"]
+						}],
+						code: {
+							include: '#include <RGBLed.h>',
+							var: 'RGBLed {NAME}({r}, {g}, {b});',
+						}
 					}, {
-						name: "b",
-						anchor: [0.75, 1],
-						tags: ["analog-out"]
-					}],
-					code: {
-						include: '#include <RGBLed.h>',
-						var: 'RGBLed {NAME}({r}, {g}, {b});',
-					}
-				}, {
-					uid: "abf7ad9a-2bd9-40f4-bf83-0af03e8f4d5a",
-					name: "lcd",
-					label: "液晶模块",
-					type: "lcd",
-					category: "action",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "sda",
-						anchor: [0.33, 0],
-						tags: ["analog-in"],
-						spec: "A4"
+						uid: "bd3ddead-5062-4ab3-9b3d-2ba85e938d0e",
+						name: "RoButton",
+						label: "按键模块",
+						type: "button",
+						category: "sensor",
+						boards: ["KenBlock"],
+						width: 72,
+						height: 72,
+						pins: [{
+							name: "s",
+							anchor: [0.5, 1],
+							tags: ["digital"],
+						}],
+						code: {
+							var: 'int {NAME} = {s};',
+							setup: 'pinMode({NAME}, INPUT);'
+						}
 					}, {
-						name: "scl",
-						anchor: [0.67, 0],
-						tags: ["analog-in"],
-						spec: "A5"
-					}],
-					code: {
-						include: '#include <LiquidCrystal_I2C.h>',
-						var: 'LiquidCrystal_I2C {NAME}(0x27, 16, 2);',
-						setup: '{NAME}.begin();{NAME}.clear();'
-					}
-				}, {
-					uid: "4b8594a2-b7ff-44fe-a8b0-319640722b30",
-					name: "serial",
-					label: "串口模块",
-					type: "serial",
-					category: "function",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [1, 0.5],
-						tags: ["serial"],
-						spec: "Serial"
-					}],
-					code: {
-						setup: 'Serial.begin(9600);'
-					}
-				}, {
-					uid: "d4a3cc37-804e-4a07-b567-aa5ca519bc61",
-					name: "bluetooth",
-					label: "蓝牙模块",
-					type: "serial",
-					category: "function",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "rxd",
-						anchor: [0.33, 1],
-						tags: ["digital", "analog-in"],
-						// spec: "0"
+						uid: "9b26a7f3-facc-4f80-83ad-8a29f909c1d7",
+						name: "RoBuzzer",
+						label: "蜂鸣器模块",
+						type: "buzzer",
+						category: "action",
+						boards: ["KenBlock"],
+						width: 72,
+						height: 72,
+						pins: [{
+							name: "s",
+							anchor: [0.5, 1],
+							tags: ["digital"],
+						}],
+						code: {
+							include: '#include <RoSys.h>',
+							var: 'RoBuzzer {NAME}({s});'
+						}
 					}, {
-						name: "txd",
-						anchor: [0.67, 1],
-						tags: ["digital", "analog-in"],
-						// spec: "1"
-					}],
-					code: {
-						setup: 'Serial.begin(9600);'
-					}
-				}, {
-					uid: "c0dc58aa-2032-4c54-9fc8-3235b7e46bc1",
-					name: "wifi",
-					label: "wifi模块",
-					type: "serial",
-					category: "function",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "rxd",
-						anchor: [0.33, 1],
-						tags: ["digital", "analog-in"],
+						uid: "18d12ce2-d24f-4bb6-ba1f-7ab3c50215df",
+						name: "RoPot",
+						label: "电位器模块",
+						type: "pot",
+						category: "sensor",
+						boards: ["KenBlock"],
+						width: 72,
+						height: 72,
+						pins: [{
+							name: "s",
+							anchor: [0.5, 1],
+							tags: ["analog-in"],
+						}],
+						code: {
+							var: 'int {NAME} = {s};',
+							setup: 'pinMode({NAME}, INPUT);'
+						}
 					}, {
-						name: "txd",
-						anchor: [0.67, 1],
-						tags: ["digital", "analog-in"],
-					}],
-					code: {
-						setup: 'Serial.begin(9600);'
-					}
-				}, {
-					uid: "bd3ddead-5062-4ab3-9b3d-2ba85e938d0e",
-					name: "button",
-					label: "按键",
-					type: "button",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						var: 'int {NAME} = {s};',
-						setup: 'pinMode({NAME}, INPUT);'
-					}
-				}, {
-					uid: "9b26a7f3-facc-4f80-83ad-8a29f909c1d7",
-					name: "buzzer",
-					label: "蜂鸣器",
-					type: "buzzer",
-					category: "action",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						var: 'int {NAME} = {s};',
-						setup: 'pinMode({NAME}, OUTPUT);'
-					}
-				}, {
-					uid: "18d12ce2-d24f-4bb6-ba1f-7ab3c50215df",
-					name: "pot",
-					label: "电位器",
-					type: "pot",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["analog-in"],
-					}],
-					code: {
-						var: 'int {NAME} = {s};',
-						setup: 'pinMode({NAME}, INPUT);'
-					}
-				}, {
-					uid: "957b4564-ba2d-436b-9386-6c80a910fc59",
-					name: "hts221",
-					label: "温湿度传感器",
-					type: "hts221",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						include: "#include <DHT.h>",
-						var: 'DHT {NAME}({s}, DHT22);',
-						setup: '{NAME}.begin();'
-					}
-				}, {
-					uid: "b75731dd-555f-4ba6-b275-e4fefb3d9c64",
-					name: "encoder",
-					label: "旋转编码器",
-					type: "encoder",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "k",
-						anchor: [0.25, 1],
-						tags: ["digital"],
-						spec: "2",
+						uid: "2d6073e7-ecee-4699-8ccb-f1bb52c4655a",
+						name: "RoLightSensor",
+						label: "光敏传感器",
+						type: "lightSensor",
+						category: "sensor",
+						boards: ["KenBlock"],
+						width: 72,
+						height: 72,
+						pins: [{
+							name: "s",
+							anchor: [0.5, 1],
+							tags: ["analog-in"],
+						}],
+						code: {
+							var: 'int {NAME} = {s};',
+							setup: 'pinMode({NAME}, INPUT);'
+						}
 					}, {
-						name: "sa",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-						spec: "3",
-					}, {
-						name: "sb",
-						anchor: [0.75, 1],
-						tags: ["digital"],
-						spec: "8",
-					}],
-					code: {
-						include: "#include <Encoder.h>",
-						var: 'Encoder {NAME}({sa}, {sb});',
-						setup: '{NAME}.begin();'
+						uid: "bbf2233f-f9a8-4e95-8a1d-4ae7419786c7",
+						name: "RoLedMatrix",
+						label: "点阵模块",
+						type: "ACT009",
+						category: "action",
+						boards: ["KenBlock"],
+						width: 72,
+						height: 72,
+						pins: [{
+							name: "s",
+							anchor: [0.33, 1],
+							tags: ["6P-digital"],
+						}],
+						code: {
+							include: '#include <RoSys.h>',
+							var: 'RoLedMatrix {NAME}({s});',
+						}
+					},  {
+						uid: "bbf2233f-f9a8-4e95-8a1d-4ae7419786c7",
+						name: "Ro7SegmentDisplay",
+						label: "数码管模块",
+						type: "Ro7SegmentDisplay",
+						category: "action",
+						boards: ["KenBlock"],
+						width: 72,
+						height: 72,
+						pins: [{
+							name: "data",
+							anchor: [0.33, 1],
+							tags: ["4P-digital"],
+						}, {
+							name: "clk",
+							anchor: [0.67, 1],
+							tags: ["4P-digital"],
+						}],
+						code: {
+							include: '#include <RoSys.h>',
+							var: 'Ro7SegmentDisplay {NAME}({s});',
+						}
 					}
-				}, {
-					uid: "e1bde3b1-11f6-48c2-ad56-a8f0220d6e7a",
-					name: "infraredSensor",
-					label: "光电对管",
-					type: "infraredSensor",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						var: 'int {NAME} = {s};',
-						setup: 'pinMode({NAME}, INPUT);'
-					}
-				}, {
-					uid: "2d6073e7-ecee-4699-8ccb-f1bb52c4655a",
-					name: "lightSensor",
-					label: "光敏传感器",
-					type: "lightSensor",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["analog-in"],
-					}],
-					code: {
-						var: 'int {NAME} = {s};',
-						setup: 'pinMode({NAME}, INPUT);'
-					}
-				}, {
-					uid: "57307666-b6a0-4e64-b447-90732b71c4d7",
-					name: "soundSensor",
-					label: "声音传感器",
-					type: "soundSensor",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						var: 'int {NAME} = {s};',
-						setup: 'pinMode({NAME}, INPUT);'
-					}
-				}, {
-					uid: "49c65abb-dda7-49ae-ad7e-e9aebf512869",
-					name: "limitSwitch",
-					label: "碰撞传感器",
-					type: "limitSwitch",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						var: 'int {NAME} = {s};',
-						setup: 'pinMode({NAME}, INPUT);'
-					}
-				}, {
-					uid: "a44f6a20-c35a-46dc-b495-9bcb0618c7ec",
-					name: "servo",
-					label: "舵机",
-					type: "servo",
-					category: "action",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						include: "#include <Servo.h>",
-						var: 'Servo {NAME};',
-						setup: '{NAME}.attach({s});'
-					}
-				}, {
-					uid: "1b286953-9e06-496d-baaf-c831c0f61d87",
-					name: "continuousServo",
-					label: "全角度舵机",
-					type: "continuousServo",
-					category: "action",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "s",
-						anchor: [0.5, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						include: "#include <Servo.h>",
-						var: 'Servo {NAME};',
-						setup: '{NAME}.attach({s});'
-					}
-				}, {
-					uid: "f4ef6a5f-b646-47ab-b7f3-f0dcdc6651dd",
-					name: "ultrasound",
-					label: "超声波",
-					type: "ultrasound",
-					category: "sensor",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "tri",
-						anchor: [0.333, 1],
-						tags: ["digital"],
-					}, {
-						name: "ech",
-						anchor: [0.667, 1],
-						tags: ["digital"],
-					}],
-					code: {
-						include: "#include <SR04.h>",
-						var: 'SR04 {NAME}({ech}, {tri});',
-					}
-				}, {
-					uid: "563eeca3-ddf2-454d-8bed-7918652da3a6",
-					name: "rtc",
-					label: "时钟模块",
-					type: "rtc",
-					category: "function",
-					boards: ["KenBlock"],
-					width: 72,
-					height: 72,
-					pins: [{
-						name: "sda",
-						anchor: [0.333, 0],
-						tags: ["analog-in"],
-						spec: 'A4'
-					}, {
-						name: "scl",
-						anchor: [0.667, 0],
-						tags: ["analog-in"],
-						spec: 'A5'
-					}],
-					code: {
-						include: "#include <Time.h>",
-						var: 'tmElements_t {NAME};',
-					}
-				}]
+					/*  编程部分的代码 */
+				]
 			},
 			software: {
 				blocks: [{
@@ -1493,7 +1263,10 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					code: "digitalWrite({LED},{STATE});",
 					tags: ["module"],
 					module: "led"
-				}, {
+				}
+				// console.log("第一条")；
+				, 
+				{
 					type: "statement",
 					name: "rgbLedSimple",
 					connectors: [{
@@ -2015,217 +1788,6 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					code: "{LED}.setColor({INDEX}, {VALUE});",
 					tags: ["module"],
 					module: "ACT002"
-				}, {
-					type: "statement",
-					name: "ACT005Tone",
-					connectors: [{
-						type: "connector-top",
-						accept: "connector-bottom"
-					}, {
-						type: "connector-bottom",
-						accept: "connector-top"
-					}, {
-						type: "connector-input",
-						accept: "connector-output",
-						acceptType: "all",
-						name: "9c9ec54a-36ce-4196-a175-9e611efceddf"
-					}, {
-						type: "connector-input",
-						accept: "connector-output",
-						acceptType: "all",
-						name: "34e4fd81-8159-4e8c-bbe2-e52fcc9ee009"
-					}],
-					content: [{
-						type: "text",
-						value: "蜂鸣器"
-					}, {
-						id: "BUZZER",
-						type: "dynamic-select",
-						options: "ACT005s"
-					}, {
-						type: "text",
-						value: "发出声音，频率为"
-					}, {
-						blockInputId: "FREQUENCY",
-						type: "block-input",
-						acceptType: "number",
-						name: "9c9ec54a-36ce-4196-a175-9e611efceddf"
-					}, {
-						type: "text",
-						value: "Hz，持续时间为"
-					}, {
-						blockInputId: "DURATION",
-						type: "block-input",
-						acceptType: "number",
-						name: "34e4fd81-8159-4e8c-bbe2-e52fcc9ee009"
-					}, {
-						type: "text",
-						value: "毫秒"
-					}],
-					code: "{BUZZER}.tone({FREQUENCY}, {DURATION});",
-					tags: ["module"],
-					module: "ACT005"
-				}, {
-					type: "statement",
-					name: "ACT005Didi",
-					connectors: [{
-						type: "connector-top",
-						accept: "connector-bottom"
-					}, {
-						type: "connector-bottom",
-						accept: "connector-top"
-					}],
-					content: [{
-						type: "text",
-						value: "蜂鸣器"
-					}, {
-						id: "BUZZER",
-						type: "dynamic-select",
-						options: "ACT005s"
-					}, {
-						type: "text",
-						value: "发出嘀嘀声"
-					}],
-					code: "{BUZZER}.Didi();",
-					tags: ["module"],
-					module: "ACT005"
-				}, {
-					type: "statement",
-					name: "ACT005NoTone",
-					connectors: [{
-						type: "connector-top",
-						accept: "connector-bottom"
-					}, {
-						type: "connector-bottom",
-						accept: "connector-top"
-					}],
-					content: [{
-						type: "text",
-						value: "关闭蜂鸣器"
-					}, {
-						id: "BUZZER",
-						type: "dynamic-select",
-						options: "ACT005s"
-					}],
-					code: "{BUZZER}.noTone();",
-					tags: ["module"],
-					module: "ACT005"
-				}, {
-					type: "statement",
-					name: "ACT008Init",
-					connectors: [{
-						type: "connector-top",
-						accept: "connector-bottom"
-					}, {
-						type: "connector-bottom",
-						accept: "connector-top"
-					}],
-					content: [{
-						type: "text",
-						value: "数码管"
-					}, {
-						id: "SEGMENT",
-						type: "dynamic-select",
-						options: "ACT008s"
-					}, {
-						type: "text",
-						value: "初始化"
-					}],
-					code: "{SEGMENT}.init();",
-					tags: ["module"],
-					module: "ACT008"
-				}, {
-					type: "statement",
-					name: "ACT008Display",
-					connectors: [{
-						type: "connector-top",
-						accept: "connector-bottom"
-					}, {
-						type: "connector-bottom",
-						accept: "connector-top"
-					}, {
-						type: "connector-input",
-						accept: "connector-output",
-						acceptType: "all",
-						name: "8e242abc-8d0b-4947-a29f-a2028bd6b64c"
-					}],
-					content: [{
-						type: "text",
-						value: "数码管"
-					}, {
-						id: "SEGMENT",
-						type: "dynamic-select",
-						options: "ACT008s"
-					}, {
-						type: "text",
-						value: "显示数据"
-					}, {
-						blockInputId: "DATA",
-						type: "block-input",
-						acceptType: "number",
-						name: "8e242abc-8d0b-4947-a29f-a2028bd6b64c"
-					}],
-					code: "{SEGMENT}.display({DATA});",
-					tags: ["module"],
-					module: "ACT008"
-				}, {
-					type: "statement",
-					name: "ACT008SetBrightness",
-					connectors: [{
-						type: "connector-top",
-						accept: "connector-bottom"
-					}, {
-						type: "connector-bottom",
-						accept: "connector-top"
-					}, {
-						type: "connector-input",
-						accept: "connector-output",
-						acceptType: "all",
-						name: "c5d8e6f0-28c9-47af-b939-b515bd0e1dd4"
-					}],
-					content: [{
-						type: "text",
-						value: "设置数码管"
-					}, {
-						id: "SEGMENT",
-						type: "dynamic-select",
-						options: "ACT008s"
-					}, {
-						type: "text",
-						value: "亮度为"
-					}, {
-						blockInputId: "BRIGHTNESS",
-						type: "block-input",
-						acceptType: "number",
-						name: "c5d8e6f0-28c9-47af-b939-b515bd0e1dd4"
-					}],
-					code: "{SEGMENT}.setBrightness({BRIGHTNESS});",
-					tags: ["module"],
-					module: "ACT008"
-				}, {
-					type: "statement",
-					name: "ACT008ClearDisplay",
-					connectors: [{
-						type: "connector-top",
-						accept: "connector-bottom"
-					}, {
-						type: "connector-bottom",
-						accept: "connector-top"
-					}],
-					content: [{
-						type: "text",
-						value: "清除数码管"
-					}, {
-						id: "SEGMENT",
-						type: "dynamic-select",
-						options: "ACT008s"
-					}, {
-						type: "text",
-						value: "显示"
-					}],
-					code: "{SEGMENT}.clearDisplay();",
-					tags: ["module"],
-					module: "ACT008"
 				}, {
 					type: "output",
 					name: "ACT009GetDeviceCount",
@@ -4559,7 +4121,337 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 					},
 					tags: ["module", "advanced"],
 					module: "default"
+				}, 
+/*11111111111111111111111111111111111111*/
+				{
+					type: "output",
+					name: "analogRead1",
+					connectors: [{
+						type: "connector-output",
+						accept: "connector-input"
+					}],
+					content: [{
+						type: "text",
+						value: "读取引脚"
+					}, {
+						id: "PIN",
+						type: "dynamic-select",
+						options: "pots"
+					}, {
+						type: "text",
+						value: "的数字量"
+					}],
+					code: "analogRead({PIN})",
+					returnType: {
+						type: "simple",
+						value: "float"
+					},
+					tags: ["module"],
+					module: "pot"
+				}
+				,{
+					type: "output",
+					name: "analogRead2",
+					connectors: [{
+						type: "connector-output",
+						accept: "connector-input"
+					}],
+					content: [{
+						type: "text",
+						value: "读取引脚"
+					}, {
+						id: "PIN",
+						type: "dynamic-select",
+						options: "pots"
+					}, {
+						type: "text",
+						value: "的模拟量"
+					}],
+					code: "analogRead({PIN})",
+					returnType: {
+						type: "simple",
+						value: "float"
+					},
+					tags: ["module"],
+					module: "pot"
+				},{
+					type: "output",
+					name: "analogRead3",
+					connectors: [{
+						type: "connector-output",
+						accept: "connector-input"
+					}],
+					content: [{
+						type: "text",
+						value: "读取"
+					}, {
+						id: "PIN",
+						type: "dynamic-select",
+						options: "pots"
+					}, {
+						type: "text",
+						value: "的值"
+					}],
+					code: "analogRead({PIN})",
+					returnType: {
+						type: "simple",
+						value: "float"
+					},
+					tags: ["module"],
+					module: "pot"
+				},{
+					type: "statement",
+					name: "buzzer1",
+					connectors: [{
+						type: "connector-top",
+						accept: "connector-bottom"
+					}, {
+						type: "connector-bottom",
+						accept: "connector-top"
+					}],
+					content: [{
+						type: "text",
+						value: "蜂鸣器"
+					}, {
+						id: "BUZZER",
+						type: "dynamic-select",
+						options: "buzzers"
+					}, {
+						type: "text",
+						value: "发出声音，频率为"
+					}, {
+						id: "RATE",
+						type: "number-input",
+						value: 1000
+					}, {
+						type: "text",
+						value: "持续"
+					}, {
+						id: "SECONDS",
+						type: "number-input",
+						value: 1000
+					}, {
+						type: "text",
+						value: "毫秒"
+					}],
+					code: "tone({BUZZER},{NOTE},{SECONDS});\ndelay({SECONDS});",
+					tags: ["module"],
+					module: "buzzer"
 				}, {
+					type: "statement",
+					name: "ACT005Tone",
+					connectors: [{
+						type: "connector-top",
+						accept: "connector-bottom"
+					}, {
+						type: "connector-bottom",
+						accept: "connector-top"
+					}, {
+						type: "connector-input",
+						accept: "connector-output",
+						acceptType: "all",
+						name: "9c9ec54a-36ce-4196-a175-9e611efceddf"
+					}, {
+						type: "connector-input",
+						accept: "connector-output",
+						acceptType: "all",
+						name: "34e4fd81-8159-4e8c-bbe2-e52fcc9ee009"
+					}],
+					content: [{
+						type: "text",
+						value: "蜂鸣器"
+					}, {
+						id: "BUZZER",
+						type: "dynamic-select",
+						options: "ACT005s"
+					}, {
+						type: "text",
+						value: "发出声音，频率为"
+					}, {
+						blockInputId: "FREQUENCY",
+						type: "block-input",
+						acceptType: "number",
+						name: "9c9ec54a-36ce-4196-a175-9e611efceddf"
+					}, {
+						type: "text",
+						value: "Hz，持续时间为"
+					}, {
+						blockInputId: "DURATION",
+						type: "block-input",
+						acceptType: "number",
+						name: "34e4fd81-8159-4e8c-bbe2-e52fcc9ee009"
+					}, {
+						type: "text",
+						value: "毫秒"
+					}],
+					code: "{BUZZER}.tone({FREQUENCY}, {DURATION});",
+					tags: ["module"],
+					module: "buzzer"
+				}, {
+					type: "statement",
+					name: "ACT005Didi",
+					connectors: [{
+						type: "connector-top",
+						accept: "connector-bottom"
+					}, {
+						type: "connector-bottom",
+						accept: "connector-top"
+					}],
+					content: [{
+						type: "text",
+						value: "蜂鸣器"
+					}, {
+						id: "BUZZER",
+						type: "dynamic-select",
+						options: "ACT005s"
+					}, {
+						type: "text",
+						value: "发出嘀嘀声"
+					}],
+					code: "{BUZZER}.Didi();",
+					tags: ["module"],
+					module: "buzzer"
+				}, {
+					type: "statement",
+					name: "ACT005NoTone",
+					connectors: [{
+						type: "connector-top",
+						accept: "connector-bottom"
+					}, {
+						type: "connector-bottom",
+						accept: "connector-top"
+					}],
+					content: [{
+						type: "text",
+						value: "关闭蜂鸣器"
+					}, {
+						id: "BUZZER",
+						type: "dynamic-select",
+						options: "ACT005s"
+					}],
+					code: "{BUZZER}.noTone();",
+					tags: ["module"],
+					module: "buzzer"
+				},{
+					type: "statement",
+					name: "ACT008Init",
+					connectors: [{
+						type: "connector-top",
+						accept: "connector-bottom"
+					}, {
+						type: "connector-bottom",
+						accept: "connector-top"
+					}],
+					content: [{
+						type: "text",
+						value: "数码管"
+					}, {
+						id: "SEGMENT",
+						type: "dynamic-select",
+						options: "Ro7SegmentDisplays"
+					}, {
+						type: "text",
+						value: "初始化"
+					}],
+					code: "{SEGMENT}.init();",
+					tags: ["module"],
+					module: "Ro7SegmentDisplay"
+				}, {
+					type: "statement",
+					name: "ACT008Display",
+					connectors: [{
+						type: "connector-top",
+						accept: "connector-bottom"
+					}, {
+						type: "connector-bottom",
+						accept: "connector-top"
+					}, {
+						type: "connector-input",
+						accept: "connector-output",
+						acceptType: "all",
+						name: "8e242abc-8d0b-4947-a29f-a2028bd6b64c"
+					}],
+					content: [{
+						type: "text",
+						value: "数码管"
+					}, {
+						id: "SEGMENT",
+						type: "dynamic-select",
+						options: "Ro7SegmentDisplays"
+					}, {
+						type: "text",
+						value: "显示数据"
+					}, {
+						blockInputId: "DATA",
+						type: "block-input",
+						acceptType: "number",
+						name: "8e242abc-8d0b-4947-a29f-a2028bd6b64c"
+					}],
+					code: "{SEGMENT}.display({DATA});",
+					tags: ["module"],
+					module: "Ro7SegmentDisplay"
+				}, {
+					type: "statement",
+					name: "ACT008SetBrightness",
+					connectors: [{
+						type: "connector-top",
+						accept: "connector-bottom"
+					}, {
+						type: "connector-bottom",
+						accept: "connector-top"
+					}, {
+						type: "connector-input",
+						accept: "connector-output",
+						acceptType: "all",
+						name: "c5d8e6f0-28c9-47af-b939-b515bd0e1dd4"
+					}],
+					content: [{
+						type: "text",
+						value: "设置数码管"
+					}, {
+						id: "SEGMENT",
+						type: "dynamic-select",
+						options: "Ro7SegmentDisplays"
+					}, {
+						type: "text",
+						value: "亮度为"
+					}, {
+						blockInputId: "BRIGHTNESS",
+						type: "block-input",
+						acceptType: "number",
+						name: "c5d8e6f0-28c9-47af-b939-b515bd0e1dd4"
+					}],
+					code: "{SEGMENT}.setBrightness({BRIGHTNESS});",
+					tags: ["module"],
+					module: "Ro7SegmentDisplay"
+				}, {
+					type: "statement",
+					name: "ACT008ClearDisplay",
+					connectors: [{
+						type: "connector-top",
+						accept: "connector-bottom"
+					}, {
+						type: "connector-bottom",
+						accept: "connector-top"
+					}],
+					content: [{
+						type: "text",
+						value: "清除数码管"
+					}, {
+						id: "SEGMENT",
+						type: "dynamic-select",
+						options: "Ro7SegmentDisplays"
+					}, {
+						type: "text",
+						value: "显示"
+					}],
+					code: "{SEGMENT}.clearDisplay();",
+					tags: ["module"],
+					module: "Ro7SegmentDisplay"
+				}
+				
+/*11111111111111111111111111111111111111111111111111111*/ 
+				,{
 					type: "output",
 					name: "analogReadAdvanced",
 					connectors: [{

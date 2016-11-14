@@ -25,6 +25,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	var dragMouseX;
 	var dragMouseY;
 	var delayTimer;
+	var recycleDom;
 
 	var translateRegExp = /translate\(((-)*(\d|\.)*)px, ((-)*(\d|\.)*)px\)/;
 	var reservedWords = 'setup,loop,if,else,for,switch,case,while,do,break,continue,return,goto,define,include,HIGH,LOW,INPUT,OUTPUT,INPUT_PULLUP,true,false,interger, constants,floating,point,void,bool,char,unsigned,byte,int,word,long,float,double,string,String,array,static, volatile,const,sizeof,pinMode,digitalWrite,digitalRead,analogReference,analogRead,analogWrite,tone,noTone,shiftOut,shitIn,pulseIn,millis,micros,delay,delayMicroseconds,min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,randomSeed,random,lowByte,highByte,bitRead,bitWrite,bitSet,bitClear,bit,attachInterrupt,detachInterrupt,interrupts,noInterrupts';
@@ -39,7 +40,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		this.connectors = [];
 		this.ioConnectors = [];
 		//  获取所有的模块 记录到各个模块的信息；
-
 		var dom = document.createElement('div');
 		//  dom 是所有的编程模块
 		dom.draggable = false;
@@ -410,7 +410,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function onBlockPreMouseMove(e) {
-		//  移动模块 松开鼠标之前的函数；
+		//  移动模块 松开鼠标之前的函数； 
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		if (startPreMouseMove) {
 			startPreMouseMove = false;
@@ -485,6 +485,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 
 	function onBlockMouseUp(e) {
 		// 移动模块之后 松开鼠标   点击无效
+		// console.log(1);
 		document.removeEventListener(compitableEvents.move, onBlockMouseMove);
 		document.removeEventListener(compitableEvents.up, onBlockMouseUp);
 
@@ -522,6 +523,14 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		});
 
 		emitor.trigger("block", "drag-end");
+
+		var recycleDom = $('.tab-software .recycle');
+		// console.dir(recycleDom);
+		var rectX = recycleDom.offset().top;
+		var rectY = recycleDom.offset().left;
+		if(e.pageX >= rectY && e.pageY >=rectX){
+			block.remove();
+		}
 	}
 
 	function statementDragStart(block) {
@@ -1715,10 +1724,12 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function resetBlocks() {
+		console.log('创建主模板')
 		for (var uid in blocks) {
 			var block = blocks[uid];
 			if (block.connectable || block.data.type == "group") {
 				removeBlock(block);
+				console.log(1)
 			}
 		}
 

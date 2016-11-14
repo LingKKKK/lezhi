@@ -8261,6 +8261,7 @@ html, body {
   padding-left: 20px;
   padding-right: 20px;
   position: relative;
+  display: none;
 }
 .sidebar-tabs .tab-hardware .search-wrap .search {
   background-color: #f7f7f9;
@@ -8349,16 +8350,17 @@ html, body {
 .sidebar-tabs .tab-hardware .components-wrap .components li .image-wrap {
   width: 72px;
   height: 72px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: block;
   border: 1px solid #dee9e9;
   border-radius: 8px;
   opacity: 1;
   z-index: 99;
 }
 .sidebar-tabs .tab-hardware .components-wrap .components li .image-wrap img {
+  /* position: absolute; */
   z-index: 99;
+  text-align: center;
+  display: inherit;
 }
 .sidebar-tabs .tab-hardware .components-wrap .components li .image {
   cursor: -webkit-grab;
@@ -8384,8 +8386,8 @@ html, body {
   height: 72px;
   display: none;
   position: absolute;
-  -webkit-transform: translate(0%, -145%);
-          transform: translate(0%, -145%);
+  -webkit-transform: translate(0%, -7%);
+          transform: translate(0%, -7%);
   z-index: 9;
 }
 .sidebar-tabs .tab-hardware .components-wrap .components li .hover img {
@@ -8397,7 +8399,16 @@ html, body {
   animation: "component-fadeIn" 1s both;
 }
 .sidebar-tabs .tab-hardware .components-wrap .components li:hover .hover {
-  display: block;
+  display: none;
+}
+.sidebar-tabs .tab-hardware .components-wrap .components li:hover .image-wrap {
+  opacity: 0.2;
+}
+.sidebar-tabs .tab-hardware .components-wrap .components li:active .hover {
+  display: none;
+}
+.sidebar-tabs .tab-hardware .components-wrap .components li:active .image-wrap {
+  opacity: 1;
 }
 
 .content-tabs .tab-hardware {
@@ -8791,6 +8802,18 @@ html, body {
 }
 .content-tabs .tab-software .block-menu.uncomment li[data-action="uncomment"] {
   display: block;
+}
+.content-tabs .tab-software .recycle {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: center;
+  line-height: 80px;
+}
+.content-tabs .tab-software .recycle .icon {
+  font-size: 60px;
 }
 
 .content-tabs .tab-code {

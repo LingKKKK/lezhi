@@ -179,7 +179,7 @@
 										<div class="group-description">这里就是程序一直在做的事情，记得是无循环哦</div>
 										<div class="group-placeholder">拖一个块放到这里开始你第一个程序吧</div>
 									</div>
-								</div>
+								</div>								
 							</div>
 							<ul class="x-context-menu block-menu">
 								<li data-action="copy">复制</li>
@@ -187,6 +187,9 @@
 								<li data-action="uncomment">取消注释</li>
 								<li data-action="delete">删除</li>
 							</ul>
+							<div class="recycle">
+								<i class="icon lezhi lz-delete"></i>
+							</div>
 						</div>
 						<div class="tab tab-code" data-action="code">
 							<div id="code-container" class="code-container"></div>
