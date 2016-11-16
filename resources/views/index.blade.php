@@ -140,7 +140,7 @@
 								</div>
 							</div>
 							<div class="component-dialog" id="component-dialog">
-								<span class="name-label"><i class="lezhi lz-search"></i></span>
+								<span class="name-label"><i class="lezhi lz-editor"></i></span>
 								<input class="name" type="text" spellcheck="false" />
 							</div>
 							<ul class="x-context-menu component-menu">
