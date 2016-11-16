@@ -52,6 +52,51 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor'], function($1, util,
 			}
 		}
 
+
+		var modulebs = $('.module.block-statement');
+		var modulebo = $('.module.block-output');
+		var functions = $('.function.block-statement');
+		var functiono = $('.function.block-output');
+		var functionsi = $('.function.block-statement-input'); 
+		var vars = $('.var.block-statement');
+		var varo = $('.var.block-output');
+		var codes = $('.code.block-statement');
+		var codeo = $('.code.block-output');
+		var maths = $('.math.block-statement');
+		var matho = $('.math.block-output');
+		var texts = $('.text.block-statement');
+		var texto = $('.text.block-output');
+		var controls = $('.control.block-statement');
+		var controlo = $('.control.block-output');
+		var controlsi = $('.control.block-statement-input'); 
+		var logics = $('.logic.block-statement');
+		var logico = $('.logic.block-output');
+
+
+
+		function add(){
+			modulebs.addClass('modulebs');
+			modulebo.addClass('modulebo');
+			functions.addClass('functions');
+			functiono.addClass('functiono');
+			functionsi.addClass('functionsi')
+			vars.addClass('vars');
+			varo.addClass('varo');
+			codes.addClass('codes');
+			codeo.addClass('codeo');
+			maths.addClass('maths');
+			matho.addClass('matho');
+			texts.addClass('texts');
+			texto.addClass('texto');
+			controls.addClass('controls');
+			controlo.addClass('controlo');
+			controlsi.addClass('controlsi');
+			logics.addClass('logics');
+			logico.addClass('logico');
+		}
+		add();
+
+
 		emitor.trigger("sidebar", "activeTab", action);
 		
 		return false;

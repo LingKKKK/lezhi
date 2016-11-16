@@ -101,10 +101,10 @@
 		} */
 
 		.icon {
-			height: 60px;
+			position: absolute;
+			left: 0px;
+			top: 1px;
 			display: inline-block;
-			margin-right: 5px;
-			float: left;
 		}
 
 		.name {

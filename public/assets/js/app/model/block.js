@@ -31,6 +31,9 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	var reservedWords = 'setup,loop,if,else,for,switch,case,while,do,break,continue,return,goto,define,include,HIGH,LOW,INPUT,OUTPUT,INPUT_PULLUP,true,false,interger, constants,floating,point,void,bool,char,unsigned,byte,int,word,long,float,double,string,String,array,static, volatile,const,sizeof,pinMode,digitalWrite,digitalRead,analogReference,analogRead,analogWrite,tone,noTone,shiftOut,shitIn,pulseIn,millis,micros,delay,delayMicroseconds,min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,randomSeed,random,lowByte,highByte,bitRead,bitWrite,bitSet,bitClear,bit,attachInterrupt,detachInterrupt,interrupts,noInterrupts';
 	reservedWords = reservedWords.split(',');
 
+	
+	console.log($('.module'));
+
 	function Block(blockData) {
 		// 添加模块s
 		this.data = blockData;
@@ -437,6 +440,47 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 
 	function onBlockMouseMove(e) {
 		//  拖拽模块时 移动鼠标
+		var modulebs = $('.module.block-statement');
+		var modulebo = $('.module.block-output');
+		var functions = $('.function.block-statement');
+		var functiono = $('.function.block-output');
+		var functionsi = $('.function.block-statement-input'); 
+		var vars = $('.var.block-statement');
+		var varo = $('.var.block-output');
+		var codes = $('.code.block-statement');
+		var codeo = $('.code.block-output');
+		var maths = $('.math.block-statement');
+		var matho = $('.math.block-output');
+		var texts = $('.text.block-statement');
+		var texto = $('.text.block-output');
+		var controls = $('.control.block-statement');
+		var controlo = $('.control.block-output');
+		var controlsi = $('.control.block-statement-input'); 
+		var logics = $('.logic.block-statement');
+		var logico = $('.logic.block-output');
+
+		function add(){
+			modulebs.addClass('modulebs');
+			modulebo.addClass('modulebo');
+			functions.addClass('functions');
+			functiono.addClass('functiono');
+			functionsi.addClass('functionsi')
+			vars.addClass('vars');
+			varo.addClass('varo');
+			codes.addClass('codes');
+			codeo.addClass('codeo');
+			maths.addClass('maths');
+			matho.addClass('matho');
+			texts.addClass('texts');
+			texto.addClass('texto');
+			controls.addClass('controls');
+			controlo.addClass('controlo');
+			controlsi.addClass('controlsi');
+			logics.addClass('logics');
+			logico.addClass('logico');
+		}
+		add();
+
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		var block;
 		if (mouseDownBlockDom) {
@@ -485,7 +529,50 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 
 	function onBlockMouseUp(e) {
 		// 移动模块之后 松开鼠标   点击无效
-		// console.log(1);
+		var modulebs = $('.module.block-statement');
+		var modulebo = $('.module.block-output');
+		var functions = $('.function.block-statement');
+		var functiono = $('.function.block-output');
+		var functionsi = $('.function.block-statement-input'); 
+		var vars = $('.var.block-statement');
+		var varo = $('.var.block-output');
+		var codes = $('.code.block-statement');
+		var codeo = $('.code.block-output');
+		var maths = $('.math.block-statement');
+		var matho = $('.math.block-output');
+		var texts = $('.text.block-statement');
+		var texto = $('.text.block-output');
+		var controls = $('.control.block-statement');
+		var controlo = $('.control.block-output');
+		var controlsi = $('.control.block-statement-input'); 
+		var logics = $('.logic.block-statement');
+		var logico = $('.logic.block-output');
+
+		function add(){
+			modulebs.addClass('modulebs');
+			modulebo.addClass('modulebo');
+			functions.addClass('functions');
+			functiono.addClass('functiono');
+			functionsi.addClass('functionsi')
+			vars.addClass('vars');
+			varo.addClass('varo');
+			codes.addClass('codes');
+			codeo.addClass('codeo');
+			maths.addClass('maths');
+			matho.addClass('matho');
+			texts.addClass('texts');
+			texto.addClass('texto');
+			controls.addClass('controls');
+			controlo.addClass('controlo');
+			controlsi.addClass('controlsi');
+			logics.addClass('logics');
+			logico.addClass('logico');
+		}
+		add();
+
+
+
+
 		document.removeEventListener(compitableEvents.move, onBlockMouseMove);
 		document.removeEventListener(compitableEvents.up, onBlockMouseUp);
 

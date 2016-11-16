@@ -1,9 +1,9 @@
 define(['app/util/compitableEvents', 'vendor/jsPlumb'], function(compitableEvents) {
 
 	var config = {
-		color: 'blue',
-		colorHover: 'red',
-		labelColor: 'yellow',
+		color: '#0093fc',
+		colorHover: '#0093fc',
+		labelColor: 'white',
 		font: '14px Microsoft YaHei',
 		endpoint: {
 			radius: 7,

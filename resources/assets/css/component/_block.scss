@@ -37,6 +37,9 @@ $disabled-deep-color: #dadada;
 	margin: 2px;
 	display: table;
 	user-select: none;
+	margin-top: 6px;
+
+
 
 	.block-output {
 		margin: 0 2px;
@@ -128,7 +131,7 @@ $disabled-deep-color: #dadada;
 	}
 
 	span {
-		margin-right: 14px;
+		margin-right: 20px;
 	}
 
 	input {
@@ -1036,6 +1039,257 @@ $disabled-deep-color: #dadada;
 				&:before {
 					background-color: $disabled-deep-color;
 				}
+			}
+		}
+	}
+
+	&.modulebs {
+		padding-left: 70px;
+		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			background-color:white;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 40px;
+			background-color:$module-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+	}
+	&.functions {
+		padding-left: 70px;
+		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			background-color:white;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 40px;
+			background-color:$function-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+	}
+	&.functionsi {
+		/* padding-left: 70px;
+ */		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 36px;
+			top: 40px;
+			background-color:$function-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			left: 0;
+		}
+		.statement-header{
+			left: 10px;
+		}
+		.statement-extension {
+			.statement-extension-end{
+				/* left: -60px; */
+			}
+		}
+	}
+	&.vars {
+		padding-left: 70px;
+		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			background-color:white;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 40px;
+			background-color:$var-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+	}
+	&.codes {
+		padding-left: 70px;
+		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			background-color:white;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 40px;
+			background-color:$code-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+	}
+	&.maths {
+		padding-left: 70px;
+		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			background-color:white;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 40px;
+			background-color:$math-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+	}
+	&.texts {
+		padding-left: 70px;
+		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			background-color:white;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 40px;
+			background-color:$text-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+	}
+	&.logics {
+		padding-left: 70px;
+		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			background-color:white;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 40px;
+			background-color:$logic-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+	}
+	&.controls {
+		padding-left: 70px;
+		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 0px;
+			background-color:white;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 20px;
+			top: 40px;
+			background-color:$control-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+	}
+	&.controlsi {
+		/* padding-left: 70px;
+ */		&:after {
+			content: '';
+			width: 42px;
+			height: 6px;
+			position: absolute;
+			left: 36px;
+			top: 40px;
+			background-color:$control-color;
+			border-bottom-left-radius: 7px;
+    		border-bottom-right-radius: 7px;
+		}
+		&:before {
+			left: 0;
+		}
+		.statement-header{
+			left: 10px;
+		}
+		.statement-extension {
+			.statement-extension-end{
+				/* left: -60px; */
 			}
 		}
 	}

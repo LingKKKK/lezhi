@@ -25,10 +25,10 @@
 					<div class="url">edu.kenrobot.com</div> -->
 				</div>
 				<ul class="center">
-					<li data-action="project"><!-- <i class="icon lezhi lz-edu-project"></i> --><span class="name">项目</span></li>
-					<li data-action="hardware"><!-- <i class="icon lezhi lz-edu-hardware"></i> --><span class="name">硬件</span></li>
-					<li data-action="software"><!-- <i class="icon lezhi lz-edu-block"></i> --><span class="name">编程</span></li>
-					<li data-action="code"><!-- <i class="icon lezhi lz-edu-code"></i> --><span class="name">源码</span></li>
+					<li data-action="project"><i class="icon lezhi lz-edu-project"></i><span class="name">项目</span></li>
+					<li data-action="hardware"><i class="icon lezhi lz-edu-hardware"></i><span class="name">硬件</span></li>
+					<li data-action="software"><i class="icon lezhi lz-edu-block"></i><span class="name">编程</span></li>
+					<li data-action="code"><i class="icon lezhi lz-edu-code"></i><span class="name">源码</span></li>
 				</ul>
 				<ul class="bottom">
 					<li data-action="share"><i class="icon lezhi lz-edu-share"></i><span class="name"></span></li>

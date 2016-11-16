@@ -244,16 +244,16 @@
 
 	.component {
 		position: absolute;
-		background-color: white;
+		/* background-color: white; */
 		z-index: 1;
 		cursor: grab;
 		border-radius: 8px;
-		border: 1px solid #dee3e9;
+		/* border: 1px solid #dee3e9; */
 
 		&.selected,
 		&.jsplumb-dragged {
 			z-index: 8;
-			box-shadow: 0 0 0 1px #f1c933;
+			/* box-shadow: 0 0 0 1px #f1c933; */
 		}
 	}
 
