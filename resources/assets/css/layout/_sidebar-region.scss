@@ -42,9 +42,8 @@
 	}
 
 	.center {
-		width: 400px;
 	    background: #ffffff;
-	    width: 400px;
+	    width: 468px;
 	    height: 60px;
 	    position: absolute;
 	    left: 50%;
@@ -55,7 +54,7 @@
 
 	& > ul > li {
 		float: left;
-		width: 98px;
+		width: 114px;
 		padding-left: 22px;
 		padding-right: 22px;
 		cursor: pointer;
@@ -67,6 +66,7 @@
 		text-align: center;
 		transition: background-color 0.2s;
 		position: relative;
+		transition: all 1s;
 
 		&:hover {
 			// color:#0093fc;
@@ -76,6 +76,10 @@
 		&.active {
 			color:#0093fc;
 			border-bottom:2px solid #0093fc; 
+
+			.icon {
+				transform: scale(2)
+			}
 
 			&:after {
 				display: block;
@@ -101,10 +105,14 @@
 		} */
 
 		.icon {
-			position: absolute;
-			left: 0px;
-			top: 1px;
-			display: inline-block;
+		    position: absolute;
+		    left: -13px;
+		    top: 1px;
+		    display: inline-block;
+		    font-size: 20px;
+		    display: block;
+		    color:#0093fc;
+		    transition: all 1s;
 		}
 
 		.name {

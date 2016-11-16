@@ -11,6 +11,19 @@ $focus-color: #f1cb33;
 
 .sidebar-tabs {
 	.tab-software {
+		.hw {
+			font-size:16px;
+			color:#4a4a4a;
+			letter-spacing:1.14px;
+			text-align:left;
+			position:absolute;
+			width: 162px;
+			height: 18px;
+			left: 50%;
+		    transform: translateX(-50%);
+		    top: 16px;
+		}
+
 		.filters-wrap {
 			padding-left: 20px;
 			padding-right: 20px;
@@ -30,9 +43,11 @@ $focus-color: #f1cb33;
 
 			.filters {
 				float: left;
+				margin-top: 50px;
 
 				li {
 					border-radius: 5px;
+					padding-top: 45px;
 					width: 77px;
 					height: 77px;
 					font-size: 13px;
@@ -51,6 +66,13 @@ $focus-color: #f1cb33;
 					// &:nth-child(3n) {
 					// 	margin-right: 0;
 					// }
+
+					.lezhi {
+					    position: absolute;
+					    font-size: 39px;
+					    left: 25px;
+					    top: 14px;
+					}
 
 					&:after {
 					    width: 10px;
@@ -189,6 +211,7 @@ $focus-color: #f1cb33;
 				height: 28px;
 				display: inline-block;
 				letter-spacing: 2px;
+				display: none;
 			}
 
 			.advanced {
@@ -201,13 +224,20 @@ $focus-color: #f1cb33;
 				border-radius: 5px;
 				background-color: #eceef1;
 				cursor: pointer;
+				background:#0093fc;
+				box-shadow:1px 1px 2px 0px rgba(128,128,128,0.50);
+				border-radius:5px;
+				width:54px;
+				height:28px;
+				color: white;
+			    transform: translateY(29%);
 			}
 		}
 
 		.blocks-wrap {
 			left: 0;
 			right: 0;
-			top: 220px;
+			top: 260px;
 			bottom: 20px;
 			position: absolute;
 			overflow-x: hidden;

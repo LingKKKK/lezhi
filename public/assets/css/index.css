@@ -7075,332 +7075,283 @@ button.close {
   font-size: 16px;
   font-style: normal;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.lz-stop:before {
-  content: "\e624";
-}
-
-.lz-search:before {
-  content: "\e630";
-}
-
-.lz-edu-share:before {
-  content: "\e64f";
-}
-
-.lz-hd:before {
-  content: "\e63e";
-}
-
-.lz-fullscreen:before {
-  content: "\e64a";
-}
-
-.lz-weibo:before {
-  content: "\e635";
-}
-
-.lz-pause:before {
-  content: "\e62b";
-}
-
-.lz-qzone:before {
-  content: "\e636";
-}
-
-.lz-wechat:before {
-  content: "\e650";
-}
-
-.lz-edu-code:before {
-  content: "\e64d";
-}
-
-.lz-setting2:before {
-  content: "\e628";
-}
-
-.lz-switch-on2:before {
-  content: "\e626";
-}
-
-.lz-switch-off2:before {
-  content: "\e627";
-}
-
-.lz-check:before {
-  content: "\e631";
-}
-
-.lz-arduino:before {
-  content: "\e637";
-}
-
-.lz-comment:before {
-  content: "\e62d";
-}
-
-.lz-next:before {
-  content: "\e639";
-}
-
-.lz-play:before {
-  content: "\e62c";
-}
-
-.lz-project2:before {
-  content: "\e61a";
-}
-
-.lz-chapter:before {
-  content: "\e640";
-}
-
-.lz-setting:before {
-  content: "\e63a";
-}
-
-.lz-rank:before {
-  content: "\e641";
-}
-
-.lz-arrow-left:before {
-  content: "\e642";
-}
-
-.lz-clear:before {
-  content: "\e629";
-}
-
-.lz-demo:before {
-  content: "\e62e";
-}
-
-.lz-add:before {
-  content: "\e600";
-}
-
-.lz-close:before {
-  content: "\e601";
-}
-
-.lz-icon-code:before {
-  content: "\e602";
-}
-
-.lz-component:before {
-  content: "\e603";
-}
-
-.lz-delete:before {
-  content: "\e604";
-}
-
-.lz-icon-hardware:before {
-  content: "\e606";
-}
-
-.lz-info-error:before {
-  content: "\e607";
-}
-
-.lz-info-info:before {
-  content: "\e608";
-}
-
-.lz-info-info2:before {
-  content: "\e609";
-}
-
-.lz-info-success:before {
-  content: "\e60a";
-}
-
-.lz-info-warning:before {
-  content: "\e60b";
-}
-
-.lz-library:before {
-  content: "\e60c";
-}
-
-.lz-switch-off:before {
-  content: "\e60d";
-}
-
-.lz-switch-on:before {
-  content: "\e60e";
-}
-
-.lz-password:before {
-  content: "\e60f";
-}
-
-.lz-project:before {
-  content: "\e610";
-}
-
-.lz-setting1:before {
-  content: "\e611";
-}
-
-.lz-share:before {
-  content: "\e612";
-}
-
-.lz-logout:before {
-  content: "\e613";
-}
-
-.lz-triangle-down:before {
-  content: "\e614";
-}
-
-.lz-triangle-left:before {
-  content: "\e615";
-}
-
-.lz-triangle-right:before {
-  content: "\e616";
-}
-
-.lz-triangle-up:before {
-  content: "\e617";
-}
-
-.lz-user:before {
-  content: "\e618";
-}
-
-.lz-move:before {
-  content: "\e619";
-}
-
-.lz-clone:before {
+.lz-newfile:before {
   content: "\e61b";
 }
 
-.lz-board:before {
-  content: "\e61c";
+.lz-act022:before {
+  content: "\e601";
 }
 
-.lz-switch:before {
-  content: "\e61d";
+.lz-act009:before {
+  content: "\e602";
 }
 
-.lz-icon-folder:before {
-  content: "\e61e";
+.lz-act011:before {
+  content: "\e603";
 }
 
-.lz-save:before {
+.lz-act020:before {
+  content: "\e604";
+}
+
+.lz-sen005:before {
   content: "\e605";
 }
 
-.lz-terminal:before {
-  content: "\e61f";
+.lz-act021:before {
+  content: "\e607";
 }
 
-.lz-upload:before {
+.lz-sen105:before {
+  content: "\e608";
+}
+
+.lz-act004:before {
+  content: "\e609";
+}
+
+.lz-sen112:before {
+  content: "\e60a";
+}
+
+.lz-sen027:before {
+  content: "\e60b";
+}
+
+.lz-sen013:before {
+  content: "\e60c";
+}
+
+.lz-act006:before {
+  content: "\e60d";
+}
+
+.lz-sen018:before {
+  content: "\e60e";
+}
+
+.lz-act007:before {
+  content: "\e60f";
+}
+
+.lz-sen101:before {
+  content: "\e610";
+}
+
+.lz-sen029:before {
+  content: "\e611";
+}
+
+.lz-com003:before {
+  content: "\e612";
+}
+
+.lz-sen004:before {
+  content: "\e613";
+}
+
+.lz-sen023:before {
+  content: "\e614";
+}
+
+.lz-sen113:before {
+  content: "\e615";
+}
+
+.lz-sen019:before {
+  content: "\e616";
+}
+
+.lz-sen015:before {
+  content: "\e617";
+}
+
+.lz-sen109:before {
+  content: "\e618";
+}
+
+.lz-sen025:before {
+  content: "\e619";
+}
+
+.lz-sen024:before {
+  content: "\e61a";
+}
+
+.lz-sen026:before {
+  content: "\e61c";
+}
+
+.lz-sen016:before {
+  content: "\e61d";
+}
+
+.lz-sen017:before {
+  content: "\e61e";
+}
+
+.lz-sen103:before {
   content: "\e620";
 }
 
-.lz-build:before {
-  content: "\e621";
-}
-
-.lz-download:before {
+.lz-sen108:before {
   content: "\e622";
 }
 
-.lz-format:before {
+.lz-neo328:before {
   content: "\e623";
 }
 
-.lz-scratch:before {
-  content: "\e625";
+.lz-sen106:before {
+  content: "\e627";
 }
 
-.lz-message:before {
-  content: "\e63c";
+.lz-act003:before {
+  content: "\e628";
 }
 
-.lz-note:before {
-  content: "\e62f";
+.lz-act001:before {
+  content: "\e629";
 }
 
-.lz-edu-help:before {
-  content: "\e64e";
-}
-
-.lz-serial:before {
+.lz-sen010:before {
   content: "\e62a";
 }
 
-.lz-play1:before {
-  content: "\e63d";
+.lz-com004:before {
+  content: "\e62b";
 }
 
-.lz-stop1:before {
-  content: "\e63f";
+.lz-com001:before {
+  content: "\e62c";
 }
 
-.lz-hot:before {
-  content: "\e633";
+.lz-wifi:before {
+  content: "\e62d";
 }
 
-.lz-tool:before {
+.lz-act002:before {
+  content: "\e62e";
+}
+
+.lz-sen012:before {
+  content: "\e62f";
+}
+
+.lz-sen011:before {
+  content: "\e630";
+}
+
+.lz-act012:before {
+  content: "\e631";
+}
+
+.lz-sen003:before {
   content: "\e632";
 }
 
-.lz-guide:before {
+.lz-Router:before {
+  content: "\e633";
+}
+
+.lz-sen022:before {
   content: "\e634";
 }
 
-.lz-arrow-right:before {
-  content: "\e643";
+.lz-sen028:before {
+  content: "\e635";
 }
 
-.lz-task-0:before {
-  content: "\e644";
+.lz-sen107:before {
+  content: "\e636";
 }
 
-.lz-task-2:before {
-  content: "\e645";
+.lz-act013:before {
+  content: "\e637";
 }
 
-.lz-task-3:before {
-  content: "\e646";
-}
-
-.lz-lezhi-logo:before {
-  content: "\e647";
-}
-
-.lz-lezhi-face:before {
-  content: "\e648";
-}
-
-.lz-share1:before {
-  content: "\e64b";
-}
-
-.lz-exit-fullscreen:before {
+.lz-act005:before {
   content: "\e638";
 }
 
-.lz-edu-hardware:before {
+.lz-sen014:before {
+  content: "\e639";
+}
+
+.lz-sen104:before {
+  content: "\e63a";
+}
+
+.lz-sen020:before {
   content: "\e63b";
 }
 
-.lz-edu-block:before {
+.lz-sen021:before {
+  content: "\e63c";
+}
+
+.lz-sen111:before {
+  content: "\e63d";
+}
+
+.lz-act008:before {
+  content: "\e63e";
+}
+
+.lz-sen002:before {
+  content: "\e63f";
+}
+
+.lz-sen102:before {
+  content: "\e640";
+}
+
+.lz-sen006:before {
+  content: "\e641";
+}
+
+.lz-act010:before {
+  content: "\e642";
+}
+
+.lz-sen115:before {
+  content: "\e643";
+}
+
+.lz-sen001:before {
+  content: "\e644";
+}
+
+.lz-project:before {
+  content: "\e645";
+}
+
+.lz-programming:before {
+  content: "\e646";
+}
+
+.lz-hardware:before {
+  content: "\e647";
+}
+
+.lz-editor:before {
+  content: "\e648";
+}
+
+.lz-share:before {
   content: "\e649";
 }
 
-.lz-edu-project:before {
-  content: "\e64c";
+.lz-help:before {
+  content: "\e64a";
+}
+
+.lz-code:before {
+  content: "\e64b";
 }
 
 * {
@@ -7616,9 +7567,8 @@ html, body {
   letter-spacing: 1.33px;
 }
 .sidebar-region .center {
-  width: 400px;
   background: #ffffff;
-  width: 400px;
+  width: 468px;
   height: 60px;
   position: absolute;
   left: 50%;
@@ -7627,7 +7577,7 @@ html, body {
 }
 .sidebar-region > ul > li {
   float: left;
-  width: 98px;
+  width: 114px;
   padding-left: 22px;
   padding-right: 22px;
   cursor: pointer;
@@ -7640,6 +7590,8 @@ html, body {
   -webkit-transition: background-color 0.2s;
   transition: background-color 0.2s;
   position: relative;
+  -webkit-transition: all 1s;
+  transition: all 1s;
   /* &.fold {
   	&:after {
   		border-right-color: #f7f9f9;
@@ -7652,6 +7604,10 @@ html, body {
 .sidebar-region > ul > li.active {
   color: #0093fc;
   border-bottom: 2px solid #0093fc;
+}
+.sidebar-region > ul > li.active .icon {
+  -webkit-transform: scale(2);
+          transform: scale(2);
 }
 .sidebar-region > ul > li.active:after {
   display: block;
@@ -7669,9 +7625,14 @@ html, body {
 }
 .sidebar-region > ul > li .icon {
   position: absolute;
-  left: 0px;
+  left: -13px;
   top: 1px;
   display: inline-block;
+  font-size: 20px;
+  display: block;
+  color: #0093fc;
+  -webkit-transition: all 1s;
+  transition: all 1s;
 }
 .sidebar-region > ul > li .name {
   font-size: 20px;
@@ -8350,6 +8311,9 @@ html, body {
   opacity: 0;
   display: none;
 }
+.sidebar-tabs .tab-hardware .components-wrap .components li .ac {
+  display: none;
+}
 .sidebar-tabs .tab-hardware .components-wrap .components li .image-wrap {
   width: 72px;
   height: 72px;
@@ -8514,12 +8478,15 @@ html, body {
 }
 
 .component-dialog {
-  border-radius: 5px;
+  /* border-radius: 5px; */
   width: 220px;
-  border: 1px solid #f69c4d;
+  /* border: 1px solid #f69c4d; */
   left: 0px;
   top: 0px;
   display: none;
+}
+.component-dialog i {
+  color: black;
 }
 .component-dialog .name-label {
   letter-spacing: 2px;
@@ -8534,9 +8501,9 @@ html, body {
   margin-bottom: 7px;
   height: 28px;
   line-height: 28px;
-  background-color: rgba(0, 0, 0, 0.16);
+  /* background-color: rgba(0,0,0,0.16); */
   width: 160px;
-  color: #718ac0;
+  color: black;
   letter-spacing: 1px;
   padding: 4px 10px;
 }
@@ -8552,6 +8519,19 @@ html, body {
   background-color: white;
 }
 
+.sidebar-tabs .tab-software .hw {
+  font-size: 16px;
+  color: #4a4a4a;
+  letter-spacing: 1.14px;
+  text-align: left;
+  position: absolute;
+  width: 162px;
+  height: 18px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 16px;
+}
 .sidebar-tabs .tab-software .filters-wrap {
   padding-left: 20px;
   padding-right: 20px;
@@ -8569,9 +8549,11 @@ html, body {
 }
 .sidebar-tabs .tab-software .filters-wrap .filters {
   float: left;
+  margin-top: 50px;
 }
 .sidebar-tabs .tab-software .filters-wrap .filters li {
   border-radius: 5px;
+  padding-top: 45px;
   width: 77px;
   height: 77px;
   font-size: 13px;
@@ -8587,6 +8569,12 @@ html, body {
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
   position: relative;
+}
+.sidebar-tabs .tab-software .filters-wrap .filters li .lezhi {
+  position: absolute;
+  font-size: 39px;
+  left: 25px;
+  top: 14px;
 }
 .sidebar-tabs .tab-software .filters-wrap .filters li:after {
   width: 10px;
@@ -8696,6 +8684,7 @@ html, body {
   height: 28px;
   display: inline-block;
   letter-spacing: 2px;
+  display: none;
 }
 .sidebar-tabs .tab-software .filter .advanced {
   float: right;
@@ -8707,11 +8696,19 @@ html, body {
   border-radius: 5px;
   background-color: #eceef1;
   cursor: pointer;
+  background: #0093fc;
+  box-shadow: 1px 1px 2px 0px rgba(128, 128, 128, 0.5);
+  border-radius: 5px;
+  width: 54px;
+  height: 28px;
+  color: white;
+  -webkit-transform: translateY(29%);
+          transform: translateY(29%);
 }
 .sidebar-tabs .tab-software .blocks-wrap {
   left: 0;
   right: 0;
-  top: 220px;
+  top: 260px;
   bottom: 20px;
   position: absolute;
   overflow-x: hidden;
@@ -10811,8 +10808,44 @@ html, body {
 .block.functionsi .statement-header {
   left: 10px;
 }
+.block.functionsi .statement-header:after {
+  content: '';
+  width: 42px;
+  height: 6px;
+  position: absolute;
+  z-index: 99;
+  left: 10px;
+  top: 0px;
+  background-color: white;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
 .block.functionsi .statement-extension .statement-extension-end {
   /* left: -60px; */
+}
+.block.functionsi .statement-extension .statement-extension-end:after {
+  content: '';
+  width: 42px;
+  height: 8px;
+  position: absolute;
+  z-index: 99;
+  left: 20px;
+  top: 19px;
+  background-color: #f69023;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+.block.functionsi .statement-extension .with-content:after {
+  content: '';
+  width: 42px;
+  height: 8px;
+  position: absolute;
+  z-index: 99;
+  left: 40px;
+  top: 19px;
+  background-color: #f69023;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }
 .block.vars {
   padding-left: 70px;
@@ -10985,6 +11018,30 @@ html, body {
 .block.controlsi .statement-header {
   left: 10px;
 }
+.block.controlsi .statement-header:after {
+  content: '';
+  width: 42px;
+  height: 6px;
+  position: absolute;
+  z-index: 99;
+  left: 10px;
+  top: 0px;
+  background-color: white;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
 .block.controlsi .statement-extension .statement-extension-end {
   /* left: -60px; */
+}
+.block.controlsi .statement-extension .statement-extension-end:after {
+  content: '';
+  width: 42px;
+  height: 8px;
+  position: absolute;
+  z-index: 99;
+  left: 20px;
+  top: 19px;
+  background-color: #0b75d2;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
 }

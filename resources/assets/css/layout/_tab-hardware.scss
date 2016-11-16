@@ -116,6 +116,10 @@
 					opacity: 0;
 					display: none;
 
+					.ac {
+						display: none;
+					}
+
 					.image-wrap {
 						width: 72px;
 						height: 72px;
@@ -314,13 +318,17 @@
 }
 
 .component-dialog {
-	border-radius: 5px;
+	/* border-radius: 5px; */
 	width: 220px;
-	border: 1px solid #f69c4d;
+	/* border: 1px solid #f69c4d; */
 	// background-color: #fdbf2d;
 	left: 0px;
 	top: 0px;
 	display: none;
+
+	i {
+		color: black;
+	}
 
 	.name-label {
 		letter-spacing: 2px;
@@ -336,9 +344,10 @@
 		margin-bottom: 7px;
 		height: 28px;
 		line-height: 28px;
-		background-color: rgba(0,0,0,0.16);
+		// background-color: white;
+		/* background-color: rgba(0,0,0,0.16); */
 		width: 160px;
-		color: #718ac0;
+		color: black;
 		letter-spacing: 1px;
 		padding: 4px 10px;
 	}

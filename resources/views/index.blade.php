@@ -21,18 +21,16 @@
 			<div class="sidebar-region">
 				<div class="top">
 					<div class="logo"></div>
-					<!-- <div class="name">教育版</div>
-					<div class="url">edu.kenrobot.com</div> -->
 				</div>
 				<ul class="center">
-					<li data-action="project"><i class="icon lezhi lz-edu-project"></i><span class="name">项目</span></li>
-					<li data-action="hardware"><i class="icon lezhi lz-edu-hardware"></i><span class="name">硬件</span></li>
-					<li data-action="software"><i class="icon lezhi lz-edu-block"></i><span class="name">编程</span></li>
-					<li data-action="code"><i class="icon lezhi lz-edu-code"></i><span class="name">源码</span></li>
+					<li data-action="project"><i class="icon lezhi lz-project"></i><span class="name">项目</span></li>
+					<li data-action="hardware"><i class="icon lezhi lz-hardware"></i><span class="name">硬件</span></li>
+					<li data-action="software"><i class="icon lezhi lz-programming"></i><span class="name">编程</span></li>
+					<li data-action="code"><i class="icon lezhi lz-code"></i><span class="name">源码</span></li>
 				</ul>
 				<ul class="bottom">
-					<li data-action="share"><i class="icon lezhi lz-edu-share"></i><span class="name"></span></li>
-					<li data-action="help" data-href="http://www.kenrobot.com/index.php?app=square&mod=Index&act=help"><i class="icon lezhi lz-edu-help"></i><span class="name"></span></li>
+					<li data-action="share"><i class="icon lezhi lz-share"></i><span class="name"></span></li>
+					<li data-action="help" data-href="http://www.kenrobot.com/index.php?app=square&mod=Index&act=help"><i class="icon lezhi lz-help"></i><span class="name"></span></li>
 				</ul>
 			</div>
 			<div class="content-region">
@@ -61,16 +59,17 @@
 						</div>
 					</div>
 					<div class="tab tab-software">
+						<span class="hw">HARDWARE    硬件</span>
 						<div class="filters-wrap">
 							<ul class="filters">
-								<li data-filter="module">模块</li>
-								<li data-filter="function">函数</li>
-								<li data-filter="var">变量</li>
-								<li data-filter="code">代码</li>
-								<li data-filter="math">数学函数</li>
-								<li data-filter="text">文本</li>
-								<li data-filter="control">控制</li>
-								<li data-filter="logic">逻辑运算</li>
+								<li data-filter="module">模块<i class="lezhi lz-hardware"></i></li>
+								<li data-filter="function">函数<i class="lezhi lz-sen104"></i></li>
+								<li data-filter="var">变量<i class="lezhi lz-sen028"></i></li>
+								<li data-filter="code">代码<i class="lezhi lz-code"></i></li>
+								<li data-filter="math">数学函数<i class="lezhi lz-sen106"></i></li>
+								<li data-filter="text">文本<i class="lezhi lz-editor"></i></li>
+								<li data-filter="control">控制<i class="lezhi lz-sen006"></i></li>
+								<li data-filter="logic">逻辑运算<i class="lezhi lz-act007"></i></li>
 							</ul>
 						</div>
 						<div class="filter">
@@ -141,7 +140,7 @@
 								</div>
 							</div>
 							<div class="component-dialog" id="component-dialog">
-								<span class="name-label">名字</span>
+								<span class="name-label"><i class="lezhi lz-search"></i></span>
 								<input class="name" type="text" spellcheck="false" />
 							</div>
 							<ul class="x-context-menu component-menu">
@@ -154,7 +153,7 @@
 								<li data-action="delete">删除</li>
 							</ul>
 							<div class="recycle">
-								<i class="icon lezhi lz-delete"></i>
+								<i class="icon lezhi lz-act020"></i>
 							</div>
 						</div>
 						<div class="tab tab-software" data-action="software">
@@ -188,7 +187,7 @@
 								<li data-action="delete">删除</li>
 							</ul>
 							<div class="recycle">
-								<i class="icon lezhi lz-delete"></i>
+								<i class="icon lezhi lz-act020"></i>
 							</div>
 						</div>
 						<div class="tab tab-code" data-action="code">
@@ -202,7 +201,7 @@
 		<div class="no-select">
 			<div class="layer modal dialog-layer">
 				<div class="x-dialog login-dialog">
-					<i class="lezhi lz-close x-dialog-close"></i>
+					<i class="lezhi lz-sen003 x-dialog-close"></i>
 					<ul class="switch">
 						<li class="account active" data-action="account"></li>
 						<li class="weixin" data-action="weixin"><div class="tips">扫码登录更安全</div></li>

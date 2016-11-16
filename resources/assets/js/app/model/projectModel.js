@@ -492,7 +492,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							height: 55,
 							x: 0.988,
 							y: 0.342,
-							name: "IIC INT",
+							name: "IICINT",
 							tags: ["iic-6P"],
 							overlay: [0.5, -0.8]
 						}
@@ -510,7 +510,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						height: 72,
 						pins: [{
 							name: "s",
-							anchor: [0.5, 0],
+							anchor: [0.5, 1],
 							tags: ["digital"]
 						}],
 						code: {
@@ -4457,6 +4457,55 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						code: "{SEGMENT}.display({BitAddr}, {DispData})",
 						tags: ["module"],
 						module: "Ro7SegmentDisplay"
+					}
+					,
+					{
+						type: "statement",
+						name: "ACT009Shutdown",
+						connectors: [{
+							type: "connector-top",
+							accept: "connector-bottom"
+						}, {
+							type: "connector-bottom",
+							accept: "connector-top"
+						}, {
+							type: "connector-input",
+							accept: "connector-output",
+							acceptType: "all",
+							name: "d1e01a1f-ebff-441a-9672-1207e3dda8df"
+						}, {
+							type: "connector-input",
+							accept: "connector-output",
+							acceptType: "boolean",
+							name: "fd3a61fa-83b0-4bfc-a5cf-159dd2096109"
+						}],
+						content: [{
+							type: "text",
+							value: "设置点阵模块"
+						}, {
+							id: "LCD",
+							type: "dynamic-select",
+							options: "ACT009s"
+						}, {
+							type: "text",
+							value: "关断模式，地址为"
+						}, {
+							blockInputId: "ADDR",
+							type: "block-input",
+							acceptType: "number",
+							name: "d1e01a1f-ebff-441a-9672-1207e3dda8df"
+						}, {
+							type: "text",
+							value: "状态为"
+						}, {
+							blockInputId: "STATUS",
+							type: "block-input",
+							acceptType: "boolean",
+							name: "fd3a61fa-83b0-4bfc-a5cf-159dd2096109"
+						}],
+						code: "{LCD}.shutdown({ADDR}, {STATUS});",
+						tags: ["module"],
+						module: "ACT009"
 					}
 
 

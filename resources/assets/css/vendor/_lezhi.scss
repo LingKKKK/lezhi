@@ -12,169 +12,143 @@
   font-size:16px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
 
-.lz-stop:before { content: "\e624"; }
+.lz-newfile:before { content: "\e61b"; }
 
-.lz-search:before { content: "\e630"; }
+.lz-act022:before { content: "\e601"; }
 
-.lz-edu-share:before { content: "\e64f"; }
+.lz-act009:before { content: "\e602"; }
 
-.lz-hd:before { content: "\e63e"; }
+.lz-act011:before { content: "\e603"; }
 
-.lz-fullscreen:before { content: "\e64a"; }
+.lz-act020:before { content: "\e604"; }
 
-.lz-weibo:before { content: "\e635"; }
+.lz-sen005:before { content: "\e605"; }
 
-.lz-pause:before { content: "\e62b"; }
+.lz-act021:before { content: "\e607"; }
 
-.lz-qzone:before { content: "\e636"; }
+.lz-sen105:before { content: "\e608"; }
 
-.lz-wechat:before { content: "\e650"; }
+.lz-act004:before { content: "\e609"; }
 
-.lz-edu-code:before { content: "\e64d"; }
+.lz-sen112:before { content: "\e60a"; }
 
-.lz-setting2:before { content: "\e628"; }
+.lz-sen027:before { content: "\e60b"; }
 
-.lz-switch-on2:before { content: "\e626"; }
+.lz-sen013:before { content: "\e60c"; }
 
-.lz-switch-off2:before { content: "\e627"; }
+.lz-act006:before { content: "\e60d"; }
 
-.lz-check:before { content: "\e631"; }
+.lz-sen018:before { content: "\e60e"; }
 
-.lz-arduino:before { content: "\e637"; }
+.lz-act007:before { content: "\e60f"; }
 
-.lz-comment:before { content: "\e62d"; }
+.lz-sen101:before { content: "\e610"; }
 
-.lz-next:before { content: "\e639"; }
+.lz-sen029:before { content: "\e611"; }
 
-.lz-play:before { content: "\e62c"; }
+.lz-com003:before { content: "\e612"; }
 
-.lz-project2:before { content: "\e61a"; }
+.lz-sen004:before { content: "\e613"; }
 
-.lz-chapter:before { content: "\e640"; }
+.lz-sen023:before { content: "\e614"; }
 
-.lz-setting:before { content: "\e63a"; }
+.lz-sen113:before { content: "\e615"; }
 
-.lz-rank:before { content: "\e641"; }
+.lz-sen019:before { content: "\e616"; }
 
-.lz-arrow-left:before { content: "\e642"; }
+.lz-sen015:before { content: "\e617"; }
 
-.lz-clear:before { content: "\e629"; }
+.lz-sen109:before { content: "\e618"; }
 
-.lz-demo:before { content: "\e62e"; }
+.lz-sen025:before { content: "\e619"; }
 
-.lz-add:before { content: "\e600"; }
+.lz-sen024:before { content: "\e61a"; }
 
-.lz-close:before { content: "\e601"; }
+.lz-sen026:before { content: "\e61c"; }
 
-.lz-icon-code:before { content: "\e602"; }
+.lz-sen016:before { content: "\e61d"; }
 
-.lz-component:before { content: "\e603"; }
+.lz-sen017:before { content: "\e61e"; }
 
-.lz-delete:before { content: "\e604"; }
+.lz-sen103:before { content: "\e620"; }
 
-.lz-icon-hardware:before { content: "\e606"; }
+.lz-sen108:before { content: "\e622"; }
 
-.lz-info-error:before { content: "\e607"; }
+.lz-neo328:before { content: "\e623"; }
 
-.lz-info-info:before { content: "\e608"; }
+.lz-sen106:before { content: "\e627"; }
 
-.lz-info-info2:before { content: "\e609"; }
+.lz-act003:before { content: "\e628"; }
 
-.lz-info-success:before { content: "\e60a"; }
+.lz-act001:before { content: "\e629"; }
 
-.lz-info-warning:before { content: "\e60b"; }
+.lz-sen010:before { content: "\e62a"; }
 
-.lz-library:before { content: "\e60c"; }
+.lz-com004:before { content: "\e62b"; }
 
-.lz-switch-off:before { content: "\e60d"; }
+.lz-com001:before { content: "\e62c"; }
 
-.lz-switch-on:before { content: "\e60e"; }
+.lz-wifi:before { content: "\e62d"; }
 
-.lz-password:before { content: "\e60f"; }
+.lz-act002:before { content: "\e62e"; }
 
-.lz-project:before { content: "\e610"; }
+.lz-sen012:before { content: "\e62f"; }
 
-.lz-setting1:before { content: "\e611"; }
+.lz-sen011:before { content: "\e630"; }
 
-.lz-share:before { content: "\e612"; }
+.lz-act012:before { content: "\e631"; }
 
-.lz-logout:before { content: "\e613"; }
+.lz-sen003:before { content: "\e632"; }
 
-.lz-triangle-down:before { content: "\e614"; }
+.lz-Router:before { content: "\e633"; }
 
-.lz-triangle-left:before { content: "\e615"; }
+.lz-sen022:before { content: "\e634"; }
 
-.lz-triangle-right:before { content: "\e616"; }
+.lz-sen028:before { content: "\e635"; }
 
-.lz-triangle-up:before { content: "\e617"; }
+.lz-sen107:before { content: "\e636"; }
 
-.lz-user:before { content: "\e618"; }
+.lz-act013:before { content: "\e637"; }
 
-.lz-move:before { content: "\e619"; }
+.lz-act005:before { content: "\e638"; }
 
-.lz-clone:before { content: "\e61b"; }
+.lz-sen014:before { content: "\e639"; }
 
-.lz-board:before { content: "\e61c"; }
+.lz-sen104:before { content: "\e63a"; }
 
-.lz-switch:before { content: "\e61d"; }
+.lz-sen020:before { content: "\e63b"; }
 
-.lz-icon-folder:before { content: "\e61e"; }
+.lz-sen021:before { content: "\e63c"; }
 
-.lz-save:before { content: "\e605"; }
+.lz-sen111:before { content: "\e63d"; }
 
-.lz-terminal:before { content: "\e61f"; }
+.lz-act008:before { content: "\e63e"; }
 
-.lz-upload:before { content: "\e620"; }
+.lz-sen002:before { content: "\e63f"; }
 
-.lz-build:before { content: "\e621"; }
+.lz-sen102:before { content: "\e640"; }
 
-.lz-download:before { content: "\e622"; }
+.lz-sen006:before { content: "\e641"; }
 
-.lz-format:before { content: "\e623"; }
+.lz-act010:before { content: "\e642"; }
 
-.lz-scratch:before { content: "\e625"; }
+.lz-sen115:before { content: "\e643"; }
 
-.lz-message:before { content: "\e63c"; }
+.lz-sen001:before { content: "\e644"; }
 
-.lz-note:before { content: "\e62f"; }
+.lz-project:before { content: "\e645"; }
 
-.lz-edu-help:before { content: "\e64e"; }
+.lz-programming:before { content: "\e646"; }
 
-.lz-serial:before { content: "\e62a"; }
+.lz-hardware:before { content: "\e647"; }
 
-.lz-play1:before { content: "\e63d"; }
+.lz-editor:before { content: "\e648"; }
 
-.lz-stop1:before { content: "\e63f"; }
+.lz-share:before { content: "\e649"; }
 
-.lz-hot:before { content: "\e633"; }
+.lz-help:before { content: "\e64a"; }
 
-.lz-tool:before { content: "\e632"; }
-
-.lz-guide:before { content: "\e634"; }
-
-.lz-arrow-right:before { content: "\e643"; }
-
-.lz-task-0:before { content: "\e644"; }
-
-.lz-task-2:before { content: "\e645"; }
-
-.lz-task-3:before { content: "\e646"; }
-
-.lz-lezhi-logo:before { content: "\e647"; }
-
-.lz-lezhi-face:before { content: "\e648"; }
-
-.lz-share1:before { content: "\e64b"; }
-
-.lz-exit-fullscreen:before { content: "\e638"; }
-
-.lz-edu-hardware:before { content: "\e63b"; }
-
-.lz-edu-block:before { content: "\e649"; }
-
-.lz-edu-project:before { content: "\e64c"; }
-
+.lz-code:before { content: "\e64b"; }
