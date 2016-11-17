@@ -29,14 +29,14 @@
 					<li data-action="code"><i class="icon lezhi lz-code"></i><span class="name">源码</span></li>
 				</ul>
 				<ul class="bottom">
-					<li data-action="share"><i class="icon lezhi lz-share"></i><span class="name"></span></li>
-					<li data-action="help" data-href="http://www.kenrobot.com/index.php?app=square&mod=Index&act=help"><i class="icon lezhi lz-help"></i><span class="name"></span></li>
+					<li data-action="share"><i class="icon lezhi lz-share" style="color: white"></i><span class="name"></span></li>
+					<li data-action="help" data-href="http://www.kenrobot.com/index.php?app=square&mod=Index&act=help"><i class="icon lezhi lz-help" style="color: white"></i><span class="name"></span></li>
 				</ul>
 			</div>
 			<div class="content-region">
 				<div class="sidebar-tabs">
 					<div class="tab tab-project no-scrollbar">
-						<p class="product-m">PRODUCT  项目</p>
+						<p class="product-m">product  项目</p>
 						<ul class="list"></ul>
 					</div>
 					<div class="tab tab-hardware">

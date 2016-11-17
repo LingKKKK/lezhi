@@ -154,9 +154,10 @@
 				width: 302px;
 				height: 199px;
 				overflow: hidden;
-				background-size: cover;
+				background-size: contain;
 				cursor: pointer;
 				position: relative;
+				background-position: center;
 				margin-left: 53px;
 				top: 70px;
 

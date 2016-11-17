@@ -11,7 +11,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	var boardContextMenu;
 	var contextMenuTarget;
 	// var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
-	var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="hover"><img src="{{src2}}" /></div><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
+	var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="hover"><i class="icon lezhi lz-act001"></i></div><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
 	var mouseDownComponentDom;
 	var dragContainer;
 	var dragComponentDom;
@@ -50,7 +50,37 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		emitor.on('hardware', 'resize', onResize);
 		emitor.on('sidebar', 'activeTab', onActiveTab);
 
+		console.log($('.hover').length)
+
 		$('.hardware-container', region).mouseover(function(){
+			qwe0();
+			function qwe0(){
+				$('.component').css({
+					"width":"150px",
+					"height":"150px",
+					"transform":"translate(-0%, -0%)"
+				});
+			}
+
+			qwe();
+			function qwe(){
+				if($('.pin-PD4').hasClass('jsplumb-endpoint-full')){
+					$('.pin-PD6').css('display','none');
+				}else{
+					$('.pin-PD6').css('display','block');
+				}
+			}
+
+			qwe1();
+			function qwe1(){
+				if($('.pin-PD2').hasClass('jsplumb-endpoint-full')){
+					$('.pin-8').css('display','none');
+					$('.pin-9').css('display','none');
+				}else{
+					$('.pin-8').css('display','block');
+					$('.pin-9').css('display','block');
+				}
+			}
 
 			runa0();
 			function runa0(){
@@ -535,6 +565,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		}
 
 		var componentDom = contextMenuTarget[0];
+
 		var li = $(this);
 		var action = li.data('action');
 		switch (action) {
@@ -578,6 +609,8 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 
 	function onComponentMouseUpBeforeMove(e) {
 		//  点击模块（放置之前）
+		$('.hover').css('display','none')
+
 		mouseDownComponentDom = null;
 		document.removeEventListener(compitableEvents.up, onComponentMouseUpBeforeMove);
 		document.removeEventListener(compitableEvents.move, onComponentPreMouseMove);
@@ -594,6 +627,8 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 
 			var rect = mouseDownComponentDom.getBoundingClientRect();
 			var containerRect = dragContainer.getBoundingClientRect();
+
+			console.dir(dragContainer)
 
 			dragMouseX = e.pageX - rect.left + containerRect.left - dragContainer.scrollLeft;
 			dragMouseY = e.pageY - rect.top + containerRect.top - dragContainer.scrollTop;
@@ -642,7 +677,6 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		dragComponentDom = null;
 		container.removeClass("can-drop");
 		onContainerDrop(name, e.pageX, e.pageY);
-
 		emitor.trigger("sidebar", "toggle");
 	}
 

@@ -37,7 +37,7 @@ $disabled-deep-color: #dadada;
 	margin: 2px;
 	display: table;
 	user-select: none;
-	margin-top: 6px;
+	/* margin-top: 6px; */
 
 
 
@@ -1043,318 +1043,328 @@ $disabled-deep-color: #dadada;
 		}
 	}
 
-	&.modulebs {
-		padding-left: 70px;
-		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 0px;
-			background-color:white;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 40px;
-			background-color:$module-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-	}
-	&.functions {
-		padding-left: 70px;
-		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 0px;
-			background-color:white;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 40px;
-			background-color:$function-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-	}
-	&.functionsi {
-		/* padding-left: 70px;
- */		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 36px;
-			top: 40px;
-			background-color:$function-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			left: 0;
-		}
-		.statement-header{
-			left: 10px;
+	// &.modulebs {
+	// 	padding-left: 70px;
+	// 	&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:white;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 	    content: '';
+	// 	    width: 42px;
+	// 	    height: 8px;
+	// 	    position: absolute;
+	// 	    left: 20px;
+	// 	    top: 40px;
+	// 	    background-color: $module-color;
+	// 	    border-bottom-left-radius: 7px;
+	// 	    border-bottom-right-radius: 7px;
+	// 	    z-index: 999;
+	// 	}
+	// }
+	// &.functions {
+	// 	padding-left: 70px;
+	// 	&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$function-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 	    content: '';
+	// 	    width: 42px;
+	// 	    height: 8px;
+	// 	    position: absolute;
+	// 	    left: 20px;
+	// 	    top: 40px;
+	// 	    background-color: $function-color;
+	// 	    border-bottom-left-radius: 7px;
+	// 	    border-bottom-right-radius: 7px;
+	// 	    z-index: 999;
+	// 	}
+	// }
 
-			&:after {
-				content: '';
-			    width: 42px;
-			    height: 6px;
-			    position: absolute;
-			    z-index: 99;
-			    left: 10px;
-			    top: 0px;
-			    background-color: white;
-			    border-bottom-left-radius: 7px;
-			    border-bottom-right-radius: 7px;
-			}
-		}
-		.statement-extension {
-			.statement-extension-end{
-				/* left: -60px; */
-				&:after {
-					content: '';
-				    width: 42px;
-				    height: 8px;
-				    position: absolute;
-				    z-index: 99;
-				    left: 20px;
-				    top: 19px;
-				    background-color: $function-color;
-				    border-bottom-left-radius: 7px;
-				    border-bottom-right-radius: 7px;
-				}
-			}
-			.with-content {
-				&:after {
-					content: '';
-				    width: 42px;
-				    height: 8px;
-				    position: absolute;
-				    z-index: 99;
-				    left: 40px;
-				    top: 19px;
-				    background-color: $function-color;
-				    border-bottom-left-radius: 7px;
-				    border-bottom-right-radius: 7px;
-				}
-			}
-		}
-	}
-	&.vars {
-		padding-left: 70px;
-		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 0px;
-			background-color:white;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 40px;
-			background-color:$var-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-	}
-	&.codes {
-		padding-left: 70px;
-		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 0px;
-			background-color:white;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 40px;
-			background-color:$code-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-	}
-	&.maths {
-		padding-left: 70px;
-		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 0px;
-			background-color:white;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 40px;
-			background-color:$math-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-	}
-	&.texts {
-		padding-left: 70px;
-		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 0px;
-			background-color:white;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 40px;
-			background-color:$text-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-	}
-	&.logics {
-		padding-left: 70px;
-		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 0px;
-			background-color:white;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 40px;
-			background-color:$logic-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-	}
-	&.controls {
-		padding-left: 70px;
-		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 0px;
-			background-color:white;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 20px;
-			top: 40px;
-			background-color:$control-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-	}
-	&.controlsi {
-		/* padding-left: 70px;
- */		&:after {
-			content: '';
-			width: 42px;
-			height: 6px;
-			position: absolute;
-			left: 36px;
-			top: 40px;
-			background-color:$control-color;
-			border-bottom-left-radius: 7px;
-    		border-bottom-right-radius: 7px;
-		}
-		&:before {
-			left: 0;
-		}
-		.statement-header{
-			left: 10px;
+	// &.vars {
+	// 	padding-left: 70px;
+	// 	&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$var-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 	    content: '';
+	// 	    width: 42px;
+	// 	    height: 8px;
+	// 	    position: absolute;
+	// 	    left: 20px;
+	// 	    top: 40px;
+	// 	    background-color: $var-color;
+	// 	    border-bottom-left-radius: 7px;
+	// 	    border-bottom-right-radius: 7px;
+	// 	    z-index: 999;
+	// 	}
+	// }
+	// &.codes {
+	// 	padding-left: 70px;
+	// 	&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$code-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 	    content: '';
+	// 	    width: 42px;
+	// 	    height: 8px;
+	// 	    position: absolute;
+	// 	    left: 20px;
+	// 	    top: 40px;
+	// 	    background-color: $code-color;
+	// 	    border-bottom-left-radius: 7px;
+	// 	    border-bottom-right-radius: 7px;
+	// 	    z-index: 999;
+	// 	}
+	// }
+	// &.maths {
+	// 	padding-left: 70px;
+	// 	&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$math-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 	    content: '';
+	// 	    width: 42px;
+	// 	    height: 8px;
+	// 	    position: absolute;
+	// 	    left: 20px;
+	// 	    top: 40px;
+	// 	    background-color: $math-color;
+	// 	    border-bottom-left-radius: 7px;
+	// 	    border-bottom-right-radius: 7px;
+	// 	    z-index: 999;
+	// 	}
+	// }
+	// &.texts {
+	// 	padding-left: 70px;
+	// 	&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$text-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 	    content: '';
+	// 	    width: 42px;
+	// 	    height: 8px;
+	// 	    position: absolute;
+	// 	    left: 20px;
+	// 	    top: 40px;
+	// 	    background-color: $text-color;
+	// 	    border-bottom-left-radius: 7px;
+	// 	    border-bottom-right-radius: 7px;
+	// 	    z-index: 999;
+	// 	}
+	// }
+	// &.logics {
+	// 	padding-left: 70px;
+	// 	&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$logic-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 	    content: '';
+	// 	    width: 42px;
+	// 	    height: 8px;
+	// 	    position: absolute;
+	// 	    left: 20px;
+	// 	    top: 40px;
+	// 	    background-color: $logic-color;
+	// 	    border-bottom-left-radius: 7px;
+	// 	    border-bottom-right-radius: 7px;
+	// 	    z-index: 999;
+	// 	}
+	// }
+	// &.controls {
+	// 	padding-left: 70px;
+	// 	&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$control-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 	    content: '';
+	// 	    width: 42px;
+	// 	    height: 8px;
+	// 	    position: absolute;
+	// 	    left: 20px;
+	// 	    top: 40px;
+	// 	    background-color: $control-color;
+	// 	    border-bottom-left-radius: 7px;
+	// 	    border-bottom-right-radius: 7px;
+	// 	    z-index: 999;
+	// 	}
+	// }
+	// &.controlsi {
+	// 	/* padding-left: 70px;
+ // */		&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$control-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 		left: 0;
+	// 	}
+	// 	.statement-header{
+	// 		left: 10px;
 
-			&:after {
-				content: '';
-			    width: 42px;
-			    height: 6px;
-			    position: absolute;
-			    z-index: 99;
-			    left: 10px;
-			    top: 0px;
-			    background-color: white;
-			    border-bottom-left-radius: 7px;
-			    border-bottom-right-radius: 7px;
-			}
-		}
-		.statement-extension {
-			.statement-extension-end{
-				/* left: -60px; */
-				&:after {
-					content: '';
-				    width: 42px;
-				    height: 8px;
-				    position: absolute;
-				    z-index: 99;
-				    left: 20px;
-				    top: 19px;
-				    background-color: $control-color;
-				    border-bottom-left-radius: 7px;
-				    border-bottom-right-radius: 7px;
-				}
-			}
-		}
-	}
+	// 		&:after {
+	// 			content: '';
+	// 		    width: 42px;
+	// 		    height: 6px;
+	// 		    position: absolute;
+	// 		    z-index: 99;
+	// 		    left: 10px;
+	// 		    top: 0px;
+	// 		    background-color: $control-color;
+	// 		    border-bottom-left-radius: 7px;
+	// 		    border-bottom-right-radius: 7px;
+	// 		}
+	// 	}
+	// 	.statement-extension {
+	// 		.statement-extension-end{
+	// 			/* left: -60px; */
+	// 			&:after {
+	// 				content: '';
+	// 			    width: 42px;
+	// 			    height: 8px;
+	// 			    position: absolute;
+	// 			    z-index: 99;
+	// 			    left: 20px;
+	// 			    top: 19px;
+	// 			    background-color: $control-color;
+	// 			    border-bottom-left-radius: 7px;
+	// 			    border-bottom-right-radius: 7px;
+	// 			}
+	// 		}
+	// 	}
+	// }
+
+	// &.functionsi {
+	// 	/* padding-left: 70px;
+ // */		&:after {
+	// 	    content: '';
+	// 	    width: 47px;
+	// 	    height: 9px;
+	// 	    position: absolute;
+	// 	    left: 18px;
+	// 	    top: 0px;		
+	// 		background-color:$function-color;
+	// 		border-bottom-left-radius: 7px;
+ //    		border-bottom-right-radius: 7px;
+	// 	}
+	// 	&:before {
+	// 		left: 0;
+	// 	}
+	// 	.statement-header{
+	// 		left: 10px;
+
+	// 		&:after {
+	// 			content: '';
+	// 		    width: 42px;
+	// 		    height: 6px;
+	// 		    position: absolute;
+	// 		    z-index: 99;
+	// 		    left: 10px;
+	// 		    top: 0px;
+	// 		    background-color: $function-color;
+	// 		    border-bottom-left-radius: 7px;
+	// 		    border-bottom-right-radius: 7px;
+	// 		}
+	// 	}
+	// 	.statement-extension {
+	// 		.statement-extension-end{
+	// 			/* left: -60px; */
+	// 			&:after {
+	// 				content: '';
+	// 			    width: 42px;
+	// 			    height: 8px;
+	// 			    position: absolute;
+	// 			    z-index: 99;
+	// 			    left: 20px;
+	// 			    top: 19px;
+	// 			    background-color: $function-color;
+	// 			    border-bottom-left-radius: 7px;
+	// 			    border-bottom-right-radius: 7px;
+	// 			}
+	// 		}
+	// 		.with-content {
+	// 			&:after {
+	// 			    content: '';
+	// 			    width: 42px;
+	// 			    height: 8px;
+	// 			    position: absolute;
+	// 			    z-index: 99;
+	// 			    left: 20px;
+	// 			    top: 40px;
+	// 			    background-color: $function-color;
+	// 			    border-bottom-left-radius: 7px;
+	// 			    border-bottom-right-radius: 7px;
+	// 			}
+	// 		}
+	// 	}
+	// }
 }
