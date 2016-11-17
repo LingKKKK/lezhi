@@ -45,13 +45,14 @@
 							<i class="lezhi lz-search"></i>
 						</div>
 						<div class="filters-wrap">
+							<span class="hard">HARDWARE  硬件</span>
 							<ul class="filters">
 								<li data-filter="all">全部</li>
 								<li data-filter="sensor">传感模块</li>
 								<li data-filter="action">执行模块</li>
 								<li data-filter="function">功能模块</li>
-								<li data-filter="sensor">传感模块</li>
-								<li data-filter="action">执行模块</li>
+								<!-- <li data-filter="sensor">传感模块</li>
+								<li data-filter="action">执行模块</li> -->
 							</ul>
 						</div>
 						<div class="components-wrap no-scrollbar">
@@ -59,17 +60,17 @@
 						</div>
 					</div>
 					<div class="tab tab-software">
-						<span class="hw">HARDWARE    硬件</span>
+						<span class="hw">PROGRAMMING    编程</span>
 						<div class="filters-wrap">
 							<ul class="filters">
-								<li data-filter="module">模块<i class="lezhi lz-hardware"></i></li>
-								<li data-filter="function">函数<i class="lezhi lz-sen104"></i></li>
-								<li data-filter="var">变量<i class="lezhi lz-sen028"></i></li>
-								<li data-filter="code">代码<i class="lezhi lz-code"></i></li>
-								<li data-filter="math">数学函数<i class="lezhi lz-sen106"></i></li>
-								<li data-filter="text">文本<i class="lezhi lz-editor"></i></li>
-								<li data-filter="control">控制<i class="lezhi lz-sen006"></i></li>
-								<li data-filter="logic">逻辑运算<i class="lezhi lz-act007"></i></li>
+								<li data-filter="module">模块<i class="lezhi lz-module"></i></li>
+								<li data-filter="function">函数<i class="lezhi lz-function"></i></li>
+								<li data-filter="var">变量<i class="lezhi lz-variable"></i></li>
+								<li data-filter="code">代码<i class="lezhi lz-codeicon"></i></li>
+								<li data-filter="math">数学函数<i class="lezhi lz-Digitalfunction"></i></li>
+								<li data-filter="text">文本<i class="lezhi lz-text"></i></li>
+								<li data-filter="control">控制<i class="lezhi lz-control"></i></li>
+								<li data-filter="logic">逻辑运算<i class="lezhi lz-Logicaloperations"></i></li>
 							</ul>
 						</div>
 						<div class="filter">
@@ -153,7 +154,7 @@
 								<li data-action="delete">删除</li>
 							</ul>
 							<div class="recycle">
-								<i class="icon lezhi lz-act020"></i>
+								<i class="icon lezhi lz-recycle"></i>
 							</div>
 						</div>
 						<div class="tab tab-software" data-action="software">
@@ -187,7 +188,7 @@
 								<li data-action="delete">删除</li>
 							</ul>
 							<div class="recycle">
-								<i class="icon lezhi lz-act020"></i>
+								<i class="icon lezhi lz-recycle"></i>
 							</div>
 						</div>
 						<div class="tab tab-code" data-action="code">
@@ -201,7 +202,7 @@
 		<div class="no-select">
 			<div class="layer modal dialog-layer">
 				<div class="x-dialog login-dialog">
-					<i class="lezhi lz-sen003 x-dialog-close"></i>
+					<i class="lezhi lz-delete x-dialog-close"></i>
 					<ul class="switch">
 						<li class="account active" data-action="account"></li>
 						<li class="weixin" data-action="weixin"><div class="tips">扫码登录更安全</div></li>

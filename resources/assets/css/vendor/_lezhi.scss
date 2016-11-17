@@ -1,10 +1,10 @@
 
 @font-face {font-family: "lezhi";
-  src: url('../font/lezhi.eot?t=1478504336010'); /* IE9*/
-  src: url('../font/lezhi.eot?t=1478504336010#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('../font/lezhi.woff?t=1478504336010') format('woff'), /* chrome, firefox */
-  url('../font/lezhi.ttf?t=1478504336010') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
-  url('../font/lezhi.svg?t=1478504336010') format('svg'); /* iOS 4.1- */
+  src: url('../font/iconfont.eot?t=1479363952142'); /* IE9*/
+  src: url('../font/iconfont.eot?t=1479363952142#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../font/iconfont.woff?t=1479363952142') format('woff'), /* chrome, firefox */
+  url('../font/iconfont.ttf?t=1479363952142') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../font/iconfont.svg?t=1479363952142#iconfont') format('svg'); /* iOS 4.1- */
 }
 
 .lezhi {
@@ -12,10 +12,15 @@
   font-size:16px;
   font-style:normal;
   -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .lz-newfile:before { content: "\e61b"; }
+
+.lz-delete:before { content: "\e61f"; }
+
+.lz-recycle:before { content: "\e606"; }
 
 .lz-act022:before { content: "\e601"; }
 
@@ -152,3 +157,20 @@
 .lz-help:before { content: "\e64a"; }
 
 .lz-code:before { content: "\e64b"; }
+
+.lz-text:before { content: "\e64c"; }
+
+.lz-codeicon:before { content: "\e64d"; }
+
+.lz-variable:before { content: "\e64e"; }
+
+.lz-control:before { content: "\e64f"; }
+
+.lz-module:before { content: "\e650"; }
+
+.lz-function:before { content: "\e651"; }
+
+.lz-Digitalfunction:before { content: "\e652"; }
+
+.lz-Logicaloperations:before { content: "\e653"; }
+

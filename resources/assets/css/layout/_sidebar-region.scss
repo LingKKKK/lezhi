@@ -43,7 +43,7 @@
 
 	.center {
 	    background: #ffffff;
-	    width: 468px;
+	    width: 498px;
 	    height: 60px;
 	    position: absolute;
 	    left: 50%;
@@ -56,17 +56,18 @@
 		float: left;
 		width: 114px;
 		padding-left: 22px;
-		padding-right: 22px;
+		padding-right: 8px;
 		cursor: pointer;
 		color: white;
 		font-size: 16px;
 		letter-spacing: 5.33px;
 		height: 60px;
 		line-height: 60px;
-		text-align: center;
+		text-align: right;
 		transition: background-color 0.2s;
 		position: relative;
 		transition: all 1s;
+		margin-right: 10px;
 
 		&:hover {
 			// color:#0093fc;
@@ -78,7 +79,8 @@
 			border-bottom:2px solid #0093fc; 
 
 			.icon {
-				transform: scale(2)
+				transform: rotate(360deg) scale(2,2) ;
+				transform-origin: 50% 50%;
 			}
 
 			&:after {
@@ -106,7 +108,7 @@
 
 		.icon {
 		    position: absolute;
-		    left: -13px;
+		    left: 17px;
 		    top: 1px;
 		    display: inline-block;
 		    font-size: 20px;

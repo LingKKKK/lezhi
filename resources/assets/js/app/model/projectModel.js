@@ -501,7 +501,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 				}],
 				components: [{
 						uid: "aa1a2f4c-2934-414a-823f-9961fbf23c55",
-						name: "RoLed",
+						name: "LED",
 						label: "LED模块",
 						type: "led",
 						category: "action",
@@ -519,7 +519,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}
 					}, {
 						uid: "a8466d12-ed5e-4cc8-bffe-1031c3bb10e1",
-						name: "RoRGB",
+						name: "RGB",
 						label: "彩色LED模块",
 						type: "rgb",
 						category: "action",
@@ -537,7 +537,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}
 					}, {
 						uid: "bd3ddead-5062-4ab3-9b3d-2ba85e938d0e",
-						name: "RoButton",
+						name: "Button",
 						label: "按键模块",
 						type: "button",
 						category: "sensor",
@@ -555,7 +555,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}
 					}, {
 						uid: "9b26a7f3-facc-4f80-83ad-8a29f909c1d7",
-						name: "RoBuzzer",
+						name: "Buzzer",
 						label: "蜂鸣器模块",
 						type: "buzzer",
 						category: "action",
@@ -573,7 +573,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}
 					}, {
 						uid: "18d12ce2-d24f-4bb6-ba1f-7ab3c50215df",
-						name: "RoPot",
+						name: "Pot",
 						label: "电位器模块",
 						type: "pot",
 						category: "sensor",
@@ -591,7 +591,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}
 					}, {
 						uid: "2d6073e7-ecee-4699-8ccb-f1bb52c4655a",
-						name: "RoLightSensor",
+						name: "Light",
 						label: "光敏传感器",
 						type: "lightSensor",
 						category: "sensor",
@@ -609,7 +609,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}
 					}, {
 						uid: "bbf2233f-f9a8-4e95-8a1d-4ae7419786c7",
-						name: "RoLedMatrix",
+						name: "LedMatrix",
 						label: "点阵模块",
 						type: "ACT009",
 						category: "action",
@@ -627,7 +627,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}
 					}, {
 						uid: "bbf2233f-f9a8-4e95-8a1d-4ae7419786c7",
-						name: "Ro7SegmentDisplay",
+						name: "disp",
 						label: "数码管模块",
 						type: "Ro7SegmentDisplay",
 						category: "action",

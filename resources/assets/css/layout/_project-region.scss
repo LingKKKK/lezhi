@@ -15,22 +15,23 @@
 		text-align:left;
 		position: absolute;
 		left: -230px;
-    	top: -43px;
+    	top: -39px;
 	}
 
 	.btn-change {
 		font-size:14px;
-		color:#a8a8a8;
+		color:#8d8d8d;
 		letter-spacing:1px;
 		text-align:left;
 		position: absolute;
 		left: -35px;
-    	top: -43px;
+    	top: -39px;
     	cursor: pointer;
 	}
 
 	.project-wrap {
 		position: relative;
+		top: -40px;
 		.x-btn {
 			// background-color: #0b7bdc;
 			border-radius: 5px;
@@ -43,17 +44,17 @@
 
 		.new {
 			position: absolute;
-			left: -400px;
-			top: -100px;
-			background:#143c82;
-			box-shadow:0px 0px 1px 0px rgba(0,0,0,0.50);
-			border-radius:5px;
-			width:115px;
-			height:24px;	
-			letter-spacing:1.75px;
-			line-height:14px;
-			text-align:center;
-			color: white;
+		    left: -400px;
+		    top: -61px;
+		    background: #0093fc;
+		    box-shadow: 0px 0px 1px 0px rgba(0, 0, 0, 0.5);
+		    border-radius: 5px;
+		    width: 115px;
+		    height: 34px;
+		    letter-spacing: 1.75px;
+		    line-height: 14px;
+		    text-align: center;
+		    color: white;
 		}
 
 		.boards {

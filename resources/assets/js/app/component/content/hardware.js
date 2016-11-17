@@ -51,6 +51,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		emitor.on('sidebar', 'activeTab', onActiveTab);
 
 		$('.hardware-container', region).mouseover(function(){
+
 			runa0();
 			function runa0(){
 				if($('.pin-A0').hasClass('jsplumb-endpoint-full')){
@@ -235,6 +236,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			function acc4(){
 				if($('.pin-PD6').hasClass('jsplumb-endpoint-full')){
 					$('.pin-PD3').css('display','none');
+					$('.pin-PD4').css('display','none');
 					$('.pin-10').css('display','none');
 					$('.pin-11').css('display','none');
 					qqq0();
@@ -389,6 +391,35 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 					$('.pin-2').css('display','none');
 				}else {
 					$('.pin-2').css('display','block');
+				}
+			}
+
+			runadd1();
+			function runadd1(){
+				if($('.pin-PD1').hasClass('jsplumb-endpoint-full')){
+					$('.pin-2').css('display','none');
+					$('.pin-PA3').css('display','none');
+				}else{
+					$('.pin-PA1').css('display','block');
+					$('.pin-PA3').css('display','block');
+				}
+			}
+			runadd2();
+			function runadd2(){
+				if($('.pin-PD5').hasClass('jsplumb-endpoint-full')){
+					$('.pin-2').css('display','none');
+					$('.pin-PA3').css('display','none');
+				}else{
+					$('.pin-PA1').css('display','block');
+					$('.pin-PA3').css('display','block');
+				}
+			}
+			runadd3();
+			function runadd3(){
+				if($('.pin-PD4').hasClass('jsplumb-endpoint-full')){
+					$('.pin-PD6').css('display','none');
+				}else{
+					$('.pin-PD6').css('display','block');
 				}
 			}
 

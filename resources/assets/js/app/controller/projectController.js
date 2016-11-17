@@ -413,7 +413,7 @@ define(['vendor/jquery', 'app/config/config', 'app/util/util', 'app/util/emitor'
 		var now = new Date();
 		return {
 			id: 0,
-			project_name: "我的项目",
+			project_name: "My Product",
 			project_intro: "项目简介",
 			public_type: 2,
 			project_data: {},

@@ -9,7 +9,7 @@
 
 .sidebar-tabs {
 	.tab-hardware {
-		padding-top: 30px;
+		padding-top: 50px;
 
 		.search-wrap {
 			padding-left: 20px;
@@ -46,6 +46,20 @@
 			height: 96px;
 			margin-bottom: 20px;
 			position: relative;
+
+			.hard {
+			    font-size: 16px;
+			    color: #4a4a4a;
+			    letter-spacing: 1.14px;
+			    text-align: left;
+			    position: absolute;
+			    width: 150px;
+			    height: 18px;
+			    left: 50%;
+			    -webkit-transform: translateX(-50%);
+			    transform: translateX(-50%);
+			    top: -23px;
+			}
 
 			&:after {
 				content: ' ';
