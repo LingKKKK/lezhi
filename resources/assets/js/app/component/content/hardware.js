@@ -55,6 +55,10 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		// })
 
 		$('.hardware-container', region).mouseover(function() {
+
+			// var a = $('.blocks li:nth(93)')
+			// a.css('display', 'none');
+			// console.dir(a)
 			qwe0();
 
 			function qwe0() {
@@ -488,6 +492,17 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 				}
 			}
 
+			runadd4();
+
+			function runadd4() {
+				console.log(01)
+				if ($('.pin-3').hasClass('jsplumb-endpoint-full') || $('.pin-9').hasClass('jsplumb-endpoint-full') || $('.pin-10').hasClass('jsplumb-endpoint-full') || $('.pin-11').hasClass('jsplumb-endpoint-full') ) {
+					$('.blocks li:nth(93)').css('display', 'block');
+				} else {
+					$('.blocks li:nth(93)').css('display', 'none');
+				}
+			}
+
 		});
 
 	}
@@ -642,7 +657,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		mouseDownComponentDom = e.currentTarget;
 		startPreMouseMove = true;
 
-		
+
 		document.addEventListener(compitableEvents.up, onComponentMouseUpBeforeMove);
 		document.addEventListener(compitableEvents.move, onComponentPreMouseMove);
 	}

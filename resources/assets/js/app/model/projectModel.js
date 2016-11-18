@@ -4232,6 +4232,40 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						code: "{SEGMENT}.display({RATE});",
 						tags: ["module"],
 						module: "Ro7SegmentDisplay"
+					},{
+						type: "statement",
+						name: "led1",
+						connectors: [{
+							type: "connector-top",
+							accept: "connector-bottom"
+						}, {
+							type: "connector-bottom",
+							accept: "connector-top"
+						},{
+							type: "connector-input",
+							accept: "connector-output",
+							acceptType: "all",
+							name: "20a464bc-527f-4429-b21e-8db0b9404285"
+						}],
+						content: [{
+							type: "text",
+							value: "设置LED"
+						}, {
+							id: "LED",
+							type: "dynamic-select",
+							options: "leds"
+						}, {
+							type: "text",
+							value: "亮度为"
+						}, {
+							blockInputId: "VALUE",
+							type: "block-input",
+							acceptType: "all",
+							name: "20a464bc-527f-4429-b21e-8db0b9404285"
+						}],
+						code: "analogWrite({LED},{VALUE});",
+						tags: ["module"],
+						module: "led"
 					},
 					//   控制亮度 0 - 7
 					{
