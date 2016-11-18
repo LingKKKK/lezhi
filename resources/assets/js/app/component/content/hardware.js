@@ -11,7 +11,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	var boardContextMenu;
 	var contextMenuTarget;
 	// var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
-	var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="hover"><i class="icon lezhi lz-act001"></i></div><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
+	var componentTemplate = '<li data-filter="{{filter}}" data-label="{{label}}" data-name="{{name}}"><div class="hover change"><i class="icon lezhi lz-act001"></i></div><div class="image-wrap"><img class="image" draggable="false" src="{{src}}" /></div><div class="name">{{label}}</div></li>'
 	var mouseDownComponentDom;
 	var dragContainer;
 	var dragComponentDom;
@@ -50,417 +50,452 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		emitor.on('hardware', 'resize', onResize);
 		emitor.on('sidebar', 'activeTab', onActiveTab);
 
-		console.log($('.hover').length)
+		// $('.tab-hardware', region).mouseover(function(){
+		// 	$('.hover').addClass('change');			
+		// })
 
-		$('.hardware-container', region).mouseover(function(){
+		$('.hardware-container', region).mouseover(function() {
 			qwe0();
-			function qwe0(){
+
+			function qwe0() {
 				$('.component').css({
-					"width":"150px",
-					"height":"150px",
-					"transform":"translate(-0%, -0%)"
+					"width": "150px",
+					"height": "150px",
+					"transform": "translate(-0%, -0%)"
 				});
 			}
 
 			qwe();
-			function qwe(){
-				if($('.pin-PD4').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD6').css('display','none');
-				}else{
-					$('.pin-PD6').css('display','block');
+
+			function qwe() {
+				if ($('.pin-PD4').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD6').css('display', 'none');
+				} else {
+					$('.pin-PD6').css('display', 'block');
 				}
 			}
 
 			qwe1();
-			function qwe1(){
-				if($('.pin-PD2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-8').css('display','none');
-					$('.pin-9').css('display','none');
-				}else{
-					$('.pin-8').css('display','block');
-					$('.pin-9').css('display','block');
+
+			function qwe1() {
+				if ($('.pin-PD2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-8').css('display', 'none');
+					$('.pin-9').css('display', 'none');
+				} else {
+					$('.pin-8').css('display', 'block');
+					$('.pin-9').css('display', 'block');
 				}
 			}
 
 			runa0();
-			function runa0(){
-				if($('.pin-A0').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PA1').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function runa0() {
+				if ($('.pin-A0').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PA1').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					runa2();
-				}else{
-					$('.pin-PA1').css('display','block');
-					$('.pin-PA3').css('display','block');
+				} else {
+					$('.pin-PA1').css('display', 'block');
+					$('.pin-PA3').css('display', 'block');
 					runa1()
 				}
 			}
-			function runa1(){
-				if($('.pin-A1').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PA1').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function runa1() {
+				if ($('.pin-A1').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PA1').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					runa4();
-				}else{
-					$('.pin-PA1').css('display','block');
-					$('.pin-PA3').css('display','block');
+				} else {
+					$('.pin-PA1').css('display', 'block');
+					$('.pin-PA3').css('display', 'block');
 					runa6();
 				}
 			}
-			function runa2(){
-				if($('.pin-A2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PA2').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function runa2() {
+				if ($('.pin-A2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PA2').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-PA2').css('display','block');
-					$('.pin-PA3').css('display','none');
+				} else {
+					$('.pin-PA2').css('display', 'block');
+					$('.pin-PA3').css('display', 'none');
 					runa3()
 				}
 			}
-			function runa3(){
-				if($('.pin-A3').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PA2').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function runa3() {
+				if ($('.pin-A3').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PA2').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-PA2').css('display','block');
-					$('.pin-PA3').css('display','none');
+				} else {
+					$('.pin-PA2').css('display', 'block');
+					$('.pin-PA3').css('display', 'none');
 				}
 			}
-			function runa4(){
-				if($('.pin-A2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PA2').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function runa4() {
+				if ($('.pin-A2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PA2').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-PA2').css('display','block');
-					$('.pin-PA3').css('display','none');
+				} else {
+					$('.pin-PA2').css('display', 'block');
+					$('.pin-PA3').css('display', 'none');
 					runa5()
 				}
 			}
-			function runa5(){
-				if($('.pin-A3').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PA2').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function runa5() {
+				if ($('.pin-A3').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PA2').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-PA2').css('display','block');
-					$('.pin-PA3').css('display','none');
+				} else {
+					$('.pin-PA2').css('display', 'block');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
 				}
 			}
-			function runa6(){
-				if($('.pin-A2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PA2').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function runa6() {
+				if ($('.pin-A2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PA2').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-PA2').css('display','block');
-					$('.pin-PA3').css('display','block');
+				} else {
+					$('.pin-PA2').css('display', 'block');
+					$('.pin-PA3').css('display', 'block');
 					runa7()
 				}
 			}
-			function runa7(){
-				if($('.pin-A3').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PA2').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function runa7() {
+				if ($('.pin-A3').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PA2').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-PA2').css('display','block');
-					$('.pin-PA3').css('display','block');
+				} else {
+					$('.pin-PA2').css('display', 'block');
+					$('.pin-PA3').css('display', 'block');
 					run8();
 				}
 			}
-			function run8(){
-				if($('.pin-PA1').hasClass('jsplumb-endpoint-full')){
-					$('.pin-A0').css('display','none');
-					$('.pin-A1').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function run8() {
+				if ($('.pin-PA1').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-A0').css('display', 'none');
+					$('.pin-A1').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					run9();
-				}else {
-					$('.pin-A0').css('display','block');
-					$('.pin-A1').css('display','block');
-					$('.pin-PA3').css('display','block');
+				} else {
+					$('.pin-A0').css('display', 'block');
+					$('.pin-A1').css('display', 'block');
+					$('.pin-PA3').css('display', 'block');
 					run10()
 				}
 			}
-			function run9(){
-				if($('.pin-PA2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-A2').css('display','none');
-					$('.pin-A3').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function run9() {
+				if ($('.pin-PA2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-A2').css('display', 'none');
+					$('.pin-A3').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-A2').css('display','block');
-					$('.pin-A3').css('display','block');
-					$('.pin-PA3').css('display','none');
+				} else {
+					$('.pin-A2').css('display', 'block');
+					$('.pin-A3').css('display', 'block');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
 				}
 			}
-			function run10(){
-				if($('.pin-PA2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-A2').css('display','none');
-					$('.pin-A3').css('display','none');
-					$('.pin-PA3').css('display','none');
+
+			function run10() {
+				if ($('.pin-PA2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-A2').css('display', 'none');
+					$('.pin-A3').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-A2').css('display','block');
-					$('.pin-A3').css('display','block');
-					$('.pin-PA3').css('display','block');
+				} else {
+					$('.pin-A2').css('display', 'block');
+					$('.pin-A3').css('display', 'block');
+					$('.pin-PA3').css('display', 'block');
 					run11();
 				}
 			}
-			function run11(){
-				if($('.pin-PA3').hasClass('jsplumb-endpoint-full')){
-					$('.pin-A0').css('display','none');
-					$('.pin-A1').css('display','none');
-					$('.pin-A2').css('display','none');
-					$('.pin-A3').css('display','none');
-					$('.pin-PA1').css('display','none');
-					$('.pin-PA2').css('display','none');
+
+			function run11() {
+				if ($('.pin-PA3').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-A0').css('display', 'none');
+					$('.pin-A1').css('display', 'none');
+					$('.pin-A2').css('display', 'none');
+					$('.pin-A3').css('display', 'none');
+					$('.pin-PA1').css('display', 'none');
+					$('.pin-PA2').css('display', 'none');
 					acc1();
-				}else {
-					$('.pin-A0').css('display','block');
-					$('.pin-A1').css('display','block');
-					$('.pin-A2').css('display','block');
-					$('.pin-A3').css('display','block');
-					$('.pin-PA1').css('display','block');
-					$('.pin-PA2').css('display','block');
+				} else {
+					$('.pin-A0').css('display', 'block');
+					$('.pin-A1').css('display', 'block');
+					$('.pin-A2').css('display', 'block');
+					$('.pin-A3').css('display', 'block');
+					$('.pin-PA1').css('display', 'block');
+					$('.pin-PA2').css('display', 'block');
 					acc1();
 				}
 			}
-			function acc1(){
-				if($('.pin-10').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD3').css('display','none');
-					$('.pin-PD6').css('display','none');
+
+			function acc1() {
+				if ($('.pin-10').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD3').css('display', 'none');
+					$('.pin-PD6').css('display', 'none');
 					qqq1();
-				}else {
-					$('.pin-PD3').css('display','block');
-					$('.pin-PD6').css('display','block');
+				} else {
+					$('.pin-PD3').css('display', 'block');
+					$('.pin-PD6').css('display', 'block');
 					acc2();
 				}
 			}
-			function acc2(){
-				if($('.pin-11').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD3').css('display','none');
-					$('.pin-PD6').css('display','none');
+
+			function acc2() {
+				if ($('.pin-11').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD3').css('display', 'none');
+					$('.pin-PD6').css('display', 'none');
 					qqq1();
-				}else {
-					$('.pin-PD3').css('display','block');
-					$('.pin-PD6').css('display','block');
+				} else {
+					$('.pin-PD3').css('display', 'block');
+					$('.pin-PD6').css('display', 'block');
 					acc3()
 				}
 			}
-			function acc3(){
-				if($('.pin-PD3').hasClass('jsplumb-endpoint-full')){
-					$('.pin-10').css('display','none');
-					$('.pin-11').css('display','none');
-					$('.pin-PD6').css('display','none');
+
+			function acc3() {
+				if ($('.pin-PD3').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-10').css('display', 'none');
+					$('.pin-11').css('display', 'none');
+					$('.pin-PD6').css('display', 'none');
 					qqq1();
-				}else{
-					$('.pin-10').css('display','block');
-					$('.pin-11').css('display','block');
-					$('.pin-PD6').css('display','block');
+				} else {
+					$('.pin-10').css('display', 'block');
+					$('.pin-11').css('display', 'block');
+					$('.pin-PD6').css('display', 'block');
 					acc4();
 				}
 			}
-			function acc4(){
-				if($('.pin-PD6').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD3').css('display','none');
-					$('.pin-PD4').css('display','none');
-					$('.pin-10').css('display','none');
-					$('.pin-11').css('display','none');
+
+			function acc4() {
+				if ($('.pin-PD6').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD3').css('display', 'none');
+					$('.pin-PD4').css('display', 'none');
+					$('.pin-10').css('display', 'none');
+					$('.pin-11').css('display', 'none');
 					qqq0();
-				}else{
-					$('.pin-PD3').css('display','block');
-					$('.pin-10').css('display','block');
-					$('.pin-11').css('display','block');
+				} else {
+					$('.pin-PD3').css('display', 'block');
+					$('.pin-10').css('display', 'block');
+					$('.pin-11').css('display', 'block');
 					qqq0();
 				}
 			}
-			
-			function qqq0(){
-				if($('.pin-2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-IICINT').css('display','none');
-					$('.pin-PD1').css('display','none');
-					$('.pin-PD5').css('display','none');
+
+			function qqq0() {
+				if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-IICINT').css('display', 'none');
+					$('.pin-PD1').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
 					qqq2();
-				}else{
-					$('.pin-PD1').css('display','block');
-					$('.pin-PD5').css('display','block');
-					$('.pin-IICINT').css('display','block');
+				} else {
+					$('.pin-PD1').css('display', 'block');
+					$('.pin-PD5').css('display', 'block');
+					$('.pin-IICINT').css('display', 'block');
 					qqq1();
 					www();
 				}
 			}
-			function qqq1(){
-				if($('.pin-3').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD1').css('display','none');
-					$('.pin-PD5').css('display','none');
+
+			function qqq1() {
+				if ($('.pin-3').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD1').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
 					qqq4();
-				}else{
-					$('.pin-PD1').css('display','block');
-					$('.pin-PD5').css('display','block');
+				} else {
+					$('.pin-PD1').css('display', 'block');
+					$('.pin-PD5').css('display', 'block');
 					qqq6();
 				}
 			}
-			function qqq2(){
-				if($('.pin-8').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD2').css('display','none');
-					$('.pin-PD5').css('display','none');
-				}else {
-					$('.pin-PD2').css('display','block');
-					$('.pin-PD5').css('display','none');
+
+			function qqq2() {
+				if ($('.pin-8').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD2').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
+				} else {
+					$('.pin-PD2').css('display', 'block');
+					$('.pin-PD5').css('display', 'none');
 					qqq3()
 				}
 			}
-			function qqq3(){
-				if($('.pin-9').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD2').css('display','none');
-					$('.pin-PD5').css('display','none');
-				}else {
-					$('.pin-PD2').css('display','block');
-					$('.pin-PD5').css('display','none');
+
+			function qqq3() {
+				if ($('.pin-9').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD2').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
+				} else {
+					$('.pin-PD2').css('display', 'block');
+					$('.pin-PD5').css('display', 'none');
 				}
 			}
-			function qqq4(){
-				if($('.pin-8').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD2').css('display','none');
-					$('.pin-PD5').css('display','none');
-				}else {
-					$('.pin-PD2').css('display','block');
-					$('.pin-PD5').css('display','none');
+
+			function qqq4() {
+				if ($('.pin-8').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD2').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
+				} else {
+					$('.pin-PD2').css('display', 'block');
+					$('.pin-PD5').css('display', 'none');
 					qqq5()
 				}
 			}
-			function qqq5(){
-				if($('.pin-9').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD2').css('display','none');
-					$('.pin-PD5').css('display','none');
-				}else {
-					$('.pin-PD2').css('display','block');
-					$('.pin-PD5').css('display','none');
+
+			function qqq5() {
+				if ($('.pin-9').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD2').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
+				} else {
+					$('.pin-PD2').css('display', 'block');
+					$('.pin-PD5').css('display', 'none');
 				}
 			}
-			function qqq6(){
-				if($('.pin-8').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD2').css('display','none');
-					$('.pin-PD5').css('display','none');
-				}else {
-					$('.pin-PD2').css('display','block');
-					$('.pin-PD5').css('display','block');
+
+			function qqq6() {
+				if ($('.pin-8').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD2').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
+				} else {
+					$('.pin-PD2').css('display', 'block');
+					$('.pin-PD5').css('display', 'block');
 					qqq7()
 				}
 			}
-			function qqq7(){
-				if($('.pin-9').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD2').css('display','none');
-					$('.pin-PD5').css('display','none');
-				}else {
-					$('.pin-PD2').css('display','block');
-					$('.pin-PD5').css('display','block');
+
+			function qqq7() {
+				if ($('.pin-9').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD2').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
+				} else {
+					$('.pin-PD2').css('display', 'block');
+					$('.pin-PD5').css('display', 'block');
 					qqq8();
 				}
 			}
-			function qqq8(){
-				if($('.pin-PD1').hasClass('jsplumb-endpoint-full')){
-					$('.pin-2').css('display','none');
-					$('.pin-3').css('display','none');
-					$('.pin-PD5').css('display','none');
+
+			function qqq8() {
+				if ($('.pin-PD1').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-2').css('display', 'none');
+					$('.pin-3').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
 					qqq9();
-				}else {
-					$('.pin-2').css('display','block');
-					$('.pin-3').css('display','block');
-					$('.pin-PD5').css('display','block');
+				} else {
+					$('.pin-2').css('display', 'block');
+					$('.pin-3').css('display', 'block');
+					$('.pin-PD5').css('display', 'block');
 					qqq10()
 				}
 			}
-			function qqq9(){
-				if($('.pin-PD2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-8').css('display','none');
-					$('.pin-9').css('display','none');
-					$('.pin-PD5').css('display','none');
-				}else {
-					$('.pin-8').css('display','block');
-					$('.pin-9').css('display','block');
-					$('.pin-PD5').css('display','none');
+
+			function qqq9() {
+				if ($('.pin-PD2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-8').css('display', 'none');
+					$('.pin-9').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
+				} else {
+					$('.pin-8').css('display', 'block');
+					$('.pin-9').css('display', 'block');
+					$('.pin-PD5').css('display', 'none');
 				}
 			}
-			function qqq10(){
-				if($('.pin-PD2').hasClass('jsplumb-endpoint-full')){
-					$('.pin-8').css('display','none');
-					$('.pin-9').css('display','none');
-					$('.pin-PD5').css('display','none');
-				}else {
-					$('.pin-8').css('display','block');
-					$('.pin-9').css('display','block');
-					$('.pin-PD5').css('display','block');
+
+			function qqq10() {
+				if ($('.pin-PD2').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-8').css('display', 'none');
+					$('.pin-9').css('display', 'none');
+					$('.pin-PD5').css('display', 'none');
+				} else {
+					$('.pin-8').css('display', 'block');
+					$('.pin-9').css('display', 'block');
+					$('.pin-PD5').css('display', 'block');
 					qqq11();
 				}
 			}
-			function qqq11(){
-				if($('.pin-PD5').hasClass('jsplumb-endpoint-full')){
-					$('.pin-2').css('display','none');
-					$('.pin-3').css('display','none');
-					$('.pin-8').css('display','none');
-					$('.pin-9').css('display','none');
-					$('.pin-PD1').css('display','none');
-					$('.pin-PD2').css('display','none');
-				}else {
-					$('.pin-2').css('display','block');
-					$('.pin-3').css('display','block');
-					$('.pin-8').css('display','block');
-					$('.pin-9').css('display','block');
-					$('.pin-PD1').css('display','block');
-					$('.pin-PD2').css('display','block');
+
+			function qqq11() {
+				if ($('.pin-PD5').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-2').css('display', 'none');
+					$('.pin-3').css('display', 'none');
+					$('.pin-8').css('display', 'none');
+					$('.pin-9').css('display', 'none');
+					$('.pin-PD1').css('display', 'none');
+					$('.pin-PD2').css('display', 'none');
+				} else {
+					$('.pin-2').css('display', 'block');
+					$('.pin-3').css('display', 'block');
+					$('.pin-8').css('display', 'block');
+					$('.pin-9').css('display', 'block');
+					$('.pin-PD1').css('display', 'block');
+					$('.pin-PD2').css('display', 'block');
 					www()
 				}
 			}
 
-			function www(){
-				if($('.pin-IICINT').hasClass('jsplumb-endpoint-full')){
-					$('.pin-2').css('display','none');
-				}else {
-					$('.pin-2').css('display','block');
+			function www() {
+				if ($('.pin-IICINT').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-2').css('display', 'none');
+				} else {
+					$('.pin-2').css('display', 'block');
 				}
 			}
 
 			runadd1();
-			function runadd1(){
-				if($('.pin-PD1').hasClass('jsplumb-endpoint-full')){
-					$('.pin-2').css('display','none');
-					$('.pin-PA3').css('display','none');
-				}else{
-					$('.pin-PA1').css('display','block');
-					$('.pin-PA3').css('display','block');
+
+			function runadd1() {
+				if ($('.pin-PD1').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-2').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
+				} else {
+					$('.pin-PA1').css('display', 'block');
+					$('.pin-PA3').css('display', 'block');
 				}
 			}
 			runadd2();
-			function runadd2(){
-				if($('.pin-PD5').hasClass('jsplumb-endpoint-full')){
-					$('.pin-2').css('display','none');
-					$('.pin-PA3').css('display','none');
-				}else{
-					$('.pin-PA1').css('display','block');
-					$('.pin-PA3').css('display','block');
+
+			function runadd2() {
+				if ($('.pin-PD5').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-2').css('display', 'none');
+					$('.pin-PA3').css('display', 'none');
+				} else {
+					$('.pin-PA1').css('display', 'block');
+					$('.pin-PA3').css('display', 'block');
 				}
 			}
 			runadd3();
-			function runadd3(){
-				if($('.pin-PD4').hasClass('jsplumb-endpoint-full')){
-					$('.pin-PD6').css('display','none');
-				}else{
-					$('.pin-PD6').css('display','block');
+
+			function runadd3() {
+				if ($('.pin-PD4').hasClass('jsplumb-endpoint-full')) {
+					$('.pin-PD6').css('display', 'none');
+				} else {
+					$('.pin-PD6').css('display', 'block');
 				}
 			}
 
-		})
+		});
+
 	}
 
 
 
 	function loadSchema(schema) {
 		hardwareModel.loadSchema(schema);
-
 		updateComponents(schema.components);
 	}
 
@@ -490,6 +525,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function updateComponents(components) {
+
 		componentList.empty();
 		components.forEach(function(component) {
 			var li = componentTemplate.replace(/\{\{name\}\}/g, component.name)
@@ -506,7 +542,14 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		});
 
 		filterList.find('[data-filter="all"]').click();
-		console.log($('.hover').length)
+		// var oLi = $('.hover');
+		// var aLi = $('li', componentList);
+		// for (var i = 0; i < oLi.length; i++) {
+		// 	oLi[i].index = i;
+		// 	oLi.hover(function() {
+		// 			$(this).removeClass('change')
+		// 	});
+		// }
 	}
 
 	function onAppStart() {
@@ -591,26 +634,22 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 
 	function onComponentMouseDown(e) {
 		//  点击拖拽模块  （置放前）
-		console.log('1');
+
 		// $('.hover').css('display','none')
 		e.stopPropagation();
 		e.returnValue = false;
 
 		mouseDownComponentDom = e.currentTarget;
 		startPreMouseMove = true;
+
 		
-		function run (){
-			$('.components').find('li:first-child').find('.image-wrap').attr('display','none');
-		}
-		run();
 		document.addEventListener(compitableEvents.up, onComponentMouseUpBeforeMove);
 		document.addEventListener(compitableEvents.move, onComponentPreMouseMove);
 	}
 
 	function onComponentMouseUpBeforeMove(e) {
 		//  点击模块（放置之前）
-		$('.hover').css('display','none')
-
+		console.log(1)
 		mouseDownComponentDom = null;
 		document.removeEventListener(compitableEvents.up, onComponentMouseUpBeforeMove);
 		document.removeEventListener(compitableEvents.move, onComponentPreMouseMove);
@@ -618,7 +657,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function onComponentPreMouseMove(e) {
-		
+
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		if (startPreMouseMove) {
 			startPreMouseMove = false;
@@ -646,11 +685,11 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	function onComponentMouseMove(e) {
 		// console.log(1);   放置之前的移动
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
-		
+
 		if (mouseDownComponentDom) {
 			document.removeEventListener(compitableEvents.up, onComponentMouseUpBeforeMove);
 			document.addEventListener(compitableEvents.up, onComponentMouseUp);
-			
+
 			var li = $(mouseDownComponentDom).closest("li")[0];
 			dragComponentDom = document.createElement("img");
 			dragComponentDom.src = mouseDownComponentDom.src;
@@ -703,7 +742,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 
 	function onContainerDrop(name, pageX, pageY) {
 		var rect = container[0].getBoundingClientRect();
-		if(pageX < rect.left || pageX > rect.right || pageY < rect.top || pageY > rect.bottom) {
+		if (pageX < rect.left || pageX > rect.right || pageY < rect.top || pageY > rect.bottom) {
 			return;
 		}
 
@@ -724,12 +763,12 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	function onContainerEvent(e) {
 		// console.log('1')
 		var action = e.originalEvent.action;
-		if(action == "select-component") {
+		if (action == "select-component") {
 			showComponentDialog(e.originalEvent.data.uid);
-		} else if(action == "remove-component") {
+		} else if (action == "remove-component") {
 			var uid = e.originalEvent.data.uid;
 			uid == componentDialog.data("uid") && hideComponentDialog();
-		} else if(action == "remove-all-components") {
+		} else if (action == "remove-all-components") {
 			hideComponentDialog();
 		}
 	}

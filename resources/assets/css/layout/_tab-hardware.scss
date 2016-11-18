@@ -170,10 +170,11 @@
 					.hover {
 						width: 72px;
 						height: 72px;
-					    display: none;
 					    position:absolute;
     					transform: translate(0%, -7%);
     					z-index: 9;
+    					display: none;
+    					transition: all 1s;
 
     					i {
     						font-size: 68px;
@@ -187,22 +188,9 @@
 						@include animation('component-fadeIn' 1s both);
 					}
 
-					// &:hover .image-wrap {
-					// 	opacity: 0.2;
-					// }
-				
-					&:hover .hover {
-						display: none;;
+					&:hover .change {
+						// display: block;
 					}
-					&:hover .image-wrap {
-						opacity: 1;
-					}
-					// &:active .hover {
-					// 	display: none;
-					// }
-					// &:active .image-wrap {
-					// 	opacity: 1;
-					// }
 				}
 			}
 		}
