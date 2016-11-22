@@ -1281,7 +1281,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "static-select",
 							options: [{
 								label: "全部",
-								value: "all"
+								value: "0"
 							}, {
 								label: "1",
 								value: "1"
@@ -1330,7 +1330,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 								value: "255,0,255"
 							}]
 						}],
-						code: "{LED}.setColor({index}, {COLOR});",
+						code: "{LED}.setColor({index}, {COLOR});{LED}.show();",
 						tags: ["module"],
 						module: "rgb"
 					}, {
@@ -1373,7 +1373,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "static-select",
 							options: [{
 								label: "全部",
-								value: "all"
+								value: "0"
 							}, {
 								label: "1",
 								value: "1"
@@ -1412,7 +1412,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							acceptType: "number",
 							name: "15cd8f30-8b59-4402-84f1-7a1f574d954b"
 						}],
-						code: "{LED}.setColor({index},{red},{green},{blue});",
+						code: "{LED}.setColor({index},{red},{green},{blue});{LED}.show();",
 						tags: ["module"],
 						module: "rgb"
 					}, {
