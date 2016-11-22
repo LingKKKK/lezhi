@@ -31,8 +31,11 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	var reservedWords = 'setup,loop,if,else,for,switch,case,while,do,break,continue,return,goto,define,include,HIGH,LOW,INPUT,OUTPUT,INPUT_PULLUP,true,false,interger, constants,floating,point,void,bool,char,unsigned,byte,int,word,long,float,double,string,String,array,static, volatile,const,sizeof,pinMode,digitalWrite,digitalRead,analogReference,analogRead,analogWrite,tone,noTone,shiftOut,shitIn,pulseIn,millis,micros,delay,delayMicroseconds,min,max,abs,constrain,map,pow,sqrt,sin,cos,tan,randomSeed,random,lowByte,highByte,bitRead,bitWrite,bitSet,bitClear,bit,attachInterrupt,detachInterrupt,interrupts,noInterrupts';
 	reservedWords = reservedWords.split(',');
 
-	
+
 	console.log($('.module'));
+
+	$('.sidebar-region .center li:nth-child(4)').click();
+	$('.sidebar-region .center li:nth-child(2)').click();
 
 	function Block(blockData) {
 		// 添加模块s
@@ -444,7 +447,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var modulebo = $('.module.block-output');
 		var functions = $('.function.block-statement');
 		var functiono = $('.function.block-output');
-		var functionsi = $('.function.block-statement-input'); 
+		var functionsi = $('.function.block-statement-input');
 		var vars = $('.var.block-statement');
 		var varo = $('.var.block-output');
 		var codes = $('.code.block-statement');
@@ -455,11 +458,11 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var texto = $('.text.block-output');
 		var controls = $('.control.block-statement');
 		var controlo = $('.control.block-output');
-		var controlsi = $('.control.block-statement-input'); 
+		var controlsi = $('.control.block-statement-input');
 		var logics = $('.logic.block-statement');
 		var logico = $('.logic.block-output');
 
-		function add(){
+		function add() {
 			modulebs.addClass('modulebs');
 			modulebo.addClass('modulebo');
 			functions.addClass('functions');
@@ -533,7 +536,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var modulebo = $('.module.block-output');
 		var functions = $('.function.block-statement');
 		var functiono = $('.function.block-output');
-		var functionsi = $('.function.block-statement-input'); 
+		var functionsi = $('.function.block-statement-input');
 		var vars = $('.var.block-statement');
 		var varo = $('.var.block-output');
 		var codes = $('.code.block-statement');
@@ -544,11 +547,11 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var texto = $('.text.block-output');
 		var controls = $('.control.block-statement');
 		var controlo = $('.control.block-output');
-		var controlsi = $('.control.block-statement-input'); 
+		var controlsi = $('.control.block-statement-input');
 		var logics = $('.logic.block-statement');
 		var logico = $('.logic.block-output');
 
-		function add(){
+		function add() {
 			modulebs.addClass('modulebs');
 			modulebo.addClass('modulebo');
 			functions.addClass('functions');
@@ -569,7 +572,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 			logico.addClass('logico');
 		}
 		add();
-
 
 
 
@@ -615,9 +617,27 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		// console.dir(recycleDom);
 		var rectX = recycleDom.offset().top;
 		var rectY = recycleDom.offset().left;
-		if(e.pageX >= rectY && e.pageY >=rectX){
+		if (e.pageX >= rectY && e.pageY >= rectX) {
 			block.remove();
 		}
+
+		var promptDom = $('.tab-software .prompt');
+		
+		$('.software-container').mousemove(function() {
+			// var a = $('.software-container .block .connector-input');
+			// for (var i = 0; i < a.length; i++) {
+			// 	a[i].index = i;
+			// 	a[i].onclick = function() {
+			// 		promptDom.css('display', 'block')
+			// 	}
+			// }
+		})
+
+		// $('.tab-software').mousemove(function() {
+		// 	console.log(2)
+		// 	promptDom.css('display', 'none')
+		// })
+
 	}
 
 	function statementDragStart(block) {

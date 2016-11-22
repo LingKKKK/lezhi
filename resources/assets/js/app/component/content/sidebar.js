@@ -17,11 +17,6 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor'], function($1, util,
 		emitor.on('sidebar', 'toggle', onTabToggle);
 
 		var alertInput = $('.block-statement .statement-content').find('.connector-input');
-		
-		$('.software-container').mousemove(function(){
-			// console.log(alertInput.length)
-		})
-
 	}
 
 	function onAppStart() {

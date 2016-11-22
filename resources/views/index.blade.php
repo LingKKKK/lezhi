@@ -190,6 +190,7 @@
 							<div class="recycle">
 								<i class="icon lezhi lz-recycle"></i>
 							</div>
+							<div class="prompt"></div>
 						</div>
 						<div class="tab tab-code" data-action="code">
 							<div id="code-container" class="code-container"></div>
@@ -313,7 +314,7 @@
 							<ul>
 								<li class="share" data-action="weibo"><i class="lezhi lz-weibo"></i>新浪微博</li>
 								<li class="share" data-action="qzone"><i class="lezhi lz-qzone"></i>QQ空间</li>
-								<li class="share" data-action="kenrobot"><i class="lezhi lz-kenrobot-logo"></i>啃萝卜</li>
+								<li class="share" data-action="kenrobot"><i class="lezhi lz-kenrobot-logo"></i>乐智</li>
 							</ul>
 						</div>
 					</div>

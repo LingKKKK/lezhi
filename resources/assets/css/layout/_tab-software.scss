@@ -427,5 +427,15 @@ $focus-color: #f1cb33;
 		    	font-size: 60px;
 		    }
 		}
+
+		.prompt {
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+			display: none;
+		}
 	}
 }

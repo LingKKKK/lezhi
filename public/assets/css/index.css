@@ -8897,6 +8897,15 @@ html, body {
 .content-tabs .tab-software .recycle .icon {
   font-size: 60px;
 }
+.content-tabs .tab-software .prompt {
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
 
 .content-tabs .tab-code {
   padding: 30px;

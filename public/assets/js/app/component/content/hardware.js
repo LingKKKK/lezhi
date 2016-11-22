@@ -52,11 +52,12 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 
 		$('.content-region').mouseup(function() {
 			if ($('.tab-software .filters-wrap').find('.filters li:nth-child(1)').hasClass('active')) {
-				$('.blocks li:nth(87)').css('display','none');
+				$('.blocks li:nth(87)').css('display', 'none');
 			}
 		})
 		documentmove();
-		function documentmove(){
+
+		function documentmove() {
 			$('.content-region').mouseover(function() {
 				var a = $('.blocks li:nth(87)')
 				a.css('display', 'none');
@@ -68,11 +69,28 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 						"height": "150px",
 						"transform": "translate(-0%, -0%)"
 					});
+					if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
+						$('.pin-PD1').css('display', 'none');
+						zadd();
+					} else {
+						$('.pin-PD1').css('display', 'block');
+					}
+				}
+				// zadd();
+				function zadd() {
+					if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
+						$('.pin-PD1').css('display', 'none');
+						zadd();
+					} else {
+						$('.pin-PD1').css('display', 'block');
+					}
 				}
 
 				qwe();
 
 				function qwe() {
+					$('.pin-PD1').css('display', 'none');
+					$('.pin-PD4').css('display', 'block');
 					if ($('.pin-PD4').hasClass('jsplumb-endpoint-full')) {
 						$('.pin-PD6').css('display', 'none');
 					} else {
@@ -297,6 +315,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 						$('.pin-11').css('display', 'none');
 						qqq0();
 					} else {
+						$('.pin-PD4').css('display', 'block');
 						$('.pin-PD3').css('display', 'block');
 						$('.pin-10').css('display', 'block');
 						$('.pin-11').css('display', 'block');
@@ -307,8 +326,8 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 				function qqq0() {
 					if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
 						$('.pin-IICINT').css('display', 'none');
-						$('.pin-PD1').css('display', 'none');
 						$('.pin-PD5').css('display', 'none');
+						$('.pin-PD1').css('display', 'none');
 						qqq2();
 					} else {
 						$('.pin-PD1').css('display', 'block');
@@ -740,10 +759,10 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 
 	function onComponentMouseUp(e) {
 		$('.component').css({
-					"width": "150px",
-					"height": "150px",
-					"transform": "translate(-0%, -0%)"
-				});
+			"width": "150px",
+			"height": "150px",
+			"transform": "translate(-0%, -0%)"
+		});
 		//  松开鼠标 放入模块
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		document.removeEventListener(compitableEvents.move, onComponentMouseMove);

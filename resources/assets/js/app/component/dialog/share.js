@@ -12,6 +12,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/config/config'
 		host = window.location.host;
 
 		emitor.on('share', 'show', onShow);
+		// $('.modal').on('click',function(){
+		// 	$('.modal').css('display','none')
+		// })
 	}
 
 	function onShow(args) {
@@ -41,13 +44,13 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/config/config'
 				// 	url += "&pic=http://" + host + "/project/image/" + projectInfo.imageHash;
 				// }
 				// window.open(encodeURI(url));
-				util.message("æ•¬è¯·æœŸå¾…");
+				util.message("¾´ÇëÆÚ´ý");
 				break;
 			case "qzone":
-				util.message("æ•¬è¯·æœŸå¾…");
+				util.message("¾´ÇëÆÚ´ý");
 				break;
 			case "kenrobot":
-				util.message("æ•¬è¯·æœŸå¾…");
+				util.message("¾´ÇëÆÚ´ý");
 				break;
 		}
 	}
