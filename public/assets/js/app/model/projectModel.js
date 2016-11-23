@@ -532,7 +532,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							tags: ["analog-out"]
 						}],
 						code: {
-							var: 'RoLed {NAME}({s});'
+							var: 'RoRGBLed {NAME}({s});'
 						}
 					}, {
 						uid: "bd3ddead-5062-4ab3-9b3d-2ba85e938d0e",
@@ -4580,11 +4580,6 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "connector-input",
 							accept: "connector-output",
 							acceptType: "all",
-							name: "b2dd8577-68e0-4a38-a041-f4c4b4301c7a"
-						}, {
-							type: "connector-input",
-							accept: "connector-output",
-							acceptType: "all",
 							name: "c9ee8ac8-96b7-49b0-b907-11be6f352a70"
 						}],
 						content: [{
@@ -4598,10 +4593,24 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "text",
 							value: "显示，第"
 						}, {
-							blockInputId: "addr",
-							type: "block-input",
-							acceptType: "number",
-							name: "b2dd8577-68e0-4a38-a041-f4c4b4301c7a"
+							id: "addr",
+							type: "static-select",
+							options: [{
+								label: "全部",
+								value: "0"
+							}, {
+								label: "1",
+								value: "1"
+							}, {
+								label: "2",
+								value: "2"
+							}, {
+								label: "3",
+								value: "3"
+							}, {
+								label: "4",
+								value: "4"
+							}]
 						}, {
 							type: "text",
 							value: "个字符显示"
@@ -4627,11 +4636,6 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "connector-input",
 							accept: "connector-output",
 							acceptType: "all",
-							name: "0c3bb9f5-bc1f-4dce-96fd-a72e2242fdc0"
-						}, {
-							type: "connector-input",
-							accept: "connector-output",
-							acceptType: "all",
 							name: "a0c0e2a1-5236-4eaa-a8b6-f789aad34637"
 						}],
 						content: [{
@@ -4645,10 +4649,24 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "text",
 							value: "显示，从第"
 						}, {
-							blockInputId: "addr",
-							type: "block-input",
-							acceptType: "number",
-							name: "0c3bb9f5-bc1f-4dce-96fd-a72e2242fdc0"
+							id: "addr",
+							type: "static-select",
+							options: [{
+								label: "全部",
+								value: "0"
+							}, {
+								label: "1",
+								value: "1"
+							}, {
+								label: "2",
+								value: "2"
+							}, {
+								label: "3",
+								value: "3"
+							}, {
+								label: "4",
+								value: "4"
+							}]
 						}, {
 							type: "text",
 							value: "个字符显示"
@@ -4785,11 +4803,20 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							id: "addr",
 							type: "static-select",
 							options: [{
-								label: "所有",
-								value: "all"
+								label: "全部",
+								value: "0"
 							}, {
-								label: "",
-								value: ""
+								label: "1",
+								value: "1"
+							}, {
+								label: "2",
+								value: "2"
+							}, {
+								label: "3",
+								value: "3"
+							}, {
+								label: "4",
+								value: "4"
 							}]
 						}],
 						code: "{LCD}.clearDisplay({addr});",
