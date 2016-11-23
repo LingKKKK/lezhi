@@ -4496,23 +4496,23 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 								label: "9",
 								value: "9"
 							}, {
-								label: "A",
-								value: "A"
+								label: "'A'",
+								value: "'A'"
 							}, {
-								label: "B",
-								value: "B"
+								label: "'B'",
+								value: "'B'"
 							}, {
-								label: "C",
-								value: "C"
+								label: "'C'",
+								value: "'C'"
 							}, {
-								label: "D",
-								value: "D"
+								label: "'D'",
+								value: "'D'"
 							}, {
-								label: "E",
-								value: "E"
+								label: "'E'",
+								value: "'E'"
 							}, {
-								label: "F",
-								value: "F"
+								label: "'F'",
+								value: "'F'"
 							}]
 						}],
 						code: "{SEGMENT}.display({BitAddr}, {DispData});",
