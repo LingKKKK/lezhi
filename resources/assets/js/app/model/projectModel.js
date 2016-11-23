@@ -4496,26 +4496,26 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 								label: "9",
 								value: "9"
 							}, {
-								label: "'A'",
+								label: "A",
 								value: "'A'"
 							}, {
-								label: "'B'",
+								label: "B",
 								value: "'B'"
 							}, {
-								label: "'C'",
+								label: "C",
 								value: "'C'"
 							}, {
-								label: "'D'",
+								label: "D",
 								value: "'D'"
 							}, {
-								label: "'E'",
+								label: "E",
 								value: "'E'"
 							}, {
-								label: "'F'",
+								label: "F",
 								value: "'F'"
 							}]
 						}],
-						code: "{SEGMENT}.display({BitAddr}, {DispData});",
+						code: "{SEGMENT}.displayBit({BitAddr}, {DispData});",
 						tags: ["module"],
 						module: "Ro7SegmentDisplay"
 					},
