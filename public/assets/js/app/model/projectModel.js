@@ -532,8 +532,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							tags: ["analog-out"]
 						}],
 						code: {
-							include: '#include <RGBLed.h>',
-							var: 'RGBLed {NAME}({s});',
+							var: 'RoLed {NAME}({s});'
 						}
 					}, {
 						uid: "bd3ddead-5062-4ab3-9b3d-2ba85e938d0e",
@@ -624,7 +623,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						code: {
 							include: '#include <RoSys.h>',
 							var: 'RoLedMatrix {NAME}({s},1);',
-							setup: 'int devices=ledMatrix.getDeviceCount();for(int addr=0;addr<devices;addr++){{NAME}.shutDown(addr,false);{NAME}.setIntensity(addr,8);{NAME}.clearDisplay(addr);}'
+							setup: 'int devices={NAME}.getDeviceCount();for(int addr=0;addr<devices;addr++){{NAME}.shutDown(addr,false);{NAME}.setIntensity(addr,8);{NAME}.clearDisplay(addr);}'
 						}
 					}, {
 						uid: "bbf2233f-f9a8-4e95-8a1d-4ae7419786c7",
@@ -1314,7 +1313,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 								label: "红色",
 								value: "255,0,0"
 							}, {
-								label: "红色",
+								label: "绿色",
 								value: "0,255,0"
 							}, {
 								label: "深绿",
@@ -3220,7 +3219,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							acceptType: "number",
 							name: "c0fea7ec-d21f-43b8-a034-aba9019e32c3"
 						}],
-						code: "{BUZZER}.Didi({PIN});",
+						code: "{BUZZER}.didi({PIN});",
 						tags: ["module", "advanced"],
 						module: "ACT005"
 					}, {
@@ -4225,7 +4224,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "text",
 							value: "发出嘀嘀声"
 						}],
-						code: "{BUZZER}.Didi();",
+						code: "{BUZZER}.didi();",
 						tags: ["module"],
 						module: "buzzer"
 					}, {
@@ -4687,10 +4686,10 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "static-select",
 							options: [{
 								label: "0deg",
-								value: "0deg"
+								value: "0"
 							}, {
 								label: "90deg",
-								value: "90deg"
+								value: "1"
 							}]
 						}, {
 							type: "text",
@@ -4700,13 +4699,13 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "static-select",
 							options: [{
 								label: "8*8",
-								value: "8*8"
+								value: "0"
 							}, {
 								label: "8*16",
-								value: "8*16"
+								value: "1"
 							}, {
 								label: "16*16",
-								value: "16*16"
+								value: "2"
 							}]
 						}],
 						code: "{LCD}.setDisplayType({angleValue},{sizeValue});",
@@ -4774,7 +4773,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}],
 						content: [{
 							type: "text",
-							value: "清楚点阵模块"
+							value: "清除点阵模块"
 						}, {
 							id: "LCD",
 							type: "dynamic-select",

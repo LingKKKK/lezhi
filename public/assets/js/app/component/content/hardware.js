@@ -69,22 +69,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 						"height": "150px",
 						"transform": "translate(-0%, -0%)"
 					});
-					if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
-						$('.pin-PD1').css('display', 'none');
-						zadd();
-					} else {
-						$('.pin-PD1').css('display', 'block');
-					}
 				}
-				// zadd();
-				function zadd() {
-					if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
-						$('.pin-PD1').css('display', 'none');
-						zadd();
-					} else {
-						$('.pin-PD1').css('display', 'block');
-					}
-				}
+
+
 
 				qwe();
 
@@ -298,6 +285,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 						$('.pin-10').css('display', 'none');
 						$('.pin-11').css('display', 'none');
 						$('.pin-PD6').css('display', 'none');
+						qwez();
 						qqq1();
 					} else {
 						$('.pin-10').css('display', 'block');
@@ -326,8 +314,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 				function qqq0() {
 					if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
 						$('.pin-IICINT').css('display', 'none');
-						$('.pin-PD5').css('display', 'none');
 						$('.pin-PD1').css('display', 'none');
+						$('.pin-PD5').css('display', 'none');
+						qwez();
 						qqq2();
 					} else {
 						$('.pin-PD1').css('display', 'block');
@@ -512,7 +501,13 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 					}
 				}
 
-				showLed();
+				showLEDhide();
+
+				function showLEDhide() {
+					if ($('.blocks li:nth(19)').hasClass('active')) {
+						showLed();
+					}
+				}
 
 				function showLed() {
 					if ($('.tab-software .filters-wrap').find('.filters li:nth-child(1)').hasClass('active')) {
@@ -525,6 +520,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 				function runadd4() {
 					if ($('.pin-3').hasClass('jsplumb-endpoint-full') || $('.pin-9').hasClass('jsplumb-endpoint-full') || $('.pin-10').hasClass('jsplumb-endpoint-full') || $('.pin-11').hasClass('jsplumb-endpoint-full')) {
 						$('.blocks li:nth(87)').css('display', 'block');
+						runadd5();
 					} else {
 						$('.blocks li:nth(87)').css('display', 'none');
 					}
@@ -535,6 +531,15 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 						$('.blocks li:nth(87)').css('display', 'block');
 					} else {
 						$('.blocks li:nth(87)').css('display', 'none');
+					}
+				}
+
+				qwez();
+
+				function qwez() {
+					if($('.pin-2').hasClass('jsplumb-endpoint-full')){
+						console.log(1)
+						$('.pin-PD1').css('display', 'none');
 					}
 				}
 
