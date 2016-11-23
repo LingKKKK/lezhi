@@ -1,6 +1,6 @@
 define(['app/util/util', 'app/util/emitor', 'vendor/beautify', 'vendor/ace/ace', 'vendor/ace/theme-default', 'vendor/ace/mode-arduino', 'vendor/ace/snippets/text', 'vendor/ace/snippets/arduino', 'vendor/ace/ext-language_tools'], function(util, emitor, beautify) {
 	var editor;
-	var codeTemplate = '/**\n * Copyright(C), 2016-2038, KenRobot.com\n * FileName: {{name}}.ino\n * Author: {{author}}\n * Create: {{created_at}}\n * Modify: {{updated_at}}\n */\nINCLUDE_CODE{{global}}\nvoid setup()\n{\n{{setup}}\n}\n\nvoid loop()\n{\n{{loop}}\n}';
+	var codeTemplate = '/**\n * Copyright(C), 2016-2038, KenRobot.com\n * FileName: {{name}}.ino\n * Author: {{author}}\n * Create: {{created_at}}\n * Modify: {{updated_at}}\n */\nINCLUDE_CODE{{extra}}{{global}}\nvoid setup()\n{\n{{setup}}\n}\n\nvoid loop()\n{\n{{loop}}\n}';
 	
 	function init(container) {
 		editor = ace.edit(container);
@@ -95,6 +95,7 @@ define(['app/util/util', 'app/util/emitor', 'vendor/beautify', 'vendor/ace/ace',
 			.replace(/\{\{author\}\}/, codeInfo.author || "乐智")
 			.replace(/\{\{created_at\}\}/, util.formatDate(codeInfo.created_at || date, "yyyy/MM/dd"))
 			.replace(/\{\{updated_at\}\}/, util.formatDate(codeInfo.updated_at || date, "yyyy/MM/dd"))
+			.replace(/\{\{extra\}\}/, codeInfo.extra ? "\n" + codeInfo.extra + "\n" : "")
 			.replace(/\{\{global\}\}/, codeInfo.global ? "\n" + codeInfo.global + "\n" : "")
 			.replace(/\{\{setup\}\}/, codeInfo.setup || "    ")
 			.replace(/\{\{loop\}\}/, codeInfo.loop || "    ");

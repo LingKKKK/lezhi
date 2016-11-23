@@ -622,6 +622,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}],
 						code: {
 							include: '#include <RoSys.h>',
+							extra: 'unsigned char Data_he[][8]=\n{\n{0x04, 0x0E, 0x78, 0x08, 0x08, 0xFF, 0x08, 0x18},\n{0x1C,0x2A,0x2A,0x48,0x88,0x08,0x08,0x08},\n{0x00,0x00,0x00,0x7C,0x44,0x44,0x44,0x44},\n{0x44,0x44,0x44,0x44,0x7C,0x44,0x00,0x00},/*"和",0*/\n};\nunsigned char Data_xin[][8]=\n	{\n{0x00,0x00,0x00,0x1E,0x3F,0x7F,0x7F,0x7F},\n{0x3F,0x1F,0x0F,0x07,0x03,0x01,0x00,0x00},\n{0x00,0x00,0x00,0x78,0xFC,0xFE,0xFE,0xFE},\n{0xFC,0xF8,0xF0,0xE0,0xC0,0x80,0x00,0x00},/*心形*/\n};',
 							var: 'RoLedMatrix {NAME}({s},1);',
 							setup: 'int devices={NAME}.getDeviceCount();for(int addr=0;addr<devices;addr++){{NAME}.shutDown(addr,false);{NAME}.setIntensity(addr,8);{NAME}.clearDisplay(addr);}'
 						}
@@ -964,7 +965,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						module: "motor"
 					}, {
 						type: "statement",
-						name: "buzzer",
+						name: "buzzer111",
 						connectors: [{
 							type: "connector-top",
 							accept: "connector-bottom"
@@ -987,13 +988,13 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "static-select",
 							options: [{
 								label: "Do",
-								value: "261"
+								value: "262"
 							}, {
 								label: "Re",
-								value: "293"
+								value: "294"
 							}, {
 								label: "Mi",
-								value: "329"
+								value: "330"
 							}, {
 								label: "Fa",
 								value: "349"
@@ -1006,6 +1007,21 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							}, {
 								label: "Si",
 								value: "494"
+							}, {
+								label: "C#",
+								value: "277"
+							}, {
+								label: "D#",
+								value: "311"
+							}, {
+								label: "F#",
+								value: "370"
+							}, {
+								label: "G#",
+								value: "415"
+							}, {
+								label: "A#",
+								value: "466"
 							}]
 						}, {
 							type: "text",
@@ -1018,10 +1034,317 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "text",
 							value: "毫秒"
 						}],
-						code: "tone({BUZZER},{NOTE},{SECONDS});\ndelay({SECONDS});",
+						code: "{BUZZER}.tone({NOTE},{SECONDS});",
 						tags: ["module"],
 						module: "buzzer"
-					}, {
+					}, 
+					{
+						type: "statement",
+						name: "buzzer222",
+						connectors: [{
+							type: "connector-top",
+							accept: "connector-bottom"
+						}, {
+							type: "connector-bottom",
+							accept: "connector-top"
+						}],
+						content: [{
+							type: "text",
+							value: "蜂鸣器"
+						}, {
+							id: "BUZZER",
+							type: "dynamic-select",
+							options: "buzzers"
+						}, {
+							type: "text",
+							value: "发出音阶"
+						}, {
+							id: "NOTE",
+							type: "static-select",
+							options: [{
+								label: "NOTE_B0",
+								value: "31"
+							}, {
+								label: "NOTE_C1",
+								value: "33"
+							}, {
+								label: "NOTE_CS1",
+								value: "35"
+							}, {
+								label: "NOTE_D1",
+								value: "37"
+							}, {
+								label: "NOTE_DS1",
+								value: "39"
+							}, {
+								label: "NOTE_E1",
+								value: "41"
+							}, {
+								label: "NOTE_F1",
+								value: "44"
+							}, {
+								label: "NOTE_FS1",
+								value: "46"
+							}, {
+								label: "NOTE_G1",
+								value: "49"
+							}, {
+								label: "NOTE_GS1",
+								value: "52"
+							}, {
+								label: "NOTE_A1",
+								value: "55"
+							}, {
+								label: "NOTE_AS1",
+								value: "58"
+							}, {
+								label: "NOTE_B1",
+								value: "62"
+							}, {
+								label: "NOTE_C2",
+								value: "65"
+							}, {
+								label: "NOTE_CS2",
+								value: "69"
+							}, {
+								label: "NOTE_D2",
+								value: "73"
+							}, {
+								label: "NOTE_DS2",
+								value: "78"
+							}, {
+								label: "NOTE_E2",
+								value: "82"
+							}, {
+								label: "NOTE_F2",
+								value: "87"
+							}, {
+								label: "NOTE_FS2",
+								value: "93"
+							}, {
+								label: "NOTE_G2",
+								value: "98"
+							}, {
+								label: "NOTE_GS2",
+								value: "104"
+							}, {
+								label: "NOTE_A2",
+								value: "110"
+							}, {
+								label: "NOTE_AS2",
+								value: "117"
+							}, {
+								label: "NOTE_B2",
+								value: "123"
+							}, {
+								label: "NOTE_C3",
+								value: "131"
+							}, {
+								label: "NOTE_CS3",
+								value: "139"
+							}, {
+								label: "NOTE_D3",
+								value: "147"
+							}, {
+								label: "NOTE_DS3",
+								value: "156"
+							}, {
+								label: "NOTE_E3",
+								value: "165"
+							}, {
+								label: "NOTE_F3",
+								value: "175"
+							}, {
+								label: "NOTE_FS3",
+								value: "185"
+							}, {
+								label: "NOTE_G3",
+								value: "196"
+							}, {
+								label: "NOTE_GS3",
+								value: "208"
+							}, {
+								label: "NOTE_A3",
+								value: "220"
+							}, {
+								label: "NOTE_AS3",
+								value: "233"
+							}, {
+								label: "NOTE_B3",
+								value: "247"
+							}, {
+								label: "NOTE_C4",
+								value: "262"
+							}, {
+								label: "NOTE_CS4",
+								value: "277"
+							}, {
+								label: "NOTE_D4",
+								value: "294"
+							}, {
+								label: "NOTE_DS4",
+								value: "311"
+							}, {
+								label: "NOTE_E4",
+								value: "330"
+							}, {
+								label: "NOTE_F4",
+								value: "349"
+							}, {
+								label: "NOTE_FS4",
+								value: "370"
+							}, {
+								label: "NOTE_G4",
+								value: "392"
+							}, {
+								label: "NOTE_GS4",
+								value: "415"
+							}, {
+								label: "NOTE_A4",
+								value: "440"
+							}, {
+								label: "NOTE_AS4",
+								value: "466"
+							}, {
+								label: "NOTE_B4",
+								value: "494"
+							}, {
+								label: "NOTE_C5",
+								value: "523"
+							}, {
+								label: "NOTE_CS5",
+								value: "554"
+							}, {
+								label: "NOTE_D5",
+								value: "587"
+							}, {
+								label: "NOTE_DS5",
+								value: "622"
+							}, {
+								label: "NOTE_E5",
+								value: "659"
+							}, {
+								label: "NOTE_F5",
+								value: "698"
+							}, {
+								label: "NOTE_FS5",
+								value: "740"
+							}, {
+								label: "NOTE_G5",
+								value: "784"
+							}, {
+								label: "NOTE_GS5",
+								value: "831"
+							}, {
+								label: "NOTE_A5",
+								value: "880"
+							}, {
+								label: "NOTE_AS5",
+								value: "932"
+							}, {
+								label: "NOTE_B5",
+								value: "988"
+							}, {
+								label: "NOTE_C6",
+								value: "1047"
+							}, {
+								label: "NOTE_CS6",
+								value: "1109"
+							}, {
+								label: "NOTE_D6",
+								value: "1175"
+							}, {
+								label: "NOTE_DS6",
+								value: "1245"
+							}, {
+								label: "NOTE_E6",
+								value: "1319"
+							}, {
+								label: "NOTE_F6",
+								value: "1397"
+							}, {
+								label: "NOTE_FS6",
+								value: "1480"
+							}, {
+								label: "NOTE_G6",
+								value: "1568"
+							}, {
+								label: "NOTE_GS6",
+								value: "1661"
+							}, {
+								label: "NOTE_A6",
+								value: "1760"
+							}, {
+								label: "NOTE_AS6",
+								value: "1865"
+							}, {
+								label: "NOTE_B6",
+								value: "1976"
+							}, {
+								label: "NOTE_C7",
+								value: "2093"
+							}, {
+								label: "NOTE_CS7",
+								value: "2217"
+							}, {
+								label: "NOTE_D7",
+								value: "2349"
+							}, {
+								label: "NOTE_DS7",
+								value: "2489"
+							}, {
+								label: "NOTE_E7",
+								value: "2637"
+							}, {
+								label: "NOTE_F7",
+								value: "2794"
+							}, {
+								label: "NOTE_FS7",
+								value: "2960"
+							}, {
+								label: "NOTE_G7",
+								value: "3136"
+							}, {
+								label: "NOTE_GS7",
+								value: "3322"
+							}, {
+								label: "NOTE_A7",
+								value: "3520"
+							}, {
+								label: "NOTE_AS7",
+								value: "3729"
+							}, {
+								label: "NOTE_B7",
+								value: "3951"
+							}, {
+								label: "NOTE_C8",
+								value: "4186"
+							}, {
+								label: "NOTE_CS8",
+								value: "4435"
+							}, {
+								label: "NOTE_D8",
+								value: "4699"
+							}, {
+								label: "NOTE_DS8",
+								value: "4978"
+							}]
+						}, {
+							type: "text",
+							value: "持续"
+						}, {
+							id: "SECONDS",
+							type: "number-input",
+							value: 2000
+						}, {
+							type: "text",
+							value: "毫秒"
+						}],
+						code: "{BUZZER}.tone({NOTE},{SECONDS});",
+						tags: ["module"],
+						module: "buzzer"
+					}
+					,{
 						type: "statement",
 						name: "buzzerClose",
 						connectors: [{
@@ -1039,7 +1362,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "dynamic-select",
 							options: "buzzers"
 						}],
-						code: "noTone({BUZZER});",
+						code: "{BUZZER}.noTone();",
 						tags: ["module"],
 						module: "buzzer"
 					}, {
@@ -4200,7 +4523,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							type: "text",
 							value: "毫秒"
 						}],
-						code: "tone({BUZZER},{NOTE},{SECONDS});\ndelay({SECONDS});",
+						code: "{BUZZER}.tone({RATE},{SECONDS});",
 						tags: ["module"],
 						module: "buzzer"
 					}, {
@@ -4596,7 +4919,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							id: "addr",
 							type: "static-select",
 							options: [{
-								label: "全部",
+								label: "0",
 								value: "0"
 							}, {
 								label: "1",
@@ -4607,13 +4930,10 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							}, {
 								label: "3",
 								value: "3"
-							}, {
-								label: "4",
-								value: "4"
 							}]
 						}, {
 							type: "text",
-							value: "个字符显示"
+							value: "个显示字符"
 						}, {
 							blockInputId: "ch",
 							type: "block-input",
@@ -4632,11 +4952,6 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 						}, {
 							type: "connector-bottom",
 							accept: "connector-top"
-						}, {
-							type: "connector-input",
-							accept: "connector-output",
-							acceptType: "all",
-							name: "a0c0e2a1-5236-4eaa-a8b6-f789aad34637"
 						}],
 						content: [{
 							type: "text",
@@ -4647,12 +4962,12 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							options: "ACT009s"
 						}, {
 							type: "text",
-							value: "显示，从第"
+							value: "第"
 						}, {
 							id: "addr",
 							type: "static-select",
 							options: [{
-								label: "全部",
+								label: "0",
 								value: "0"
 							}, {
 								label: "1",
@@ -4663,18 +4978,20 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							}, {
 								label: "3",
 								value: "3"
-							}, {
-								label: "4",
-								value: "4"
 							}]
 						}, {
 							type: "text",
-							value: "个字符显示"
+							value: "个显示"
 						}, {
-							blockInputId: "ch",
-							type: "block-input",
-							acceptType: "number",
-							name: "a0c0e2a1-5236-4eaa-a8b6-f789aad34637"
+							id: "ch",
+							type: "static-select",
+							options: [{
+								label: "汉字",
+								value: "Data_he"
+							}, {
+								label: "心形",
+								value: "Data_xin"
+							}]
 						}],
 						code: "{LCD}.display({addr},{ch});",
 						tags: ["module"],
@@ -4803,7 +5120,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 							id: "addr",
 							type: "static-select",
 							options: [{
-								label: "全部",
+								label: "0",
 								value: "0"
 							}, {
 								label: "1",
@@ -4815,7 +5132,7 @@ define(['vendor/jquery', './userModel'], function($1, userModel) {
 								label: "3",
 								value: "3"
 							}, {
-								label: "4",
+								label: "全部",
 								value: "4"
 							}]
 						}],

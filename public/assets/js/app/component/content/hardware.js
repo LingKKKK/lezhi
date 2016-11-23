@@ -52,14 +52,14 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 
 		$('.content-region').mouseup(function() {
 			if ($('.tab-software .filters-wrap').find('.filters li:nth-child(1)').hasClass('active')) {
-				$('.blocks li:nth(87)').css('display', 'none');
+				$('.blocks li:nth(88)').css('display', 'none');
 			}
 		})
 		documentmove();
 
 		function documentmove() {
 			$('.content-region').mouseover(function() {
-				var a = $('.blocks li:nth(87)')
+				var a = $('.blocks li:nth(88)')
 				a.css('display', 'none');
 				qwe0();
 
@@ -504,7 +504,8 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 				showLEDhide();
 
 				function showLEDhide() {
-					if ($('.blocks li:nth(19)').hasClass('active')) {
+					$('.blocks li:nth(20)').addClass('ad')
+					if ($('.blocks li:nth(20)').hasClass('active')) {
 						showLed();
 					}
 				}
@@ -513,24 +514,24 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 					if ($('.tab-software .filters-wrap').find('.filters li:nth-child(1)').hasClass('active')) {
 						runadd4();
 					} else {
-						$('.blocks li:nth(87)').css('display', 'none');
+						$('.blocks li:nth(88)').css('display', 'none');
 					}
 				}
 
 				function runadd4() {
 					if ($('.pin-3').hasClass('jsplumb-endpoint-full') || $('.pin-9').hasClass('jsplumb-endpoint-full') || $('.pin-10').hasClass('jsplumb-endpoint-full') || $('.pin-11').hasClass('jsplumb-endpoint-full')) {
-						$('.blocks li:nth(87)').css('display', 'block');
+						$('.blocks li:nth(88)').css('display', 'block');
 						runadd5();
 					} else {
-						$('.blocks li:nth(87)').css('display', 'none');
+						$('.blocks li:nth(88)').css('display', 'none');
 					}
 				}
 
 				function runadd5() {
 					if ($('.tab-software .filters-wrap').find('.filters li:nth-child(1)').hasClass('active')) {
-						$('.blocks li:nth(87)').css('display', 'block');
+						$('.blocks li:nth(88)').css('display', 'block');
 					} else {
-						$('.blocks li:nth(87)').css('display', 'none');
+						$('.blocks li:nth(88)').css('display', 'none');
 					}
 				}
 

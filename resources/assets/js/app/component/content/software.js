@@ -81,6 +81,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 		var codeInfo = softwareModel.getCode();
 
 		var includeCode = [];
+		var extraCode = '';
 		var varCode = '';
 		var setupCode = '';
 		var tempCode;
@@ -110,6 +111,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 				}
 				setupCode += tempCode;
 			}
+			if (code.extra) {
+				extraCode += code.extra;
+			}
 		});
 		includeCode = includeCode.sort().reduce(function(result, line) {
 			(result.length == 0 || result[result.length - 1] != line) && result.push(line);
@@ -117,6 +121,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 		}, []).join('\n');
 
 		codeInfo.include = includeCode;
+		codeInfo.extra = extraCode;
 		codeInfo.global = varCode + codeInfo.global;
 		codeInfo.setup = setupCode + codeInfo.setup;
 
