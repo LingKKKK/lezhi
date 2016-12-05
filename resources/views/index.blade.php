@@ -63,17 +63,18 @@
 						<span class="hw">PROGRAMMING    编程</span>
 						<div class="filters-wrap">
 							<ul class="filters">
-								<li data-filter="module">模块<i class="lezhi lz-module"></i></li>
-								<li data-filter="function">函数<i class="lezhi lz-function"></i></li>
-								<li data-filter="var">变量<i class="lezhi lz-variable"></i></li>
-								<li data-filter="code">代码<i class="lezhi lz-codeicon"></i></li>
-								<li data-filter="math">数学函数<i class="lezhi lz-Digitalfunction"></i></li>
-								<li data-filter="text">文本<i class="lezhi lz-text"></i></li>
-								<li data-filter="control">控制<i class="lezhi lz-control"></i></li>
-								<li data-filter="logic">逻辑运算<i class="lezhi lz-Logicaloperations"></i></li>
+								<li data-filter="module">模块<!-- <i class="lezhi lz-module"></i> --></li>
+								<li data-filter="function">函数<!-- <i class="lezhi lz-function"></i> --></li>
+								<li data-filter="var">变量<!-- <i class="lezhi lz-variable"></i> --></li>
+								<li data-filter="code">代码<!-- <i class="lezhi lz-codeicon"></i> --></li>
+								<li data-filter="math">数学函数<!-- <i class="lezhi lz-Digitalfunction"></i> --></li>
+								<li data-filter="text">文本<!-- <i class="lezhi lz-text"></i> --></li>
+								<li data-filter="control">控制<!-- <i class="lezhi lz-control"></i> --></li>
+								<li data-filter="logic">逻辑运算<!-- <i class="lezhi lz-Logicaloperations"></i> --></li>
 							</ul>
 						</div>
 						<div class="filter">
+							<span class="switch">切换到</span>
 							<span class="filter-name">全部</span>
 							<input class="advanced" type="button" value="高级" />
 						</div>
@@ -334,12 +335,30 @@
 					<div class="x-dialog-title">安装</div>
 					<i class="lezhi lz-close x-dialog-close"></i>
 					<div class="x-dialog-content selectable">
-						你没有安装啃萝卜<span class="strong">KenExt.crx</span>，请按以下步骤操作:
+						你没有安装乐智<span class="strong">KenExt.crx</span>，请按以下步骤操作:
 						<div class="step">
 							Step 1: 点击<a href="http://ide.kenrobot.com/download/KenExt.crx" title="啃萝卜">下载</a><br />
 							Step 2: 打开chrome浏览器，在地址栏输入<span class="strong">chrome://extensions</span><br />
 							Step 3: 把<span class="strong">KenExt.crx</span>拖入浏览器<br />
 							Step 4: 完成安装
+						</div>
+						<div class="des">说明: 如果顶部弹出“无法添加来自此网站的应用...”，请点击确定。由于一些你懂的原因，我们不能把插件发布到google应用商店。就算能发布，部分用户也不能...，所以<span class="helpless">╮(╯▽╰)╭</span></div>
+					</div>
+					<div class="x-dialog-btns">
+						<button class="x-dialog-btn confirm">确定</button>
+					</div>
+				</div>
+				<div class="x-dialog install-driver-dialog">
+					<div class="x-dialog-title">驱动问题</div>
+					<i class="kenrobot ken-close x-dialog-close"></i>
+					<div class="x-dialog-content selectable">
+						如果你遇到了Rosys<span class="strong">驱动问题</span>，请按以下步骤操作:
+						<div class="step">
+							Step 1: 点击<a class="driver-url" data-url="http://ide.kenrobot.com/download/arduino-driver-xBIT.zip 
+
+" title="rosys驱动">下载</a>并解压<br />
+							Step 2: 运行<span class="strong">rosys驱动安装.exe</span><br />
+							Step 3: 完成安装
 						</div>
 						<div class="des">说明: 如果顶部弹出“无法添加来自此网站的应用...”，请点击确定。由于一些你懂的原因，我们不能把插件发布到google应用商店。就算能发布，部分用户也不能...，所以<span class="helpless">╮(╯▽╰)╭</span></div>
 					</div>

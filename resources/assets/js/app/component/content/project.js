@@ -134,6 +134,7 @@ define(['vendor/jquery', 'app/util/emitor', 'app/util/util', 'app/model/userMode
 		userModel.authCheck(true).done(function() {
 			emitor.trigger('project', 'show');
 		});
+		// emitor.trigger('installDriver', 'show');
 	}
 
 	function onSaveClick(e) {

@@ -40,6 +40,10 @@ $focus-color: #f1cb33;
 				// background-color: #eceef1;
 				top: 164px;
 				left: 0;
+				border:0 solid #a8a8a8;
+				box-shadow:0 1px 5px 0 rgba(222,222,222,0.50);
+				/* width:402.5px; */
+				height:2.5px;
 			}
 
 			.filters {
@@ -48,13 +52,13 @@ $focus-color: #f1cb33;
 
 				li {
 					border-radius: 5px;
-					padding-top: 45px;
-					width: 77px;
-					height: 77px;
+					/* padding-top: 45px; */
+					width: 80px;
+					height: 38px;
 					font-size: 13px;
 					letter-spacing: 2px;
 					text-align: center;
-					line-height: 36px;
+					line-height: 38px;
 					border-width: 1px;
 					border-style: solid;
 					margin-right: 10px;
@@ -63,7 +67,6 @@ $focus-color: #f1cb33;
 					float: left;
 					transition: all 0.2s;
 					position: relative;
-
 					// &:nth-child(3n) {
 					// 	margin-right: 0;
 					// }
@@ -75,15 +78,15 @@ $focus-color: #f1cb33;
 					    top: 15px;
 					}
 
-					&:after {
-					    width: 10px;
-					    height: 10px;
-					    border-radius: 50%;
-					    content: '';
-					    position: absolute;
-					    left: 10px;
-					    top: 10px;
-					}
+					// &:after {
+					//     width: 10px;
+					//     height: 10px;
+					//     border-radius: 50%;
+					//     content: '';
+					//     position: absolute;
+					//     left: 10px;
+					//     top: 10px;
+					// }
 
 					&[data-filter="module"] {
 						color: $module-color;
@@ -206,6 +209,21 @@ $focus-color: #f1cb33;
 			margin-right: 20px;
 			padding-top: 15px;
 
+			.switch {
+			    font-family: PingFangSC-Regular;
+	    		font-size: 12px;
+			    color: #718ac0;
+			    letter-spacing: 1px;
+			    line-height: 16px;
+			    text-align: center;
+			    width: 40px;
+			    height: 16px;
+			    display: block;
+			    position: absolute;
+			    left: 256px;
+    			top: 194px;
+			}
+			
 			.filter-name {
 				color: #718ac0;
 				line-height: 28px;
@@ -238,7 +256,7 @@ $focus-color: #f1cb33;
 		.blocks-wrap {
 			left: 0;
 			right: 0;
-			top: 285px;
+			top: 224px;
 			bottom: 20px;
 			position: absolute;
 			overflow-x: hidden;

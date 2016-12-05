@@ -1,4 +1,4 @@
-define(['./common', './login', './project', './port', './install', './share'], function(common, login, project, port, install, share) {
+define(['./common', './login', './project', './port', './install', './share', './installDriver'], function(common, login, project, port, install, share, installDriver) {
 
 	function init() {
 		common.init();
@@ -7,6 +7,7 @@ define(['./common', './login', './project', './port', './install', './share'], f
 		port.init();
 		install.init();
 		share.init();
+		installDriver.init();
 	}
 
 	return {

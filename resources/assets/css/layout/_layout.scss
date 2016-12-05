@@ -11,6 +11,8 @@ html, body {
 	position: absolute;
 	top: 0;
 	bottom: 0;
+	min-width: 1320px;
+	overflow: auto;
 
 	.content-region {
 	    position: absolute;

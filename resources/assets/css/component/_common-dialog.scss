@@ -23,6 +23,13 @@
 		letter-spacing: 1px;
 		color: #39426a;
 		text-align: center;
+		display: block;
+
+		.link {
+			cursor: pointer;
+			color: #0088ff;
+			text-decoration: underline;
+		}
 	}
 
 	.x-dialog-btns {
@@ -83,6 +90,20 @@
 				display: inline-block;
 				background-color: #f49604;
 				margin-left: 40px;
+			}
+		}
+
+		&.warn-info {
+			.x-dialog-btn {
+				&.cancel {
+					display: none;
+				}
+
+				&.confirm {
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+				}
 			}
 		}
 	}
