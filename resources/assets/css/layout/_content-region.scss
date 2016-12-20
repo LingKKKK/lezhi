@@ -43,7 +43,7 @@ $seperator-width: 5px;
 	
 	.sidebar-tabs {
 		position: absolute;
-		background-color: red;
+		/* background-color: red; */
 		height: 100%;
 		z-index: 14;
 
@@ -55,13 +55,13 @@ $seperator-width: 5px;
 			top: 0;
 			bottom: 0;
 			right: -$seperator-width;
-			background-color: #eceef1;
+			/* background-color: #eceef1; */
 		}
 
 		.tab {
-			position: relative;
+			position: relative; 
 			height: 100%;
-			width: $sidebar-tabs-width;
+			width: 405px;
 			display: none;
 
 			&.active {

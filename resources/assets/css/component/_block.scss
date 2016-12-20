@@ -299,6 +299,7 @@ $disabled-deep-color: #dadada;
 
 	&.module {
 		background-color: $module-color;
+		padding-left: 60px;
 
 		&.block-statement-input {
 			background-color: transparent;

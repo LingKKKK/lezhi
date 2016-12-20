@@ -22,7 +22,7 @@ $focus-color: #f1cb33;
 			left: 50%;
 			-webkit-transform: translateX(-50%);
 			transform: translateX(-50%);
-			top: 25px;
+			top: 21px;
 		}
 
 		.filters-wrap {
@@ -443,6 +443,10 @@ $focus-color: #f1cb33;
 		    
 		    .icon {
 		    	font-size: 60px;
+		    }
+
+		    &:hover {
+	    	    color: #0093FC;
 		    }
 		}
 

@@ -9,15 +9,20 @@
 	
 	.photo {
 		cursor: pointer;
+		padding-top: 19px;
 		display: block;
-		width: 42px;
-		height: 42px;
-		background-color: transparent;
+		width: 90px;
+		height: 66px;
+		/* background-color: red; */
+		position: absolute;
+		left: -17px;
+		top: -16px;
+		padding-left: 15px;
 
 		& > img {
 			border-radius: 50%;
-			width: 42px;
-			height: 42px;
+			width: 36px;
+			height: 36px;
 		}
 
 		&.no-user {
@@ -28,6 +33,10 @@
 	&:hover {
 		.login-menu {
 			display: block;
+		}
+
+		.photo {
+			background:#46c8ff;
 		}
 	}
 
@@ -51,6 +60,8 @@
 	.tab {
 		width: 100px;
 		display: none;
+		margin-top: 40px;
+		margin-left: -22px;
 
 		& > ul {
 			background:#46c8ff;
@@ -78,13 +89,13 @@
 					color: #718ac0;
 					letter-spacing: 4px;
 					display: block;
-					height: 30px;
-					line-height: 30px;
+					height: 24px;
+					line-height: 24px;
 					text-align: center;
 				}
 
 				&:hover {
-				background:#143c82;
+					background:#143c82;
 				}
 			}
 		}

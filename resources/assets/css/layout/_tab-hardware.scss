@@ -9,7 +9,9 @@
 
 .sidebar-tabs {
 	.tab-hardware {
-		padding-top: 50px;
+		padding-top: 60px;
+		margin-top: 2px;
+	    box-shadow: 3px -2px 0px rgba(0, 0, 0, 0.24);
 
 		.search-wrap {
 			padding-left: 20px;
@@ -58,17 +60,18 @@
 				left: 50%;
 				-webkit-transform: translateX(-50%);
 				transform: translateX(-50%);
-				top: -25px;
+				top: -40px;
 			}
 
 			&:after {
 				content: ' ';
+				width: 398px;
 				height: 1px;
 				display: block;
 				position: relative;
-				background-color: #eceef1;
-				top: 116px;
-				left: 0;
+				background-color: #A8A8A8;
+				top: 70px;
+				left: -17px;
 			}
 
 			.filters {
@@ -85,9 +88,9 @@
 					letter-spacing: 2px;
 					text-align: center;
 					line-height: 36px;
-					border: 1px solid #eceef1;
+					border: 1px solid #e0e0e0;
 					margin-right: 10px;
-					margin-top: 12px;
+					/* margin-top: 12px; */
 					cursor: pointer;
 					float: left;
 					transition: background-color 0.2s;
@@ -101,7 +104,7 @@
 					}
 
 					&.active {
-						background-color: #0b7bdc;
+						background-color: #0093FC;
 						color: white;
 						border: none;
 					}
@@ -166,6 +169,8 @@
 						text-align: center;
 						color: #718ac0;
 						user-select: none;
+						font-size: 12px;
+						color: #4A4A4A;
 					}
 
 					.hover {
@@ -206,6 +211,7 @@
 			height: 100%;
 			position: relative;
 
+
 			&.can-drop {
 				background-color: #f3f7fa;
 				&:after {
@@ -236,6 +242,10 @@
 		    .icon {
 		    	font-size: 60px;
 		    }
+
+		    &:hover {
+	    	    color: #0093FC;
+		    }
 		}
 	}
 }
@@ -249,6 +259,18 @@
 		background-size: contain;
 		background-position: center;
 		background-repeat: no-repeat;
+		/* position: relative; */
+
+		// .modle-choice {
+		// 	width: 355px;
+		// 	height: 265px;
+		// 	background: white;
+		// 	position: absolute;
+		// 	left: 50%;
+		// 	top: 0px;
+		// 	display: block;
+		// 	z-index: 999;
+		// }
 	}
 
 	.component {
@@ -291,7 +313,7 @@
 	.jsplumb-endpoint {
 		z-index: 1;
 		cursor: pointer;
-		border-radius: 10px;
+		/* border-radius: 10px; */
 
 		&.board-endpoint {
 			opacity: 0;
@@ -317,9 +339,39 @@
 
 		&.jsplumb-endpoint-connected {
 			opacity: 1;
-			background-color: #f1c933;
+			background-color: #AEF0FF;
+		}
+	}
+
+	.endpointDrag {
+		border-radius: 50%;
+		svg {
+			border: 1px solid #AEF0FF;
+			border-radius: 50%;
+		}
+	}
+
+	.jsplumb-endpoint-full {
+		border-radius: 50%;
+		svg {
+			border: 1px solid #AEF0FF;
 		}
 	}	
+
+	.component-endpoint {
+		border-radius: 50%;
+		svg {
+			border-radius: 50%;
+			border: 1px solid #AEF0FF;
+		}
+	}
+
+	.board-endpoint {
+		/* border-radius: 50%; */
+		svg {
+			border: 1px solid #AEF0FF;
+		}
+	}
 }
 
 .component-dialog {

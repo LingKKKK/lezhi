@@ -23,10 +23,11 @@
 					<div class="logo"></div>
 				</div>
 				<ul class="center">
-					<li data-action="project"><i class="icon lezhi lz-project"></i><span class="name">项目</span></li>
-					<li data-action="hardware"><i class="icon lezhi lz-hardware"></i><span class="name">硬件</span></li>
-					<li data-action="software"><i class="icon lezhi lz-programming"></i><span class="name">编程</span></li>
-					<li data-action="code"><i class="icon lezhi lz-code"></i><span class="name">源码</span></li>
+					<li data-action="project"><!-- <i class="icon lezhi lz-project"></i> --><span class="name">项目</span></li>
+					<li data-action="hardware"><!-- <i class="icon lezhi lz-hardware"></i> --><span class="name">硬件</span></li>
+					<li data-action="software"><!-- <i class="icon lezhi lz-programming"></i> --><span class="name">编程</span></li>
+					<li data-action="code"><!-- <i class="icon lezhi lz-code"></i> --><span class="name">源码</span></li>
+					<span class="cut"></span>
 				</ul>
 				<ul class="bottom">
 					<li data-action="share"><i class="icon lezhi lz-share" style="color: white"></i><span class="name"></span></li>
@@ -139,6 +140,7 @@
 						<div class="tab tab-hardware" data-action="hardware">
 							<div id="hardware-container" class="hardware-container" droppable="true">
 								<div class="board absolute-center">
+									<div class="modle-choice"></div>
 								</div>
 							</div>
 							<div class="component-dialog" id="component-dialog">
@@ -370,5 +372,6 @@
 			<div class="layer drag-layer block-drag-layer"></div>
 			<div class="layer drag-layer component-drag-layer"></div>
 		</div>
+		<!-- <script type="text/javascript" src="assets/js/add.js"></script> -->
 	</body>
 </html>
