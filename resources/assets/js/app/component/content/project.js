@@ -143,16 +143,21 @@ define(['vendor/jquery', 'app/util/emitor', 'app/util/util', 'app/model/userMode
 	}
 
 	function projectClick() {
-		$('.center .cut').css("left",0)
+		$('.center .cut').css("left", 0)
 	}
+
 	function hardwareClick() {
-		$('.center .cut').css("left",124)
+		$('.center .cut').css("left", 124)
+		$('.center li:nth-child(4)').addClass('arrow');
 	}
+
 	function softwareClick() {
-		$('.center .cut').css("left",248)
+		$('.center .cut').css("left", 248)
+		$('li[data-action="hardware"]', region).click();
 	}
+
 	function codeClick() {
-		$('.center .cut').css("left",372)
+		$('.center .cut').css("left", 372)
 	}
 
 	function onSaveClick(e) {

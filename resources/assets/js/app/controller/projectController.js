@@ -362,11 +362,14 @@ define(['vendor/jquery', 'app/config/config', 'app/util/util', 'app/util/emitor'
 			// case 2:
 			// 	util.message("找不到Arduino");
 			// 	break;
+
+			//  给upload添加判断 如果没有安装软件  就提示安装   376~393
+
 			case 1:
 			case 2:
 				emitor.trigger('common', 'show', {
 					type: 'warn warn-info',
-					content: '未检测到有Arduino开发板或其他串口设备插入。<span class="link" data-type="link" data-close-dialog="true">驱动问题</span>？解决后请关闭窗口，然后重试',
+					content: '未检测到有Rosys开发板或其他串口设备插入。<span class="link" data-type="link" data-close-dialog="true">驱动问题</span>？解决后请关闭窗口，然后重试',
 					onLink: function(type) {
 						setTimeout(function(){
 							emitor.trigger("installDriver", "show");

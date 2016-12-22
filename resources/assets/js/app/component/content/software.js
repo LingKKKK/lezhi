@@ -35,7 +35,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 		emitor.on('block', 'drag-end', onBlockDragEnd);
 
 		var alertInput = $('.content-region .connector-input');
-		
+
 		// $('.software-container').mousemove(function(){
 		// 	console.log(alertInput.length)
 		// })
@@ -125,6 +125,14 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 		codeInfo.global = varCode + codeInfo.global;
 		codeInfo.setup = setupCode + codeInfo.setup;
 
+		// console.dir(codeInfo.global)
+		// var a = codeInfo.global;
+		// if (a == null || a.length == 0) {
+		// 	console.log(a + "是空的");
+		// }else {
+		// 	console.log(a + "不是空的");
+		// }
+		// console.dir(codeInfo)
 		return codeInfo;
 	}
 

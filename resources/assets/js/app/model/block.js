@@ -32,7 +32,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	reservedWords = reservedWords.split(',');
 
 
-	console.log($('.module'));
+	// console.log($('.module'));
 
 	$('.sidebar-region .center li:nth-child(4)').click();
 	$('.sidebar-region .center li:nth-child(2)').click();

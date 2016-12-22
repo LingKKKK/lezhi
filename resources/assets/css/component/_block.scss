@@ -301,6 +301,20 @@ $disabled-deep-color: #dadada;
 		background-color: $module-color;
 		padding-left: 60px;
 
+		&:after {
+			content: '';
+			position: absolute;
+			left: 17px;
+			top: 5px;
+			width: 33px;
+			height: 33px;
+			/* background-color: black; */
+			background-image: url('../image/logo.png');
+			background-size: 30px 30px;
+			background-position: 0px 0px;
+			z-index: 999;
+		}
+
 		&.block-statement-input {
 			background-color: transparent;
 
