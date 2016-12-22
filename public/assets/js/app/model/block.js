@@ -25,7 +25,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	var dragMouseX;
 	var dragMouseY;
 	var delayTimer;
-	var paletteDom;
 	var recycleDom;
 
 	var translateRegExp = /translate\(((-)*(\d|\.)*)px, ((-)*(\d|\.)*)px\)/;
@@ -625,8 +624,20 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var promptDom = $('.tab-software .prompt');
 		
 		$('.software-container').mousemove(function() {
-			
+			// var a = $('.software-container .block .connector-input');
+			// for (var i = 0; i < a.length; i++) {
+			// 	a[i].index = i;
+			// 	a[i].onclick = function() {
+			// 		promptDom.css('display', 'block')
+			// 	}
+			// }
 		})
+
+		// $('.tab-software').mousemove(function() {
+		// 	console.log(2)
+		// 	promptDom.css('display', 'none')
+		// })
+
 	}
 
 	function statementDragStart(block) {

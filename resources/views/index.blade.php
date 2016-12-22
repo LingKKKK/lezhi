@@ -190,6 +190,7 @@
 								<li data-action="uncomment">取消注释</li>
 								<li data-action="delete">删除</li>
 							</ul>
+							<div class="palette"></div>
 							<div class="recycle">
 								<i class="icon lezhi lz-recycle"></i>
 							</div>
