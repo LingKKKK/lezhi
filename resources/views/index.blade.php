@@ -109,7 +109,7 @@
 							</div>
 						</div>
 						<div class="login-region">
-							<div class="photo{{isset($user) ? '' : ' no-user'}}" data-href="{{$loginInfo->home_url}}">
+							<div class="photo{{isset($user) ? '' : ' no-user'}}" data-href="{{$urldata->home_url}}">
 								@if(isset($user))
 								<img src="{{$user->avatar_url or 'assets/image/default-user.png'}}" />
 								@else
@@ -219,7 +219,7 @@
 							<div class="title">账号登录</div>
 							<form>
 								{!! csrf_field() !!}
-								<input class="qrcode-key" type="hidden" value="{{$loginInfo->key or ''}}">
+								<input class="qrcode-key" type="hidden" value="{{$loginInfo->login_key or ''}}">
 								<div class="field">
 									<span class="icon"><i class="lezhi lz-user"></i></span>
 									<input class="email" type="email" name="email" placeholder="邮箱地址/手机号码" autocomplete="off" />
@@ -238,7 +238,7 @@
 							<div class="scan">
 								<img src="{{asset('assets/image/weixin-scan.png')}}" />
 							</div>
-							<img class="qrcode" alt="微信扫码" src="{{$loginInfo->qrcode_url or ''}}" />
+							<img class="qrcode" alt="微信扫码" src="{{$loginInfo->qrcodeurl or ''}}" />
 							<div class="login-tips tips">
 								请使用微信扫一扫<br />扫码关注后即可直接登录
 							</div>
@@ -249,13 +249,13 @@
 					</div>
 					<div class="footer">
 						<div class="login-footer">
-							<a class="forget-password" href="{{$loginInfo->find_password_url}}">忘记密码</a>
-							<a class="register" href="{{$loginInfo->register_url}}">点击注册</a>
+							<a class="forget-password" href="{{$urldata->find_password_url}}">忘记密码</a>
+							<a class="register" href="{{$urldata->register_url}}">点击注册</a>
 							<span class="no-account">还没有乐智平台账号？</span>
 						</div>
 						<div class="register-footer">
 							<span class="no-account">不使用微信？前往</span>
-							<a class="register" href="{{$loginInfo->register_url}}">网站注册</a>
+							<a class="register" href="{{$urldata->register_url}}">网站注册</a>
 						</div>
 					</div>
 				</div>

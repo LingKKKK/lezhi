@@ -3,43 +3,46 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\User;
 use Auth;
-use DB;
 use Illuminate\Http\Request;
-use ZipArchive;
-use Curl\Curl;
 use Session;
 use App\Util\Tools;
-use App\WebAuth\Factory as WebAuthFactory;
+use App\WebAuth\ApiProxy;
 
 class HomeController extends Controller {
 
-	public function index(Request $request) {
-		if (Auth::check()) {
-			$user = Auth::user();
-		} else {
-			if ($request->input('from') == 'weixin') {
-				header('Location:http://weixinapp.kenrobot.com/social/edubetaauth');
-			}
+	public function index(Request $request, ApiProxy $apiproxy) {
+		$attachSession = $this->attachSession();
 
-			$openid = $request->input('openid');
-			if (!empty($openid)) {
-				$webauth = WebAuthFactory::create('weixinweb');
-				$crendentials = compact('openid');
-				$loginResult = $webauth->validate($crendentials);
-
-		        if ($loginResult === true) {
-			        $user = $webauth->localUser();
-			        Auth::login($user, true);
-		        }
-			}
+		if ($attachSession) {
+			return $attachSession;
 		}
 
+		$user = $this->currentUser();
 
-		$loginInfo = Tools::getLoginInfo($request->url());
-		Session::put('key', $loginInfo->key);
+		$mainpage = config('platform.url.mainpage');
+		$find_password_url = config('platform.url.find_password');
 
-		return view("index", compact('user', 'loginInfo'));
+
+		$register_url = config('platform.url.register');
+		$find_password_url = config('platform.url.find_password');
+		$home_url = config('navigation.master.mainpage');
+		$urldata = compact('register_url', 'find_password_url', 'home_url');
+		$urldata = (object)$urldata;
+		// $loginInfo = Tools::getLoginInfo($request->url());
+		$loginInfo = array();
+		$qrscanData = $apiproxy->weixinScan();
+		if (isset($qrscanData['status']) && $qrscanData['status'] == 0) {
+			$qrscanData['data']['login_key'] = $qrscanData['data']['auth_key'];
+            $login_key = $qrscanData['data']['auth_key'];
+            $qrscanData['data']['login_key'] = $login_key;
+            Session::put('login_key', $login_key);
+            Session::put('login_data', json_encode($qrscanData['data']));
+
+            $loginInfo = (object)($qrscanData['data']);
+		}
+		$user = $user != null ? (object)$user : null;
+
+		return view("index", compact('user', 'loginInfo', 'urldata'));
 	}
 }

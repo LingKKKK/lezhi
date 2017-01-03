@@ -70,9 +70,9 @@ define(['vendor/jquery', 'vendor/jsencrypt', 'app/config/config', 'app/util/emit
 		var promise = $.Deferred();
 		$.ajax({
 			type: 'POST',
-			url: '/api/auth/login/weixin',
+			url: '/api/auth/weixin/login',
 			data: {
-				key: key,
+				login_key: key,
 			},
 			dataType: 'json',
 		}).done(function(result) {
