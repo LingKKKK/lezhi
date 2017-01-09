@@ -210,7 +210,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 	}
 
 	function onContextMenu(e) {
-		console.log(1)
+		// console.log(1)
 		var target = $(e.target).closest(".block");
 		if (target.length && (target.parents(container.selector).length || target.parents(dragContainer.selector).length) && !target.hasClass("block-group")) {
 			contextMenuTarget = target;
@@ -236,7 +236,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 	}
 
 	function onBlockContextMenu(e) {
-		console.log(1)
+		// console.log(1)
 		if (!contextMenuTarget) {
 			return;
 		}

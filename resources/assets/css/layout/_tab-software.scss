@@ -437,6 +437,7 @@ $focus-color: #f1cb33;
 				padding-bottom: 150px;
 				display: none;
 				position: relative;
+				overflow: auto;
 
 				.group-description {
 					font-size: 13px;
@@ -498,7 +499,7 @@ $focus-color: #f1cb33;
 			&.with-content {
 				.group-extension {
 					padding-top: 20px;
-					padding-bottom: 20px;
+					/* padding-bottom: 20px; */
 
 					.group-description {
 						display: none;
