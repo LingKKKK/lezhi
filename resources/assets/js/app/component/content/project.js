@@ -91,7 +91,7 @@ define(['vendor/jquery', 'app/util/emitor', 'app/util/util', 'app/model/userMode
 	}
 
 	function updateCurrentProject(projectInfo) {
-		console.log(1)
+		// console.log(1)
 		$('.sidebar-region .center li:nth-child(3)').click();
 		$('.sidebar-region .center li:nth-child(2)').click();
 

@@ -234,6 +234,7 @@ $focus-color: #f1cb33;
 			}
 
 			.advanced {
+				margin-right: 17px;
 				float: right;
 				font-size: 12px;
 				color: #718ac0;
@@ -262,6 +263,10 @@ $focus-color: #f1cb33;
 			overflow-x: hidden;
 
 			.blocks {
+				width: 100%;
+				height: 100%;
+				overflow: auto;
+				
 				li {
 					display: none;
 					padding: 5px 15px;
@@ -273,6 +278,112 @@ $focus-color: #f1cb33;
 
 				.block {
 					position: relative;
+				}
+
+				.led {
+					&:after {
+						background-image: url('../image/LEDICON.png');
+					}
+				}
+				.rgb {
+					&:after {
+						background-image: url('../image/LEDrgb.png');
+					}
+				}
+				.button {
+					&:after {
+						background-image: url('../image/buttonicon.png');
+					}
+				}
+				.buzzer {
+					&:after {
+						background-image: url('../image/蜂鸣器.png');
+					}
+				}
+				.pot {
+					&:after {
+						background-image: url('../image/电位器.png');
+					}
+				}
+				.lightSensor {
+					&:after {
+						background-image: url('../image/光敏.png');
+					}
+				}
+				.ACT009 {
+					&:after {
+						background-image: url('../image/点阵.png');
+					}
+				}
+				.Ro7SegmentDisplay {
+					&:after {
+						background-image: url('../image/数码管.png');
+					}
+				}
+				.switch {
+					&:after {
+						background-image: url('../image/开关.png');
+					}
+				}
+				.limitSwitch {
+					&:after {
+						background-image: url('../image/限位开关.png');
+					}
+				}
+				.dht {
+					&:after {
+						background-image: url('../image/温湿度.png');
+					}
+				}
+				.soundSensor {
+					&:after {
+						background-image: url('../image/声音.png');
+					}
+				}
+				.fan {
+					&:after {
+						background-image: url('../image/风扇.png');
+					}
+				}
+				.pirMotion {
+					&:after {
+						background-image: url('../image/人体感知.png');
+					}
+				}
+				.flameSensor_D {
+					&:after {
+						background-image: url('../image/火焰.png');
+					}
+				}
+				.tiltSensor {
+					&:after {
+						background-image: url('../image/倾斜传感.png');
+					}
+				}
+				.touch {
+					&:after {
+						background-image: url('../image/电容.png');
+					}
+				}
+				.analogTemp {
+					&:after {
+						background-image: url('../image/模拟温度.png');
+					}
+				}
+				.trackingSensor {
+					&:after {
+						background-image: url('../image/传感.png');
+					}
+				}
+				.trackingMatrix {
+					&:after {
+						background-image: url('../image/阵列.png');
+					}
+				}
+				.motor {
+					&:after {
+						background-image: url('../image/电机.png');
+					}
 				}
 			}
 		}
@@ -353,6 +464,7 @@ $focus-color: #f1cb33;
 			}
 
 			.block-group {
+				/* overflow: auto; */
 				position: relative;
 				height: 0;
 				width: 100%;
@@ -434,13 +546,57 @@ $focus-color: #f1cb33;
 		}
 
 		.palette {
-			width: 320px;
-			height: 320px;
+			width: 322px;
+			height: 322px;
 			border: 1px solid black;
 			position: absolute;
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%,-50%);
+			display: none;
+
+			.paletteDom_div {
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				border: 1px solid black;
+				float: left;
+			}
+
+			.paletteDom_click1 {
+				width: 100px;
+				height: 38px;
+				// background: red;
+				position: absolute;
+				bottom: -15%;
+				left: 10%;				
+				border: 1px solid black;
+				cursor: pointer;
+
+				span {
+					text-align: center;
+				    width: 100px;
+				    display: block;
+				    line-height: 38px;
+				}
+			}
+			.paletteDom_click2 {
+				width: 100px;
+				height: 38px;
+				// background: red;
+				position: absolute;
+				bottom: -15%;
+				right: 10%;				
+				border: 1px solid black;
+				cursor: pointer;
+
+				span {
+					text-align: center;
+				    width: 100px;
+				    display: block;
+				    line-height: 38px;
+				}
+			}
 		}
 
 		.recycle {

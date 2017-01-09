@@ -96,6 +96,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor'], function($1, util,
 			controlsi.addClass('controlsi');
 			logics.addClass('logics');
 			logico.addClass('logico');
+			$('.block.module:nth(21)').addClass('LEDAAAA');
 		}
 		add();
 

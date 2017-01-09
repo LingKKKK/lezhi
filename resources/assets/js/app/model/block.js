@@ -1,6 +1,6 @@
 define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEvents, emitor) {
-	var blocks = {}; /*编程链接的模块*/
-	var connectors = {}; /*连接器*/
+	var blocks = {};
+	var connectors = {};
 	var ioConnectors = {};
 	var blockVars = {
 		voidFunctions: [],
@@ -26,6 +26,8 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	var dragMouseY;
 	var delayTimer;
 	var paletteDom;
+	var paletteDom_click;
+	var ledmatrixData;
 	var recycleDom;
 
 	var translateRegExp = /translate\(((-)*(\d|\.)*)px, ((-)*(\d|\.)*)px\)/;
@@ -33,32 +35,95 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	reservedWords = reservedWords.split(',');
 
 
-	// console.log($('.module'));
-
 	$('.sidebar-region .center li:nth-child(4)').click();
 	$('.sidebar-region .center li:nth-child(2)').click();
 
+	var arrayPalette;
+	var paletteDom = $('.tab-software .palette');
+	for (var i = 1; i < 257; i++) {
+		paletteDom.append("<div class=paletteDom_div data-value=0></div>")
+	}
+	var paletteDom_click = "<div class=paletteDom_click1><span>保存</span></div><div class=paletteDom_click2><span>清除</span></div>"
+	paletteDom.append(paletteDom_click);
+	var oAll = document.getElementsByClassName('palette')[0];
+	var oDiv = oAll.getElementsByClassName('paletteDom_div');
+	for (var i = 0; i < oDiv.length; i++) {
+		oDiv[i].onclick = function() {
+			if (this.style.background == 'black') {
+				this.style.background = 'white';
+				this.className = 'paletteDom_div';
+			} else {
+				this.style.background = 'black';
+				this.className = 'paletteDom_div active';
+			}
+		};
+	};
+
+	$('.tab-software .palette .paletteDom_div').click(function() {
+		if ($(this).hasClass('active')) {
+			$(this).attr('data-value', '1');
+		} else {
+			$(this).attr('data-value', '0');
+		}
+	})
+
+	function toggleDataValue() {
+		var arrayPalette = []
+		for (var i = 0; i < oDiv.length; i++) {
+			// console.log(oDiv[i].getAttribute("data-value"))
+			arrayPalette.push(oDiv[i].getAttribute("data-value"))
+		};
+		// var result = arrayPalette.replace(/^\"|\"$/g,'');
+		return arrayPalette
+	}
+
+
+
+	$('.tab-software .palette .paletteDom_click1').on('click', ledMatrixData);
+	$('.tab-software .palette .paletteDom_click2').on('click', clearup);
+
+	function ledMatrixData() {
+		// var result = toggleDataValue()
+		// var data = {};
+		// // console.log(result[1])  读取到一个点的信息
+		// // console.log(result[0]);
+		// console.log(data);
+	}
+
+	function upload() {
+
+	}
+
+	function clearup() {
+		$('.tab-software .palette .paletteDom_div').css('background-color', 'white')
+		$('.tab-software .palette .paletteDom_div').attr('data-value', '0');
+	}
+
 	function Block(blockData) {
-		// 添加模块s
+		// console.dir(blockData) 添加模块
 		this.data = blockData;
 		this.uid = genUid();
 		this.connectable = false;
 		this.enable = true;
 		this.connectors = [];
 		this.ioConnectors = [];
-		//  获取所有的模块 记录到各个模块的信息；
+
 		var dom = document.createElement('div');
-		//  dom 是所有的编程模块
+		// console.log(dom);
 		dom.draggable = false;
 		dom.dataset.uid = this.uid;
 		dom.classList.add("block");
 		dom.classList.add("block-" + this.data.type);
 		this.data.tags && this.data.tags.forEach(function(tag) {
 			dom.classList.add(tag);
+			// console.dir(tag)
 		});
-		this.dom = dom;
-		// console.dir(dom);
+		if (this.data.tags.indexOf("module") >= 0) {
+			dom.classList.add(this.data.module);
+		}
 
+		this.dom = dom;
+		// console.dir(dom.data);
 		switch (this.data.type) {
 			case "statement-input":
 				this.dom.innerHTML = '<div class="statement-header"></div><div class="statement-extension"><div class="statement-extension-content"></div><div class="statement-extension-end"></div></div>';
@@ -91,8 +156,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		}
 
 		blocks[this.uid] = this;
-
-
 		if (this.data.createDynamicContent) {
 			var inputDom = this.dom.querySelector("input.var-input");
 			if (inputDom) {
@@ -107,32 +170,26 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	Block.prototype.getCode = function() {
-		// 切换到源码部分
 		return getBlockCode(this);
 	}
 
 	Block.prototype.copy = function() {
-		// 复制一个模块
 		return copyBlock(this);
 	}
 
 	Block.prototype.remove = function() {
-		//  删除这个模块
 		removeBlock(this);
 	}
 
 	Block.prototype.getStructure = function() {
-		//  上传 保存
 		return getBlockStructure(this);
 	}
 
 	Block.prototype.isEnable = function() {
-		// 右击 对模块进行操作
 		return this.enable;
 	}
 
 	Block.prototype.setEnable = function(value) {
-		//  给模块添加注释 或者 取消注释
 		setBlockEnable(this, value, false);
 	}
 
@@ -154,12 +211,10 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	Block.prototype.getOffset = function() {
-		// 获取模块的坐标
 		return getBlockOffset(this);
 	}
 
 	Block.prototype.setOffset = function(x, y) {
-		// 创建模块的坐标
 		setBlockOffset(this, x, y);
 	}
 
@@ -169,7 +224,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 			var elementDom = createBlockElement(block, elementData);
 			if (elementData.extra && !extDom) {
 				extDom = block.dom.querySelector(".statement-extension-end");
-				// querySelector 获取到第一个class名字为…的元素；
 				extDom.classList.add("with-content");
 			}
 			elementData.extra ? extDom.appendChild(elementDom) : block.contentDom.appendChild(elementDom);
@@ -181,7 +235,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var connectorUid;
 		var connector;
 		var containerDom;
-		//  声明编程模块的各类信息；  新建模块
 
 		block.data.connectors.forEach(function(connectorData) {
 			connectorUid = genUid();
@@ -191,7 +244,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 				blockUid: block.uid,
 				connectedTo: null
 			};
-			// console.dir(connector);connector每一个模块
+			// console.dir(connector);connector
 
 			switch (connectorData.type) {
 				case "connector-top":
@@ -238,7 +291,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function createBlockElement(block, elementData) {
-		// 新增模块
 		var elementDom;
 		switch (elementData.type) {
 			case "static-select":
@@ -339,7 +391,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 
 				break;
 		}
-
 		return elementDom;
 	}
 
@@ -368,7 +419,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function buildStatementConnector(block, connectorUid, connectorData, connector, containerDom) {
-		//  新添加一个模块  从第一个模块添加开始 一直到后期添加模块
 		var connectorDom = document.createElement("div");
 		connectorDom.dataset.connectorUid = connectorUid;
 		connectorDom.classList.add("connector");
@@ -376,6 +426,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		containerDom.appendChild(connectorDom);
 		connectors[connectorUid] = connector;
 		block.connectors.push(connectorUid);
+		var sofewareData = block.dom.outerHTML;
 		return connectorDom;
 	}
 
@@ -387,37 +438,36 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 			optionDom.dataset.reference = optionData.id;
 			optionDom.innerHTML = optionData.name;
 			selectDom.appendChild(optionDom);
-			//  optionDom  需要加载的模块
+			// console.dir(optionDom)
 		});
 	}
 
 	function onBlockMouseDown(e) {
-		//  点击拖拽模块
+		//  console.dir(1)
 		var tagName = e.target.tagName.toLowerCase();
-		//  转换成小写的字符串
 		if (tagName == "select" || tagName == "input" || tagName == "textarea") {
 			return;
 		}
 
-		e.stopPropagation(); /* 停止派发事件 */
-		e.returnValue = false; /*如果失败  阻止当前事件的继续*/
+		e.stopPropagation();
+		e.returnValue = false;
 
 		mouseDownBlockDom = e.currentTarget;
-		// mouseDownBlockDom  被操作的BlockDom 
+		// mouseDownBlockDom  ±»²Ù×÷µÄBlockDom 
 		startPreMouseMove = true;
 		document.addEventListener(compitableEvents.up, onBlockMouseUpBeforeMove);
 		document.addEventListener(compitableEvents.move, onBlockPreMouseMove);
 	}
 
 	function onBlockMouseUpBeforeMove(e) {
-		//  在移动模块之前 松鼠标的同时 执行的函数 （ 包含左右击）
+		//  ÔÚÒÆ¶¯Ä£¿éÖ®Ç° ËÉÊó±êµÄÍ¬Ê± Ö´ÐÐµÄº¯Êý £¨ °üº¬×óÓÒ»÷£©
 		mouseDownBlockDom = null;
 		document.removeEventListener(compitableEvents.up, onBlockMouseUpBeforeMove);
 		document.removeEventListener(compitableEvents.move, onBlockPreMouseMove);
 	}
 
 	function onBlockPreMouseMove(e) {
-		//  移动模块 松开鼠标之前的函数； 
+		//  ÒÆ¶¯Ä£¿é ËÉ¿ªÊó±êÖ®Ç°µÄº¯Êý£» 
 		e = compitableEvents.isMobile ? e.changedTouches[0] : e;
 		if (startPreMouseMove) {
 			startPreMouseMove = false;
@@ -443,7 +493,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function onBlockMouseMove(e) {
-		//  拖拽模块时 移动鼠标
+		//给模块添加特殊的名字
 		var modulebs = $('.module.block-statement');
 		var modulebo = $('.module.block-output');
 		var functions = $('.function.block-statement');
@@ -532,7 +582,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function onBlockMouseUp(e) {
-		// 移动模块之后 松开鼠标   点击无效
+		// ÒÆ¶¯Ä£¿éÖ®ºó ËÉ¿ªÊó±ê   µã»÷ÎÞÐ§
 		var modulebs = $('.module.block-statement');
 		var modulebo = $('.module.block-output');
 		var functions = $('.function.block-statement');
@@ -574,15 +624,13 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		}
 		add();
 
-
-
 		document.removeEventListener(compitableEvents.move, onBlockMouseMove);
 		document.removeEventListener(compitableEvents.up, onBlockMouseUp);
 
 		var block = dragBlock;
-		// block 是被操作（移动的）模块
+		// block ÊÇ±»²Ù×÷£¨ÒÆ¶¯µÄ£©Ä£¿é
 		var dropConnectorDom = container.querySelector(".connector.active") || dragContainer.querySelector(".connector.active");
-		// console.dir(dropConnectorDom); 显示dropConnectorDom的类型  object或者null
+		// console.dir(dropConnectorDom); ÏÔÊ¾dropConnectorDomµÄÀàÐÍ  object»òÕßnull
 		if (dropConnectorDom) {
 			switch (block.data.type) {
 				case "statement":
@@ -623,14 +671,14 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		}
 
 		var promptDom = $('.tab-software .prompt');
-		
+
 		$('.software-container').mousemove(function() {
-			
+
 		})
 	}
 
 	function statementDragStart(block) {
-		// 开始拖拽模块
+		// ¿ªÊ¼ÍÏ×§Ä£¿é
 		var preConnectorUid = connectors[block.connectors[0]].connectedTo;
 		if (preConnectorUid) {
 			var previousBlock = getBlockByConnector(preConnectorUid);
@@ -656,7 +704,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function statementDragEnd(block, dropConnectorDom) {
-		// 成功的拖拽 并且 放置一个模块 过程结束的时候
+		// ³É¹¦µÄÍÏ×§ ²¢ÇÒ ·ÅÖÃÒ»¸öÄ£¿é ¹ý³Ì½áÊøµÄÊ±ºò
 		var dropConnectorUid = dropConnectorDom.dataset.connectorUid;
 		var dragConnectorUid = dropConnectorDom.dataset.canConnectWith;
 
@@ -671,7 +719,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function outputDragStart(block) {
-		// 开始拖拽移动模块
+		// ¿ªÊ¼ÍÏ×§ÒÆ¶¯Ä£¿é
 		var outputConnector = getOutputConnector(block);
 		if (outputConnector.connectedTo) {
 			var blockConnector = ioConnectors[outputConnector.connectedTo];
@@ -700,11 +748,11 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function outputDragEnd(block, dropConnectorDom) {
-		//  移动可填充模块执行的函数   头部带点
+		//  ÒÆ¶¯¿ÉÌî³äÄ£¿éÖ´ÐÐµÄº¯Êý   Í·²¿´øµã
 		var dropConnectorUid = dropConnectorDom.dataset.connectorUid;
-		// console.dir(dropConnectorUid);  被拖拽的模块;
+		// console.dir(dropConnectorUid);  ±»ÍÏ×§µÄÄ£¿é;
 		var dragConnectorUid = getOutputConnector(block).uid;
-		// console.dir(dragConnectorUid);   被放置的接口位置;
+		// console.dir(dragConnectorUid);   ±»·ÅÖÃµÄ½Ó¿ÚÎ»ÖÃ;
 
 		dropConnectorDom.appendChild(block.dom);
 		block.dom.style.transform = "none";
@@ -715,8 +763,8 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		var dropBlock = getBlockByConnector(dropConnectorUid, true);
 		var dragBlock = getBlockByConnector(dragConnectorUid, true);
 		dropBlock.data.returnType && dropBlock.data.returnType.type == 'fromInput' && dragBlock.data.returnType.pointer && updateBlockVar(dropBlock);
-		console.dir(block.dom);
-		console.dir(dropConnectorDom);
+		// console.dir(block.dom);
+		// console.dir(dropConnectorDom);
 	}
 
 	function connectorRootDragEnd(dragBlock, dropConnectorDom) {
@@ -914,7 +962,6 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 		}
 
 		return !!connectors[block.connectors[2]].connectedTo;
-		console.log(1)
 	}
 
 	function copyBlock(block) {
@@ -1820,7 +1867,7 @@ define(['app/util/compitableEvents', 'app/util/emitor'], function(compitableEven
 	}
 
 	function resetBlocks() {
-		// console.log('创建主模板')
+		// console.log('´´½¨Ö÷Ä£°å')
 		for (var uid in blocks) {
 			var block = blocks[uid];
 			if (block.connectable || block.data.type == "group") {

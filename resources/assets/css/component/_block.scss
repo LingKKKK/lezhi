@@ -59,7 +59,7 @@ $disabled-deep-color: #dadada;
 	&.block-statement-input {
 		&:before {
 			width: 14px;
-			height: 100px;
+			height: 100%;
 			display: block;
 			border-bottom-left-radius: 3px;
 			border-top-left-radius: 3px;
@@ -126,6 +126,12 @@ $disabled-deep-color: #dadada;
 		.group-content {
 			& > .block {
 				position: relative;
+			}
+
+			.LEDAAAA {
+				&:after {
+					background-image: url('../image/LEDICON.png');
+				}
 			}
 		}
 	}
@@ -295,7 +301,7 @@ $disabled-deep-color: #dadada;
 	&.dragging {
 		z-index: 9;
 		opacity: 0.8;
-		padding-bottom: 140px;
+		// padding-bottom: 140px;
 	}
 
 	&.module {
@@ -307,10 +313,10 @@ $disabled-deep-color: #dadada;
 			position: absolute;
 			left: 17px;
 			top: 5px;
-			width: 33px;
-			height: 33px;
+			width: 30px;
+			height: 30px;
 			/* background-color: black; */
-			background-image: url('../image/logo.png');
+			/* background-image: url('../image/logo.png'); */
 			background-size: 30px 30px;
 			background-position: 0px 0px;
 			z-index: 999;
@@ -362,6 +368,7 @@ $disabled-deep-color: #dadada;
 
 				& > .block-input {
 					background-color: $module-deep-color;
+					text-align: center;
 					&:before {
 						background-color: $module-deep-color;
 					}
@@ -1383,4 +1390,112 @@ $disabled-deep-color: #dadada;
 	// 		}
 	// 	}
 	// }
+
+	.led {
+		&:after {
+			background-image: url('../image/LEDICON.png');
+		}
+	}
+	.rgb {
+		&:after {
+			background-image: url('../image/LEDrgb.png');
+		}
+	}
+	.button {
+		&:after {
+			background-image: url('../image/buttonicon.png');
+		}
+	}
+	.buzzer {
+		&:after {
+			background-image: url('../image/蜂鸣器.png');
+		}
+	}
+	.pot {
+		&:after {
+			background-image: url('../image/电位器.png');
+		}
+	}
+	.lightSensor {
+		&:after {
+			background-image: url('../image/光敏.png');
+		}
+	}
+	.ACT009 {
+		&:after {
+			background-image: url('../image/点阵.png');
+		}
+	}
+	.Ro7SegmentDisplay {
+		&:after {
+			background-image: url('../image/数码管.png');
+		}
+	}
+	.switch {
+		&:after {
+			background-image: url('../image/开关.png');
+		}
+	}
+	.limitSwitch {
+		&:after {
+			background-image: url('../image/限位开关.png');
+		}
+	}
+	.dht {
+		&:after {
+			background-image: url('../image/温湿度.png');
+		}
+	}
+	.soundSensor {
+		&:after {
+			background-image: url('../image/声音.png');
+		}
+	}
+	.fan {
+		&:after {
+			background-image: url('../image/风扇.png');
+		}
+	}
+	.pirMotion {
+		&:after {
+			background-image: url('../image/人体感知.png');
+		}
+	}
+	.flameSensor_D {
+		&:after {
+			background-image: url('../image/火焰.png');
+		}
+	}
+	.tiltSensor {
+		&:after {
+			background-image: url('../image/倾斜传感.png');
+		}
+	}
+	.touch {
+		&:after {
+			background-image: url('../image/电容.png');
+		}
+	}
+	.analogTemp {
+		&:after {
+			background-image: url('../image/模拟温度.png');
+		}
+	}
+	.trackingSensor {
+		&:after {
+			background-image: url('../image/传感.png');
+		}
+	}
+	.trackingMatrix {
+		&:after {
+			background-image: url('../image/阵列.png');
+		}
+	}
+	.motor {
+		&:after {
+			background-image: url('../image/电机.png');
+		}
+	}
+
+
 }

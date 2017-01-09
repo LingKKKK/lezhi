@@ -26,7 +26,6 @@ define(function() {
 		if(!hanlders) {
 			return;
 		}
-
 		for(var i = 0; i < hanlders.length; i++) {
 			var handler = hanlders[i];
 			if(handler.callback == callback) {
@@ -42,7 +41,7 @@ define(function() {
 		if(!hanlders) {
 			return;
 		}
-
+		// console.dir(hanlders)
 		hanlders = hanlders.concat().sort(function(a, b) {
 			return b.priority - a.priority;
 		});

@@ -12,7 +12,9 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 	function init() {
 		var sidebarTab = $('.sidebar-tabs .tab-software');
 		filterList = $('.filters', sidebarTab);
+
 		blockList = $('.blocks', sidebarTab);
+		// console.dir(blockList)  UL列表f
 		filterWrap = $('.filter', sidebarTab);
 		$('.advanced', filterWrap).on("click", onAdvancedClick).data("basic");
 
@@ -36,22 +38,10 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 
 		var alertInput = $('.content-region .connector-input');
 
-		// $('.software-container').mousemove(function(){
-		// 	console.log(alertInput.length)
-		// })
-		// for (var i = 0; i < alertInput.length; i++) {
-		// 	alertInput[i].index = i;
-		// 	console.log(i)
-		// 	alertInput[i].onclick = function() {
-		// 		console.log(i)
-		// 	}
-		// }
-		// $.each(alertInput, function(index) {
-		// 	console.log('index='+index);
-		// })
 	}
 
 	function loadSchema(schema) {
+		// console.log(1)
 		softwareModel.loadSchema(schema);
 
 		createBlocks(schema.blocks);
@@ -78,6 +68,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 	}
 
 	function getCode(hardwareData) {
+		// console.log(1)
 		var codeInfo = softwareModel.getCode();
 
 		var includeCode = [];
@@ -94,6 +85,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 			code = componentData.code;
 			if (code.include) {
 				includeCode = includeCode.concat(code.include.split('\n'));
+				// includeCode = includeCode.concat(code.include.split(','));
 			}
 			if (code.var) {
 				tempCode = code.var.replace(nameReg, componentData.varName);
@@ -111,6 +103,14 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 				}
 				setupCode += tempCode;
 			}
+			// if (code.extra) {
+			// 	tempCode = code.extra.replace(nameReg, componentData.varName);
+			// 	var pins = componentData.pins;
+			// 	for (var name in pins) {
+			// 		tempCode = tempCode.replace(new RegExp('{' + name + '}', 'g'), pins[name]);
+			// 	}
+			// 	extraCode += code.extra;
+			// }
 			if (code.extra) {
 				extraCode += code.extra;
 			}
@@ -124,23 +124,16 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 		codeInfo.extra = extraCode;
 		codeInfo.global = varCode + codeInfo.global;
 		codeInfo.setup = setupCode + codeInfo.setup;
-
-		// console.dir(codeInfo.global)
-		// var a = codeInfo.global;
-		// if (a == null || a.length == 0) {
-		// 	console.log(a + "是空的");
-		// }else {
-		// 	console.log(a + "不是空的");
-		// }
-		// console.dir(codeInfo)
 		return codeInfo;
 	}
 
 	function reset() {
+		console.log(1)
 
 	}
 
 	function createBlocks(blocks) {
+
 		blockList.empty();
 		blocks.forEach(function(blockData) {
 			if (blockData.type == "group") {
@@ -152,9 +145,15 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 			blockData.tags.indexOf("module") >= 0 && li.data("module", blockData.module);
 			blockList.append(li.append(block.dom));
 		});
+
+		// console.log(blocks.length);
+		for (var i = 0; i < blocks.length; i++) {
+			// console.log(blocks[i])
+		}
 	}
 
 	function updateBlocks(hardwareData) {
+		// console.dir(hardwareData)
 		modules = ["default"];
 
 		var groups = {};
@@ -195,19 +194,23 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 	}
 
 	function onBlockDragStart() {
+		// 点击开始拖拽模块
 		emitor.trigger("sidebar", "toggle");
 	}
 
 	function onBlockDragEnd() {
+		// 拖拽模块过程结束
 		emitor.trigger("sidebar", "toggle");
 	}
 
 	function onActiveTab(name) {
+		// 显示被选择中的tab页面
 		name == "software" ? dragContainer.addClass("active") : dragContainer.removeClass("active");
 		name == "software" && emitor.trigger("software", "update-block");
 	}
 
 	function onContextMenu(e) {
+		console.log(1)
 		var target = $(e.target).closest(".block");
 		if (target.length && (target.parents(container.selector).length || target.parents(dragContainer.selector).length) && !target.hasClass("block-group")) {
 			contextMenuTarget = target;
@@ -233,6 +236,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 	}
 
 	function onBlockContextMenu(e) {
+		console.log(1)
 		if (!contextMenuTarget) {
 			return;
 		}
@@ -294,10 +298,55 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 			}
 
 			blockLi.addClass("active");
+
+			clickLi1();
+
+			function clickLi1() {
+				if ($('.tab-software .filters-wrap .filters li:nth(1)').hasClass('active')) {
+					$('.blocks li:nth(21)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(2)').hasClass('active')) {
+					$('.blocks li:nth(21)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(3)').hasClass('active')) {
+					$('.blocks li:nth(21)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(4)').hasClass('active')) {
+					$('.blocks li:nth(21)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(5)').hasClass('active')) {
+					$('.blocks li:nth(21)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(6)').hasClass('active')) {
+					$('.blocks li:nth(21)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(7)').hasClass('active')) {
+					$('.blocks li:nth(21)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(0)').hasClass('active')) {
+					$('.blocks li:nth(21)').css('display', 'block');
+				}
+			}
+
+			clickLi2();
+
+			function clickLi2() {
+				if ($('.tab-software .filters-wrap .filters li:nth(1)').hasClass('active')) {
+					$('.blocks li:nth(105)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(2)').hasClass('active')) {
+					$('.blocks li:nth(105)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(3)').hasClass('active')) {
+					$('.blocks li:nth(105)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(4)').hasClass('active')) {
+					$('.blocks li:nth(105)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(5)').hasClass('active')) {
+					$('.blocks li:nth(105)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(6)').hasClass('active')) {
+					$('.blocks li:nth(105)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(7)').hasClass('active')) {
+					$('.blocks li:nth(105)').css('display', 'none');
+				} else if ($('.tab-software .filters-wrap .filters li:nth(0)').hasClass('active')) {
+					$('.blocks li:nth(105)').css('display', 'block');
+				}
+			}
 		});
 	}
 
 	function onAdvancedClick(e) {
+		console.log(1)
 		var li = filterList.find("li.active");
 		if (!li.length) {
 			return;
@@ -338,6 +387,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/model/software
 	}
 
 	function onGroupHeaderClick(e) {
+		console.log(1)
 		var group = $(this).parent().parent();
 		group.toggleClass("active");
 

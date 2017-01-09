@@ -49,17 +49,19 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		emitor.on('hardware', 'boardChange', onBoardChange);
 		emitor.on('hardware', 'resize', onResize);
 		emitor.on('sidebar', 'activeTab', onActiveTab);
-
+		
 		documentmove();
 
+		setInterval(function() {
+			panduanLed();
+			panduanFan();
+		}, 30)
+
 		$('.main').mouseover(function() {
-			var content = getSoftwareCode();
+			// var content = getSoftwareCode();
 			// console.log(content);
-			if (content.indexOf("int LED_0 = 3") >= 0 || content.indexOf("int LED_0 = 9") >= 0 || content.indexOf("int LED_0 = 10") >= 0 || content.indexOf("int LED_0 = 11") >= 0 || content.indexOf("int LED_1 = 3") >= 0 || content.indexOf("int LED_1 = 9") >= 0 || content.indexOf("int LED_1 = 10") >= 0 || content.indexOf("int LED_1 = 11") >= 0 || content.indexOf("int LED_2 = 3") >= 0 || content.indexOf("int LED_2 = 9") >= 0 || content.indexOf("int LED_2 = 10") >= 0 || content.indexOf("int LED_2 = 11") >= 0|| content.indexOf("int LED_3 = 3") >= 0 || content.indexOf("int LED_3 = 9") >= 0 || content.indexOf("int LED_3 = 10") >= 0 || content.indexOf("int LED_3 = 11") >= 0|| content.indexOf("int LED_4 = 3") >= 0 || content.indexOf("int LED_4 = 9") >= 0 || content.indexOf("int LED_4 = 10") >= 0 || content.indexOf("int LED_4 = 11") >= 0|| content.indexOf("int LED_5 = 3") >= 0 || content.indexOf("int LED_5 = 9") >= 0 || content.indexOf("int LED_5 = 10") >= 0 || content.indexOf("int LED_5 = 11") >= 0) {
-				$('.blocks li:nth(21)').css('display', 'block');
-			} else {
-				$('.blocks li:nth(21)').css('display', 'none');
-			}
+			panduanLed();
+			panduanFan();
 		})
 
 	}
@@ -69,6 +71,24 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		// console.log(arrow.global);
 		// 获取到代码部分的值；
 		return arrow.global;
+	}
+
+	function panduanLed() {
+		if (getSoftwareCode().indexOf("int LED_0 = 3") >= 0 || getSoftwareCode().indexOf("int LED_0 = 9") >= 0 || getSoftwareCode().indexOf("int LED_0 = 10") >= 0 || getSoftwareCode().indexOf("int LED_0 = 11") >= 0 || getSoftwareCode().indexOf("int LED_1 = 3") >= 0 || getSoftwareCode().indexOf("int LED_1 = 9") >= 0 || getSoftwareCode().indexOf("int LED_1 = 10") >= 0 || getSoftwareCode().indexOf("int LED_1 = 11") >= 0 || getSoftwareCode().indexOf("int LED_2 = 3") >= 0 || getSoftwareCode().indexOf("int LED_2 = 9") >= 0 || getSoftwareCode().indexOf("int LED_2 = 10") >= 0 || getSoftwareCode().indexOf("int LED_2 = 11") >= 0 || getSoftwareCode().indexOf("int LED_3 = 3") >= 0 || getSoftwareCode().indexOf("int LED_3 = 9") >= 0 || getSoftwareCode().indexOf("int LED_3 = 10") >= 0 || getSoftwareCode().indexOf("int LED_3 = 11") >= 0 || getSoftwareCode().indexOf("int LED_4 = 3") >= 0 || getSoftwareCode().indexOf("int LED_4 = 9") >= 0 || getSoftwareCode().indexOf("int LED_4 = 10") >= 0 || getSoftwareCode().indexOf("int LED_4 = 11") >= 0 || getSoftwareCode().indexOf("int LED_5 = 3") >= 0 || getSoftwareCode().indexOf("int LED_5 = 9") >= 0 || getSoftwareCode().indexOf("int LED_5 = 10") >= 0 || getSoftwareCode().indexOf("int LED_5 = 11") >= 0) {
+			$('.blocks li:nth(21)').css('display', 'block');
+			clickLi1();
+		} else {
+			$('.blocks li:nth(21)').css('display', 'none');
+		}
+	}
+
+	function panduanFan() {
+		if (getSoftwareCode().indexOf("int Fan_0 = 3") >= 0 || getSoftwareCode().indexOf("int Fan_0 = 9") >= 0 || getSoftwareCode().indexOf("int Fan_0 = 10") >= 0 || getSoftwareCode().indexOf("int Fan_0 = 11") >= 0 || getSoftwareCode().indexOf("int Fan_1 = 3") >= 0 || getSoftwareCode().indexOf("int Fan_1 = 9") >= 0 || getSoftwareCode().indexOf("int Fan_1 = 10") >= 0 || getSoftwareCode().indexOf("int Fan_1 = 11") >= 0 || getSoftwareCode().indexOf("int Fan_2 = 3") >= 0 || getSoftwareCode().indexOf("int Fan_2 = 9") >= 0 || getSoftwareCode().indexOf("int Fan_2 = 10") >= 0 || getSoftwareCode().indexOf("int Fan_2 = 11") >= 0 || getSoftwareCode().indexOf("int Fan_3 = 3") >= 0 || getSoftwareCode().indexOf("int Fan_3 = 9") >= 0 || getSoftwareCode().indexOf("int Fan_3 = 10") >= 0 || getSoftwareCode().indexOf("int Fan_3 = 11") >= 0 || getSoftwareCode().indexOf("int Fan_4 = 3") >= 0 || getSoftwareCode().indexOf("int Fan_4 = 9") >= 0 || getSoftwareCode().indexOf("int Fan_4 = 10") >= 0 || getSoftwareCode().indexOf("int Fan_4 = 11") >= 0 || getSoftwareCode().indexOf("int Fan_5 = 3") >= 0 || getSoftwareCode().indexOf("int Fan_5 = 9") >= 0 || getSoftwareCode().indexOf("int Fan_5 = 10") >= 0 || getSoftwareCode().indexOf("int Fan_5 = 11") >= 0) {
+			$('.blocks li:nth(105)').css('display', 'block');
+			clickLi2();
+		} else {
+			$('.blocks li:nth(105)').css('display', 'none');
+		}
 	}
 
 	function loadSchema(schema) {
@@ -97,8 +117,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		return data;
 	}
 
-	function reset() {
-	}
+	function reset() {}
 
 	function documentmove() {
 		setInterval(function() {
@@ -110,6 +129,10 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			runadd2();
 			runadd3();
 			qwez();
+		}, 30)
+
+		setTimeout(function(){
+  			clickHardWare();
 		}, 30)
 	}
 
@@ -131,6 +154,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		});
 
 		filterList.find('[data-filter="all"]').click();
+		// console.dir(components); 添加的硬件模块
 	}
 
 	function onAppStart() {
@@ -420,6 +444,11 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 		componentDialog.addClass("active").data("uid", uid).find(".name").val(componentData.varName);
 	}
 
+	function clickHardWare(){
+		$('.center li:nth-child(2)').click();
+		$('.center li:nth-child(2)').click();
+	}
+
 	function qwe0() {
 		$('.component').css({
 			"width": "150px",
@@ -427,6 +456,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			"transform": "translate(-0%, -0%)"
 		});
 	}
+
 	function qwe() {
 		$('.pin-PD1').css('display', 'none');
 		$('.pin-PD4').css('display', 'block');
@@ -436,6 +466,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-PD6').css('display', 'block');
 		}
 	}
+
 	function qwe1() {
 		if ($('.pin-PD2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-8').css('display', 'none');
@@ -445,6 +476,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-9').css('display', 'block');
 		}
 	}
+
 	function runa0() {
 		if ($('.pin-A0').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PA1').css('display', 'none');
@@ -456,6 +488,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			runa1()
 		}
 	}
+
 	function runa1() {
 		if ($('.pin-A1').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PA1').css('display', 'none');
@@ -467,6 +500,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			runa6();
 		}
 	}
+
 	function runa2() {
 		if ($('.pin-A2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PA2').css('display', 'none');
@@ -478,6 +512,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			runa3()
 		}
 	}
+
 	function runa3() {
 		if ($('.pin-A3').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PA2').css('display', 'none');
@@ -488,6 +523,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-PA3').css('display', 'none');
 		}
 	}
+
 	function runa4() {
 		if ($('.pin-A2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PA2').css('display', 'none');
@@ -499,6 +535,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			runa5()
 		}
 	}
+
 	function runa5() {
 		if ($('.pin-A3').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PA2').css('display', 'none');
@@ -510,6 +547,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			acc1();
 		}
 	}
+
 	function runa6() {
 		if ($('.pin-A2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PA2').css('display', 'none');
@@ -521,6 +559,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			runa7()
 		}
 	}
+
 	function runa7() {
 		if ($('.pin-A3').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PA2').css('display', 'none');
@@ -532,6 +571,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			run8();
 		}
 	}
+
 	function run8() {
 		if ($('.pin-PA1').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-A0').css('display', 'none');
@@ -545,6 +585,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			run10()
 		}
 	}
+
 	function run9() {
 		if ($('.pin-PA2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-A2').css('display', 'none');
@@ -558,6 +599,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			acc1();
 		}
 	}
+
 	function run10() {
 		if ($('.pin-PA2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-A2').css('display', 'none');
@@ -571,6 +613,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			run11();
 		}
 	}
+
 	function run11() {
 		if ($('.pin-PA3').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-A0').css('display', 'none');
@@ -590,6 +633,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			acc1();
 		}
 	}
+
 	function acc1() {
 		if ($('.pin-10').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD3').css('display', 'none');
@@ -601,6 +645,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			acc2();
 		}
 	}
+
 	function acc2() {
 		if ($('.pin-11').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD3').css('display', 'none');
@@ -612,6 +657,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			acc3()
 		}
 	}
+
 	function acc3() {
 		if ($('.pin-PD3').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-10').css('display', 'none');
@@ -626,6 +672,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			acc4();
 		}
 	}
+
 	function acc4() {
 		if ($('.pin-PD6').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD3').css('display', 'none');
@@ -641,6 +688,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			qqq0();
 		}
 	}
+
 	function qqq0() {
 		if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-IICINT').css('display', 'none');
@@ -656,6 +704,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			www();
 		}
 	}
+
 	function qqq1() {
 		if ($('.pin-3').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD1').css('display', 'none');
@@ -667,6 +716,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			qqq6();
 		}
 	}
+
 	function qqq2() {
 		if ($('.pin-8').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD2').css('display', 'none');
@@ -677,6 +727,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			qqq3()
 		}
 	}
+
 	function qqq3() {
 		if ($('.pin-9').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD2').css('display', 'none');
@@ -686,6 +737,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-PD5').css('display', 'none');
 		}
 	}
+
 	function qqq4() {
 		if ($('.pin-8').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD2').css('display', 'none');
@@ -696,6 +748,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			qqq5()
 		}
 	}
+
 	function qqq5() {
 		if ($('.pin-9').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD2').css('display', 'none');
@@ -705,6 +758,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-PD5').css('display', 'none');
 		}
 	}
+
 	function qqq6() {
 		if ($('.pin-8').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD2').css('display', 'none');
@@ -715,6 +769,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			qqq7()
 		}
 	}
+
 	function qqq7() {
 		if ($('.pin-9').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD2').css('display', 'none');
@@ -725,6 +780,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			qqq8();
 		}
 	}
+
 	function qqq8() {
 		if ($('.pin-PD1').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-2').css('display', 'none');
@@ -738,6 +794,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			qqq10()
 		}
 	}
+
 	function qqq9() {
 		if ($('.pin-PD2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-8').css('display', 'none');
@@ -749,6 +806,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-PD5').css('display', 'none');
 		}
 	}
+
 	function qqq10() {
 		if ($('.pin-PD2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-8').css('display', 'none');
@@ -761,6 +819,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			qqq11();
 		}
 	}
+
 	function qqq11() {
 		if ($('.pin-PD5').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-2').css('display', 'none');
@@ -779,6 +838,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			www()
 		}
 	}
+
 	function www() {
 		if ($('.pin-IICINT').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-2').css('display', 'none');
@@ -786,6 +846,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-2').css('display', 'block');
 		}
 	}
+
 	function runadd1() {
 		if ($('.pin-PD1').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-2').css('display', 'none');
@@ -795,6 +856,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-PA3').css('display', 'block');
 		}
 	}
+
 	function runadd2() {
 		if ($('.pin-PD5').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-2').css('display', 'none');
@@ -804,6 +866,7 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-PA3').css('display', 'block');
 		}
 	}
+
 	function runadd3() {
 		if ($('.pin-PD4').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD6').css('display', 'none');
@@ -811,9 +874,50 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 			$('.pin-PD6').css('display', 'block');
 		}
 	}
+
 	function qwez() {
 		if ($('.pin-2').hasClass('jsplumb-endpoint-full')) {
 			$('.pin-PD1').css('display', 'none');
+		}
+	}
+
+	function clickLi1() {
+		if ($('.tab-software .filters-wrap .filters li:nth(1)').hasClass('active')) {
+			$('.blocks li:nth(21)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(2)').hasClass('active')) {
+			$('.blocks li:nth(21)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(3)').hasClass('active')) {
+			$('.blocks li:nth(21)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(4)').hasClass('active')) {
+			$('.blocks li:nth(21)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(5)').hasClass('active')) {
+			$('.blocks li:nth(21)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(6)').hasClass('active')) {
+			$('.blocks li:nth(21)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(7)').hasClass('active')) {
+			$('.blocks li:nth(21)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(0)').hasClass('active')) {
+			$('.blocks li:nth(21)').css('display', 'block');
+		}
+	}
+
+	function clickLi2() {
+		if ($('.tab-software .filters-wrap .filters li:nth(1)').hasClass('active')) {
+			$('.blocks li:nth(105)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(2)').hasClass('active')) {
+			$('.blocks li:nth(105)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(3)').hasClass('active')) {
+			$('.blocks li:nth(105)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(4)').hasClass('active')) {
+			$('.blocks li:nth(105)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(5)').hasClass('active')) {
+			$('.blocks li:nth(105)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(6)').hasClass('active')) {
+			$('.blocks li:nth(105)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(7)').hasClass('active')) {
+			$('.blocks li:nth(105)').css('display', 'none');
+		} else if ($('.tab-software .filters-wrap .filters li:nth(0)').hasClass('active')) {
+			$('.blocks li:nth(105)').css('display', 'block');
 		}
 	}
 
