@@ -182,7 +182,7 @@
 										<div class="group-description">这里就是程序一直在做的事情，记得是无限循环哦</div>
 										<div class="group-placeholder">拖一个块放到这里开始你第一个程序吧</div>
 									</div>
-								</div>								
+								</div>
 							</div>
 							<ul class="x-context-menu block-menu">
 								<li data-action="copy">复制</li>
@@ -262,7 +262,7 @@
 				<div class="x-dialog project-dialog">
 					<div class="gengxin">
 						<img src="assets/image/shuaxin.png">
-					</div>	
+					</div>
 					<i class="lezhi lz-close x-dialog-close"></i>
 					<div class="image no-image">
 						<div class="mask"></div>
@@ -357,7 +357,7 @@
 					<div class="x-dialog-content selectable">
 						如果你遇到了Rosys<span class="strong">驱动问题</span>，请按以下步骤操作:
 						<div class="step">
-							Step 1: 点击<a class="driver-url" data-url="http://ide.kenrobot.com/download/arduino-driver-xBIT.zip 
+							Step 1: 点击<a class="driver-url" data-url="http://ide.kenrobot.com/download/arduino-driver-xBIT.zip
 
 " title="rosys驱动">下载</a>并解压<br />
 							Step 2: 运行<span class="strong">rosys驱动安装.exe</span><br />

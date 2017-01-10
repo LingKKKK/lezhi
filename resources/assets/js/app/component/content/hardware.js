@@ -445,8 +445,8 @@ define(['vendor/jquery', 'app/util/util', 'app/util/emitor', 'app/util/compitabl
 	}
 
 	function clickHardWare(){
-		$('.center li:nth-child(2)').click();
-		$('.center li:nth-child(2)').click();
+		// $('.center li:nth-child(2)').click();
+		// $('.center li:nth-child(2)').click();
 	}
 
 	function qwe0() {
