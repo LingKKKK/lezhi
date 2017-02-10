@@ -58,6 +58,16 @@ html, body {
 	}
 }
 
+.modal-message-layer {
+	z-index: 30;
+	background-color: rgba(32, 36, 40, 0.9);
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
 // @media screen and (max-width: $wide-screen-width) {
 // 	.main {
 // 		.content-region {
